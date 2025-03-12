@@ -1,0 +1,39 @@
+.RelatedProductsTitle{
+    margin-bottom: 31px;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 0;
+        hr{
+            width: 100%;
+            top: 23px;
+            position: absolute;
+            z-index: 0;
+            
+        }
+        h2{
+            text-align: center;
+            text-transform: uppercase;
+            width: 40%;
+            margin: 0 auto;
+            background-color: #fff;
+            font-family: Poppins;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 45px;
+            color: #3442B5;
+            z-index: 1;
+            position: relative;
+            padding: 0px 34px;
+        }
+
+        h4{
+            text-transform: uppercase;
+            font-family: Poppins;
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 22.5px;
+                text-align: center;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+        }
+}
