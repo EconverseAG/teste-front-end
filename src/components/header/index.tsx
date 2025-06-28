@@ -1,6 +1,7 @@
+import React from 'react';
 import './index.scss';
 
-export default function Header(){
+const Header: React.FC = () => {
     return (
         <header className="container-header">
             <article className="header-head">
@@ -11,7 +12,7 @@ export default function Header(){
                     </li>
                     <li>
                         <p>icon</p>
-                        Frete gŕatis acima de R$ 200
+                        Frete grátis acima de R$ 200
                     </li>
                     <li>
                         <p>icon</p>
@@ -22,7 +23,7 @@ export default function Header(){
             <article className="header-main">
                 <h1>Econverse</h1>
                 <div>
-                    <input type="text" placeholder='O que você esta buscando?'/>
+                    <input type="text" placeholder='O que você está buscando?' />
                     <p>icon</p>
                 </div>
                 <ul>
@@ -44,5 +45,7 @@ export default function Header(){
                 </ul>
             </article>
         </header>
-    )
+    );
 }
+
+export default Header;
