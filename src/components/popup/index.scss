@@ -1,0 +1,14 @@
+.container-popup {
+    width: 100%;
+    background-color: silver;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .popup {
+        width: 769px;
+        margin: 0 auto;
+        height: 300px;
+        background-color: white;
+    }
+}

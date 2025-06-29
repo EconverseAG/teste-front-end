@@ -1,9 +1,9 @@
 import React from 'react';
+import './index.scss'
 
 const LoadingComponent: React.FC = () => (
   <div className="loading">
     <p>Carregando...</p>
-    <div className="spinner"></div> {/* Estilize este elemento para uma animação */}
   </div>
 );
 

@@ -12,6 +12,7 @@
     .header-head {
         
         ul {
+            width: 764px;
             display: flex;
             justify-content: space-around;
             height: 32px;
@@ -20,10 +21,19 @@
 
             li {
                 display: flex;
-                justify-content: space-between;
+                align-items: center;
 
-                p {
-                    margin-right: 0.5rem;
+                &:first-child {
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+
+
+                span {
+                    color: #3019B2;
+                    margin: 0 5px;
+                    font-weight: 700;
                 }
             }
         }
@@ -31,6 +41,10 @@
     .header-main {
         display: flex;
         justify-content: space-between;
+        height: 72px;
+        align-items: center;
+        border-top: 1px solid #c0c0c042;
+        border-bottom: 1px solid #c0c0c042;
 
         div {
             display: flex;
@@ -47,10 +61,14 @@
                 border: transparent;
             }
 
-            p {
+            img {
                 position: absolute;
-                right: 25px;
+                right: 15px;
                 top: 10px;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
         ul {
@@ -58,9 +76,16 @@
             justify-content: space-between;
             width: 216px;
             height: 32px;
+
+            li {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
     }
     .header-footer {
+        box-shadow: 1px 1px 5px #0000004d;
 
         ul {
             display: flex;
@@ -71,6 +96,7 @@
             li {
                 &.header-active {
                     color: #3019B2;
+                    font-weight: 700;
                 }
                 &:hover {
                     cursor: pointer;

@@ -9,7 +9,7 @@ interface PopupProps {
 
 const Popup: React.FC<PopupProps> = ({ product, onClose }) => {
   return (
-    <div className="popup-overlay">
+    <div className="container-popup">
       <div className="popup">
         <button onClick={onClose} aria-label="Fechar popup">Fechar</button>
         <img src={product.photo} alt={product.productName} />
