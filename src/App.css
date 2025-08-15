@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(304px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+/* Estilos para o título */
+h1 {
+  color: #3F3F40;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}

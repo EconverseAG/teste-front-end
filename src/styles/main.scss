@@ -1,0 +1,16 @@
+@use './variables.scss';
+@use './mixins.scss';
+
+$primary-color: #3498db;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: Arial, sans-serif;
+}

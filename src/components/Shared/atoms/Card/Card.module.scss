@@ -1,0 +1,111 @@
+/* Variáveis para facilitar a manutenção */
+$primary-color: #3F3F40;
+$secondary-color: #808080;
+$tertiary-color: #3442B5; // Cor do botão e frete
+$border-color: #e0e0e0;
+$background-color: #fff;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 304px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: $background-color;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  font-family: $font-family;
+  text-align: left;
+}
+
+.cardImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  flex: 1;
+  min-height: 200px;
+}
+
+.cardImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cardContent {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  text-align: left;
+}
+
+.description {
+  font-size: 0.938rem;
+  color: $secondary-color;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
+  color: red;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.originalPrice {
+  font-size: 0.875rem;
+  color: $secondary-color;
+  text-decoration: line-through;
+  margin: 0;
+  text-align: left;
+}
+
+.currentPrice {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $primary-color;
+  margin: 0;
+  text-align: left;
+}
+
+.installments {
+  font-size: 0.875rem;
+  color: $secondary-color;
+  margin: 0;
+  text-align: left;
+}
+
+.freeShipping {
+  font-size: 0.875rem;
+  color: $tertiary-color;
+  font-weight: 600;
+  text-decoration: underline;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.buyButton {
+  background-color: $tertiary-color;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  text-align: center;
+
+  &:hover {
+    background-color: #2a3591;
+  }
+}
