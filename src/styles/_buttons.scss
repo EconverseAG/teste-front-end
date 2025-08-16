@@ -1,0 +1,29 @@
+@use 'variaveis' as *;
+
+.btn--primary {
+    background-color: $color-secondary;
+    color: $color-dark;
+    border-radius: $border-radius-base;
+    padding: .8rem 2rem;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+
+    &:active {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}

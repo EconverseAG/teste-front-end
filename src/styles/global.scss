@@ -1,15 +1,15 @@
-@use './variaveis' as *;
+@use 'variaveis' as *; 
+@use 'buttons' as *;   
 
 body {
     font-family: $font-family-base;
     font-size: $font-size-base;
 }
 
-h1 { font-size: $font-size-h1;}
-h2 {font-size: $font-size-h2;}
-p {font-size: $font-size-base;}
+h1 { font-size: $font-size-h1; }
+h2 { font-size: $font-size-h2; }
+p  { font-size: $font-size-base; }
 
-/* Reset CSS global */
 *,
 *::before,
 *::after {

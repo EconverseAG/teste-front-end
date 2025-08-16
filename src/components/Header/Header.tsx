@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/logo.png";
@@ -81,7 +80,7 @@ const links: Link[] = [
 
 
 
-const Header: React.FC = () => {
+const Header = () => {
     return (
         <header className="header">
             {/* Ícones do topo */}
