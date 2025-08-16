@@ -2,18 +2,48 @@
 @use "../../styles/variaveis" as *;
 
 .header {
+    padding: 1rem 0;
+    @include container;
+
+
+    &__itens {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 100px;
+        padding: .5rem 0;
+        border-bottom: 1px solid $color-light-01;
+    }
+
+    &__itens-box {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+
+    p {
+        color: $color-grey;
+        font-weight: 600;
+
+        span {
+            color: $color-primary;
+        }
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem 0;
-        @include container;
     }
 
     &__icons {
         display: flex;
-        gap: 16px;
         align-items: center;
+        gap: 16px;
     }
 
     &__input {
@@ -22,25 +52,56 @@
         position: relative;
 
         input {
-            background-color: $color-light;
-            padding: 1rem;
             min-width: 40rem;
+            height: 3rem;
+            padding: 1rem;
             border-radius: $border-radius-base;
+
+            background-color: $color-light;
             border: 1px solid $color-dark;
             outline: none;
         }
+
         button {
             position: absolute;
-            right: 0;
             top: 0;
+            right: 0;
             bottom: 0;
+            padding: 10px;
+
             background-color: transparent;
             border: none;
-            padding: 10px;
-            cursor: pointer;
             color: $color-grey;
             font-size: 1.2rem;
-            
+
+            cursor: pointer;
         }
+    }
+
+    &__links {
+        border-top: 1px solid $color-light-01;
+        padding: .5rem 0;
+        box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.15);
+
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 5.6875rem;
+            padding: .5rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            color: $color-grey;
+            text-transform: uppercase;
+            font-size: $font-size-base-01;
+            font-weight: 500;
+        }
+
+    }
+
+    &__links--box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 }
