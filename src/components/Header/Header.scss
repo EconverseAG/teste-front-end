@@ -43,7 +43,7 @@
     &__icons {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 30px;
     }
 
     &__input {
@@ -103,5 +103,10 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        transition: .3s;
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }
