@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/logo.png";
@@ -12,26 +13,15 @@ import icon6 from "../../assets/icons/icon-06.png";
 import icon7 from "../../assets/icons/icon-07.png";
 import icon8 from "../../assets/icons/icon-08.png";
 
-type Icon = {
-    src: string;
-    alt: string;
-    title: string;
-};
-
-type IconTopo = {
-    src: string;
-    alt: string;
-    title: string;
-    before: string;
-    highlight: string;
-    after: string;
-};
+type Icon = { src: string; alt: string; title: string; };
+type IconTopo = { src: string; alt: string; title: string; before: string; highlight: string; after: string; };
+interface Link { href: string; label: string; icon?: string; }
 
 const icons: Icon[] = [
-    { src: icon1, alt: "Ícone 1", title: "Ícone 1" },
-    { src: icon2, alt: "Ícone 2", title: "Ícone 2" },
-    { src: icon3, alt: "Ícone 3", title: "Ícone 3" },
-    { src: icon4, alt: "Ícone 4", title: "Ícone 4" },
+    { src: icon1, alt: "Loja", title: "Loja" },
+    { src: icon2, alt: "Avaliação", title: "Avaliação" },
+    { src: icon3, alt: "Usuário", title: "Usuário" },
+    { src: icon4, alt: "Carrinho", title: "Carrinho" },
 ];
 
 const iconsTopo: IconTopo[] = [
@@ -41,7 +31,7 @@ const iconsTopo: IconTopo[] = [
         title: "Compra 100% segura",
         before: "Compra ",
         highlight: "100% segura",
-        after: "",
+        after: ""
     },
     {
         src: icon6,
@@ -49,7 +39,7 @@ const iconsTopo: IconTopo[] = [
         title: "Frete grátis acima de R$ 200",
         before: "",
         highlight: "Frete grátis",
-        after: " acima de R$ 200",
+        after: " acima de R$ 200"
     },
     {
         src: icon7,
@@ -57,15 +47,10 @@ const iconsTopo: IconTopo[] = [
         title: "Parcele suas compras",
         before: "",
         highlight: "Parcele",
-        after: " suas compras",
-    },
+        after: " suas compras"
+    }
 ];
 
-interface Link {
-    href: string;
-    label: string;
-    icon?: string;
-}
 
 const links: Link[] = [
     { href: "#", label: "Todas Categorias" },
@@ -77,74 +62,105 @@ const links: Link[] = [
     { href: "#", label: "Assinatura", icon: icon8 },
 ];
 
-
-
-
 const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 100);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <header className="header">
-            {/* Ícones do topo */}
-            <div className="header__itens">
-                {iconsTopo.map((icon, index) => (
-                    <div key={index} className="header__itens-box">
-                        <div className="header__itens__icon">
-                            <img src={icon.src} alt={icon.alt} title={icon.title} />
+        <header className={`header ${scrolled ? "header--fixed" : ""}`}>
+            <div className="header__container">
+                {/* Top icons */}
+                <div className="header__itens">
+                    {iconsTopo.map((icon, index) => (
+                        <div key={index} className="header__itens-box">
+                            <div className="header__itens__icon">
+                                <img src={icon.src} alt={icon.alt} title={icon.title} />
+                            </div>
+                            <div className="header__itens__text">
+                                <p>{icon.before}<span>{icon.highlight}</span>{icon.after}</p>
+                            </div>
                         </div>
-                        <div className="header__itens__text">
-                            <p>
-                                {icon.before}
-                                <span>{icon.highlight}</span>
-                                {icon.after}
-                            </p>
-                        </div>
+                    ))}
+                </div>
+
+                <div className="header__content">
+                    <div className="header__logo">
+                        <img src={logo} alt="Logo econverse" title="Logo econverse" />
                     </div>
-                ))}
-            </div>
-            {/* Pesquisa */}
-            <div className="header__content">
-                <div className="header__logo">
-                    <img src={logo} alt="Logo econverse" title="Logo econverse" />
-                </div>
-                <div className="header__input">
-                    <input
-                        type="text"
-                        placeholder="O que você está buscando?"
-                        aria-label="Pesquisa"
-                    />
-                    <button type="button">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+
+                    {/* Hamburger mobile */}
+                    <button
+                        className={`header__hamburger ${menuOpen ? "active" : ""}`}
+                        onClick={toggleMenu}
+                        aria-label="Abrir menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
+
+                    {/* Conteúdo desktop */}
+                    <div className="header__input header__input--desktop">
+                        <input type="text" placeholder="O que você está buscando?" aria-label="Pesquisa" />
+                        <button type="button">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </div>
+                    <div className="header__icons header__icons--desktop">
+                        {icons.map((icon, index) => (
+                            <img key={index} src={icon.src} alt={icon.alt} title={icon.title} />
+                        ))}
+                    </div>
                 </div>
-                {/* Icones */}
-                <div className="header__icons">
-                    {icons.map((icon, index) => (
-                        <img
-                            key={index}
-                            src={icon.src}
-                            alt={icon.alt}
-                            title={icon.title}
-                        />
-                    ))}
+
+                {/* Links desktop */}
+                <div className="header__links header__links--desktop">
+                    <ul>
+                        {links.map((link, index) => (
+                            <li key={index}>
+                                <a href={link.href} title={link.label} className="header__links--box">
+                                    {link.icon && <img src={link.icon} alt={`${link.label} ícone`} className="header__links--icon" />}
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </div>
-            {/* Links navegação */}
-            <div className="header__links">
-                <ul>
-                    {links.map((link, index) => (
-                        <li key={index}>
-                            <a href={link.href} title={link.label} className="header__links--box">
-                                {link.icon && (
-                                    <img
-                                        src={link.icon}
-                                        alt={`${link.label} ícone`}
-                                        className="header__links--icon"
-                                    />
-                                )}
-                                {link.label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+                {/* Menu mobile */}
+                <div className={`header__menu ${menuOpen ? "active" : ""}`}>
+                    <div className="header__input">
+                        <input type="text" placeholder="O que você está buscando?" aria-label="Pesquisa" />
+                        <button type="button"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                    </div>
+                    <div className="header__icons">
+                        {icons.map((icon, index) => (
+                            <img key={index} src={icon.src} alt={icon.alt} title={icon.title} />
+                        ))}
+                    </div>
+                    <div className="header__links">
+                        <ul>
+                            {links.map((link, index) => (
+                                <li key={index}>
+                                    <a href={link.href} title={link.label} className="header__links--box">
+                                        {link.icon && <img src={link.icon} alt={`${link.label} ícone`} className="header__links--icon" />}
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
     );

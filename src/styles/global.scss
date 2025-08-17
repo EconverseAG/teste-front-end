@@ -5,6 +5,12 @@
 body {
     font-family: $font-family-base;
     font-size: $font-size-base;
+    padding-top: 0;
+    transition: padding-top 0.3s ease-in-out;
+    
+    &.has-fixed-header {
+        padding-top: 150px; 
+    }
 }
 
 h1 { font-size: $font-size-h1; }
