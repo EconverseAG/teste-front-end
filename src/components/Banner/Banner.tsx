@@ -4,8 +4,7 @@ import banner from "../../assets/banner.webp";
 
 const Banner = () => {
     return (
-        <div
-            className="banner" style={{ backgroundImage: `url(${banner})`, }} >
+        <div className="banner" style={{ backgroundImage: `url(${banner})`, }} >
             <div className="banner__content">
                 <div>
                     <h1 className="banner__title">Venha conhecer nossas  <span>promoções</span></h1>
