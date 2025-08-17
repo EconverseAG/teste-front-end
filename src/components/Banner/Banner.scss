@@ -43,6 +43,12 @@
             color: $color-secondary;
             font-weight: 600;
         }
+
+        @media (max-width: 768px) {
+            .banner__title {
+                font-size: $font-size-h2;
+            }
+        }
     }
 
     &__overlay {

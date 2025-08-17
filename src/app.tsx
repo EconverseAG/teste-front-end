@@ -6,6 +6,7 @@ import Parceiros from "./components/Parceiros/Parceiros";
 import Marcas from "./components/Marcas/Marcas";
 import ProdutosRelacionados from "./components/ProdutosRelacionados/ProdutosRelacionados";
 import Newsletter from "./components/Newsletter/Newsletter";
+import Footer from "./components/Footer/Footer";
 import "./styles/global.scss";
 import '@splidejs/splide/dist/css/splide.min.css';
 
@@ -23,6 +24,7 @@ export default function App() {
             <Marcas />
             <ProdutosRelacionados />
             <Newsletter />
+            <Footer />
         </div>
     );
 }
