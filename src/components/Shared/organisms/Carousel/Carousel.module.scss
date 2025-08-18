@@ -1,0 +1,147 @@
+.vitrineContainer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.titleLine {
+  width: 100px;
+  height: 1px;
+  background-color: #DEDEDE;
+  flex: 1;
+  max-width: 360px;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #3442B5;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.carousel {
+  flex: 1;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.carouselTrack {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+  padding: 0.25rem 3rem;
+}
+
+.carouselItem {
+  flex: 0 0 calc((100% - 3rem) / 4);
+  max-width: calc((100% - 3rem) / 4);
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .carousel {
+    padding: 0 0.75rem;
+  }
+  
+  .titleLine {
+    max-width: 150px;
+  }
+  
+  .carouselItem {
+    flex: 0 0 calc((100% - 2.25rem) / 4);
+    max-width: calc((100% - 2.25rem) / 4);
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel {
+    padding: 0 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .titleLine {
+    max-width: 100px;
+  }
+  
+  .carouselItem {
+    flex: 0 0 calc((100% - 2rem) / 4);
+    max-width: calc((100% - 2rem) / 4);
+  }
+}
+
+@media (max-width: 768px) {
+  .vitrineContainer {
+    padding: 0.75rem 0;
+  }
+
+  .titleSection {
+    margin-bottom: 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .titleLine {
+    max-width: 80px;
+  }
+
+  .carousel {
+    padding: 0 0.5rem;
+  }
+  .carouselItem {
+    flex: 0 0 calc((100% - 1.5rem) / 4);
+    max-width: calc((100% - 1.5rem) / 4);
+  }
+}
+
+@media (max-width: 480px) {
+  .vitrineContainer {
+    padding: 0.5rem 0;
+  }
+  
+  .titleSection {
+    margin-bottom: 0.25rem;
+    gap: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+  }
+  
+  .titleLine {
+    max-width: 60px;
+  }
+  
+  .carousel {
+    padding: 0 0.25rem;
+  }
+  
+  .carouselItem {
+    flex: 0 0 calc((100% - 1rem) / 4);
+    max-width: calc((100% - 2rem) / 4);
+  }
+}

@@ -1,0 +1,163 @@
+$cinza-claro: #6C6C6C;
+$cinza-escuro: #3F3F40;
+$azul-principal: #3442B5;
+$amarelo-logo: #F7CA11;
+$branco: #FFFFFF;
+$cinza-fundo: #F5F5F5;
+$cinza-borda: #E0E0E0;
+
+.footer {
+  font-family: 'Poppins', sans-serif;
+}
+
+.topBar {
+  height: 4px;
+  background-color: #362C50;
+}
+
+.mainFooter {
+  background-color: #F5F5F5;
+  padding: 3rem 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.brandSection {
+  flex: 1;
+  max-width: 300px;
+  
+  .logo {
+    margin-bottom: 1.5rem;
+    
+    .logoCircle {
+      background-color: #F7CA11;
+      color: #3F3F40;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-right: 0.5rem;
+    }
+    
+    .logoText {
+      color: #3F3F40;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+  }
+  
+  .description {
+    color: #808080;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  .socialMedia {
+    display: flex;
+    gap: 1rem;
+    
+    .socialIcon {
+      display: inline-block;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        
+        svg {
+          color: $azul-principal;
+        }
+      }
+      
+      svg {
+        width: 20px;
+        height: 20px;
+        transition: color 0.3s ease;
+        color: $cinza-claro;
+      }
+    }
+  }
+}
+
+.divider {
+  width: 1px;
+  background-color: #E0E0E0;
+  margin: 0 1rem;
+}
+
+.navigationSection {
+  flex: 2;
+  display: flex;
+  gap: 3rem;
+  
+  .navColumn {
+    h4 {
+      color: #3F3F40;
+      font-weight: 600;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      
+      li {
+        margin-bottom: 0.75rem;
+        
+        a {
+          color: #808080;
+          font-size: 0.875rem;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: #3442B5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottomBar {
+  background-color: #FFFFFF;
+  padding: 1rem 0;
+  text-align: center;
+  
+  p {
+    color: #808080;
+    font-size: 0.75rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .navigationSection {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .brandSection {
+    max-width: 100%;
+    text-align: center;
+  }
+} 

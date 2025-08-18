@@ -1,0 +1,108 @@
+.banner {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    filter: brightness(0.7) contrast(1.1);
+  }
+}
+
+.textOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  
+  .content {
+    text-align: left;
+    padding: 2rem;
+    color: #FFFFFF;
+    padding-left: 5.063rem;
+    
+    .headline {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .discount {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      
+      .discountValue {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #F7CA11;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      
+      .discountText {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #FFFFFF;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 300px;
+  }
+  
+  .textOverlay {
+    width: 100%;
+    height: 60%;
+    top: auto;
+    bottom: 0;
+    
+    .content {
+      padding: 1rem;
+      
+      .headline {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .discount {
+        margin-bottom: 1.5rem;
+        
+        .discountValue {
+          font-size: 2rem;
+        }
+        
+        .discountText {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+} 

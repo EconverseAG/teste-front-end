@@ -1,0 +1,116 @@
+.navigationBar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 0;
+  
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    @media (max-width: 1200px) {
+      padding: 0 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+  
+  .navList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    height: 100%;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 2px;
+      }
+    }
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.5rem;
+    text-decoration: none;
+    color: #3B3B3B;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    position: relative;
+    gap: 0.5rem;
+    
+    &:hover {
+      color: #3442B5;
+    }
+    
+    &.active {
+      color: #3442B5;
+      font-weight: 600;
+    }
+    
+    &.ofertasDia {
+      font-weight: 600;
+      color: #3442B5;
+      
+      &:hover {
+        color: #2A3591;
+      }
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .assinaturaStar {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
