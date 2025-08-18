@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import styles from './CategoryCards.module.scss';
-import { 
-  TecnologiaIcon, 
-  SupermercadoIcon, 
-  BebidasIcon, 
-  FerramentasIcon, 
-  SaudeIcon, 
-  EsportesIcon,
-  ModaIcon 
-} from '../../atoms/Icons';
+import TecnologiaIcon from '../../../../assets/icons/tecnologia.svg?url';
+import SupermercadoIcon from '../../../../assets/icons/supermercados 1 (1).svg?url';
+import BebidasIcon from '../../../../assets/icons/whiskey (1).svg?url';
+import FerramentasIcon from '../../../../assets/icons/ferramentas 1 (1).svg?url';
+import SaudeIcon from '../../../../assets/icons/cuidados-de-saude 1 (1).svg?url';
+import EsportesIcon from '../../../../assets/icons/corrida 1 (1).svg?url';
+import ModaIcon from '../../../../assets/icons/moda 1 (1).svg?url';
 
 interface Category {
   id: string;
   name: string;
-  icon: React.ComponentType<{ className?: string; size?: number; color?: string }>;
+  icon: string;
   isActive?: boolean;
+  color?: string;
 }
 
 const CategoryCards: React.FC = () => {
@@ -23,80 +22,84 @@ const CategoryCards: React.FC = () => {
       id: 'tecnologia',
       name: 'Tecnologia',
       icon: TecnologiaIcon,
-      isActive: true
+      isActive: true,
+      color: '#3019B2'
     },
     {
       id: 'supermercado',
       name: 'Supermercado',
       icon: SupermercadoIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     },
     {
       id: 'bebidas',
       name: 'Bebidas',
       icon: BebidasIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     },
     {
       id: 'ferramentas',
       name: 'Ferramentas',
       icon: FerramentasIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     },
     {
       id: 'saude',
       name: 'Saúde',
       icon: SaudeIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     },
     {
       id: 'esportes',
       name: 'Esportes',
       icon: EsportesIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     },
     {
       id: 'moda',
       name: 'Moda',
       icon: ModaIcon,
-      isActive: false
+      isActive: false,
+      color: '#9F9F9F'
     }
   ]);
 
   const handleCategoryClick = (categoryId: string) => {
-    setCategories(prevCategories => 
-      prevCategories.map(category => ({
-        ...category,
-        isActive: category.id === categoryId
-      }))
+    setCategories(prevCategories =>
+      prevCategories.map(category =>
+        category.id === categoryId
+          ? { ...category, isActive: !category.isActive, color: !category.isActive ? '#3019B2' : '#9F9F9F' }
+          : { ...category, isActive: false, color: '#9F9F9F' }
+      )
     );
-    console.log('Categoria clicada:', categoryId);
   };
 
   return (
     <section className={styles.categorySection}>
       <div className={styles.container}>
         <div className={styles.categoryGrid}>
-          {categories.map((category) => {
-            const IconComponent = category.icon;
-            return (
-              <button
-                key={category.id}
-                className={`${styles.categoryCard} ${category.isActive ? styles.active : ''}`}
-                onClick={() => handleCategoryClick(category.id)}
-                aria-label={`Filtrar por ${category.name}`}
-              >
-                <div className={styles.iconContainer}>
-                  <IconComponent 
-                    className={styles.categoryIcon}
-                    size={48}
-                    color={category.isActive ? '#3019B2' : '#9F9F9F'}
-                  />
-                </div>
-                <span className={styles.categoryName}>{category.name}</span>
-              </button>
-            );
-          })}
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              className={`${styles.categoryCard} ${category.isActive ? styles.active : ''}`}
+              onClick={() => handleCategoryClick(category.id)}
+              aria-label={`Filtrar por ${category.name}`}
+            >
+              <div className={styles.iconContainer}>
+                <img 
+                  src={category.icon} 
+                  alt={category.name}
+                  className={styles.categoryIcon}
+                />
+              </div>
+              <span className={styles.categoryName}>{category.name}</span>
+            </button>
+          ))}
         </div>
       </div>
     </section>

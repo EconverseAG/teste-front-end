@@ -30,7 +30,6 @@ const Vitrine: React.FC<VitrineProps> = ({ products, onBuyClick, showOnlyVerTodo
     setSelectedCategory(category);
   };
 
-  // Verifica se há produtos para navegar
   const canGoNext = currentIndex + 4 < products.length;
   const canGoPrev = currentIndex > 0;
 

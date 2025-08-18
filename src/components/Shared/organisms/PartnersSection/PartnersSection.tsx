@@ -5,7 +5,7 @@ import partnerImage from '../../../../assets/img/image 45.png';
 
 const PartnersSection: React.FC = () => {
   const handlePartnerClick = () => {
-    console.log('Parceiro clicado!');
+    
   };
 
   return (

@@ -297,6 +297,12 @@ npm run build -- --analyze
 - SEO e acessibilidade implementados
 - Código limpo e profissional
 
+## 📝 Observações sobre o Layout
+
+- **Contato com o designer**: Não houve contato direto para alinhar e apurar melhor as funcionalidades e estilos. Algumas decisões de UI/UX foram assumidas durante a implementação.
+- **Paleta com cores muito semelhantes**: O layout apresenta muitas cores muito próximas entre si para uma página relativamente pequena, o que dificulta a hierarquia visual e o contraste em alguns pontos.
+- **Ícones SVG com fundo**: Vários SVGs foram fornecidos com fundo aplicado. Foi necessário remover o fundo para usá-los corretamente como ícones (outline/stroke) e permitir mudança de cor via CSS/props.
+
 ## 🚀 Próximos Passos
 
 ### Melhorias Futuras

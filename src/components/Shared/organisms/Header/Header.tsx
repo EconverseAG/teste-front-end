@@ -36,24 +36,30 @@ const Header: React.FC = () => {
 
       <div className={styles.mainHeader}>
         <div className={styles.container}>
-          <div className={styles.logo}>
-            <a href="https://www.econverse.com.br/" target="_blank" rel="noopener noreferrer">
-              <LogoEconverse />
-            </a>
+          <div className={styles.leftSection}>
+            <div className={styles.logo}>
+              <a href="https://www.econverse.com.br/" target="_blank" rel="noopener noreferrer">
+                <LogoEconverse />
+              </a>
+            </div>
           </div>
 
-          <div className={styles.searchBar}>
-            <input
-              type="text"
-              placeholder="O que você está buscando?"
-              className={styles.searchInput}
-            />
-            <button className={styles.searchButton}>
-              <MagnifyingGlassIcon />
-            </button>
+          <div className={styles.centerSection}>
+            <div className={styles.searchBar}>
+              <input
+                type="text"
+                placeholder="O que você está buscando?"
+                className={styles.searchInput}
+              />
+              <button className={styles.searchButton}>
+                <MagnifyingGlassIcon />
+              </button>
+            </div>
           </div>
 
-          <UserNavigation />
+          <div className={styles.rightSection}>
+            <UserNavigation />
+          </div>
         </div>
       </div>
 

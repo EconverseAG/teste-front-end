@@ -1,6 +1,7 @@
 .newsletter {
   background-color: #362C50;
   padding: 4rem 0;
+  margin-top: 2rem;
 }
 
 .container {
@@ -17,14 +18,16 @@
 
 .textSection {
   flex: 1;
+  text-align: left;
   
   h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: white;
     margin: 0 0 1rem 0;
     line-height: 1.3;
+    
   }
   
   p {
@@ -44,7 +47,7 @@
 .newsletterForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.625rem;
 }
 
 .inputRow {
@@ -52,15 +55,24 @@
   gap: 1rem;
   align-items: flex-start;
   
+  .inputGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
   .input {
     flex: 1;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 0.875rem;
     background-color: white;
     color: #3F3F40;
+    width: 14.563rem;
+    height: 2.625rem;
     
     &::placeholder {
       color: #9E9E9E;
@@ -70,13 +82,30 @@
       outline: none;
       box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
     }
+    
+    &.inputError {
+      border: 2px solid #FF6B6B;
+      background-color: #FFF5F5;
+      
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
+      }
+    }
+  }
+  
+  .errorMessage {
+    color: #FF6B6B;
+    font-size: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 0.5rem;
   }
   
   .subscribeButton {
+    width: 9.813rem;
+    height: 2.625rem;
     background-color: #F7CA11;
     color: #161615;
     border: none;
-    padding: 1rem 2rem;
     font-family: 'Poppins', sans-serif;
     font-size: 0.875rem;
     font-weight: 700;
@@ -86,16 +115,46 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: darken(#F7CA11, 10%);
       transform: translateY(-2px);
     }
     
-    &:active {
+    &:active:not(:disabled) {
       transform: translateY(0);
     }
+    
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    &.submitting {
+      background-color: #4CAF50;
+      color: white;
+    }
   }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .formFooter {

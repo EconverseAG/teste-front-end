@@ -4,27 +4,20 @@ import { Button } from '../../atoms/Button';
 import bannerImage from '../../../../assets/img/Rectange 230.png';
 
 const Banner: React.FC = () => {
-  const handleVerProdutoClick = () => {
-    // Pequeno delay para melhor experiência visual
+  const scrollToVitrine = () => {
     setTimeout(() => {
-      // Encontrar o elemento da vitrine (carrossel)
       const vitrineElement = document.querySelector('[data-section="vitrine"]');
       
       if (vitrineElement) {
-        // Scroll suave para a vitrine
-        vitrineElement.scrollIntoView({
+        vitrineElement.scrollIntoView({ 
           behavior: 'smooth',
           block: 'start'
         });
       } else {
-        // Fallback: scroll para a seção de produtos em destaque
-        const homeSection = document.querySelector('.homeSection');
-        if (homeSection) {
-          homeSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
       }
     }, 100);
   };
@@ -46,7 +39,7 @@ const Banner: React.FC = () => {
             <Button 
               variant="primary" 
               size="medium"
-              onClick={handleVerProdutoClick}
+              onClick={scrollToVitrine}
             >
               Ver produto
             </Button>

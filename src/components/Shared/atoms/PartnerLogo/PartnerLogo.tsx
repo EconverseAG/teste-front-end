@@ -12,7 +12,6 @@ const PartnerLogo: React.FC<PartnerLogoProps> = ({
   name, 
   size = 'medium' 
 }) => {
-  // Se o logo for uma string (URL), renderiza uma imagem
   if (typeof logo === 'string') {
     return (
       <div className={`${styles.partnerLogo} ${styles[size]}`}>
@@ -25,7 +24,6 @@ const PartnerLogo: React.FC<PartnerLogoProps> = ({
     );
   }
 
-  // Se o logo for um componente React, renderiza o componente
   const LogoComponent = logo;
   return (
     <div className={`${styles.partnerLogo} ${styles[size]}`}>

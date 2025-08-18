@@ -13,8 +13,26 @@
     padding: 0 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 2rem;
+  }
+  
+  .leftSection {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .centerSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rightSection {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
   
   .logo {
@@ -39,7 +57,7 @@
   }
   
   .searchBar {
-    flex: 1;
+    width: 100%;
     max-width: 600px;
     display: flex;
     position: relative;
@@ -58,7 +76,7 @@
       
       &:focus {
         outline: none;
-        border-color: #3442B5;
+        border: 1px solid #3442B5;
         background-color: #FFFFFF;
       }
     }

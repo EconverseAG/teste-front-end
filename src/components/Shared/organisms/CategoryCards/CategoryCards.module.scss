@@ -50,7 +50,7 @@
 .categoryName {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #E4E4E4;
+  color: #4E4E4E;
   text-align: center;
   line-height: 1.2;
   transition: color 0.3s ease;
@@ -59,6 +59,12 @@
 .categoryCard.active {
   .iconContainer {
     background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    color: #3019B2;
+  }
+  
+  .categoryIcon {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(1234%) hue-rotate(242deg) brightness(95%) contrast(95%);
   }
   
   .categoryName {

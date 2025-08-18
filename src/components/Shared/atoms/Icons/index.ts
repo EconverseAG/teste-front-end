@@ -1,4 +1,5 @@
 // Ícones SVG reutilizáveis para a aplicação
+export { default as ArrowIcon } from './ArrowIcon';
 export { default as BoxArrowInIcon } from './BoxArrowInIcon';
 export { default as CalendarIcon } from './CalendarIcon';
 export { default as CreditCardIcon } from './CreditCardIcon';
@@ -8,6 +9,7 @@ export { default as MinusIcon } from './MinusIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as ShieldCheckIcon } from './ShieldCheckIcon';
 export { default as ShoppingCartIcon } from './ShoppingCartIcon';
+export { default as StarIcon } from './StarIcon';
 export { default as TruckIcon } from './TruckIcon';
 export { default as UserCircleIcon } from './UserCircleIcon';
 

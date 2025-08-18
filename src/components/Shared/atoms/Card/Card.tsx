@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Card.module.scss';
-import type { Product } from '../../../types';
+import type { Product } from '../../../../types';
 
 interface CardProps {
   product: Product;
@@ -12,10 +12,7 @@ const Card: React.FC<CardProps> = ({ product, onBuyClick }) => {
     onBuyClick(product);
   };
 
-  // Lógica para preço riscado (6.47% a mais)
   const originalPrice = product.price * 1.0647;
-  
-  // Lógica para parcelamento (2x sem juros)
   const installmentValue = product.price / 2;
 
   return (

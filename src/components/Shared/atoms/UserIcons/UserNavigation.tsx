@@ -9,16 +9,28 @@ const UserNavigation: React.FC = () => {
   return (
     <div className={styles.userNavigation}>
       <button className={styles.iconButton}>
-        <BoxArrowInIcon />
+        <BoxArrowInIcon 
+          size={32}
+          color="#9F9F9F"
+        />
       </button>
       <button className={styles.iconButton}>
-        <HeartIcon />
+        <HeartIcon 
+          size={32}
+          color="#9F9F9F"
+        />
       </button>
       <button className={styles.iconButton}>
-        <UserCircleIcon />
+        <UserCircleIcon 
+          size={32}
+          color="#9F9F9F"
+        />
       </button>
       <button className={styles.iconButton}>
-        <ShoppingCartIcon />
+        <ShoppingCartIcon 
+          size={32}
+          color="#9F9F9F"
+        />
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './NavigationMenu.module.scss';
+import { StarIcon } from '../../atoms/Icons';
 
 interface NavigationMenuProps {
   activeItem?: string;
@@ -12,10 +13,8 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
   onItemClick,
   initialActiveItem = 'OFERTAS DO DIA'
 }) => {
-  // Estado interno para controlar o item ativo
   const [internalActiveItem, setInternalActiveItem] = useState(initialActiveItem);
   
-  // Usa o item ativo externo se fornecido, senão usa o interno
   const currentActiveItem = externalActiveItem || internalActiveItem;
 
   const navigationItems = [
@@ -29,10 +28,8 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
   ];
 
   const handleItemClick = (item: string) => {
-    // Atualiza o estado interno
     setInternalActiveItem(item);
     
-    // Chama o callback externo se fornecido
     if (onItemClick) {
       onItemClick(item);
     }
@@ -49,12 +46,27 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
       className += ` ${styles.active}`;
     }
     
-    // OFERTAS DO DIA só tem estilo especial quando está ativo
     if (isOfertasDia && isActive) {
       className += ` ${styles.ofertasDia}`;
     }
     
     return className;
+  };
+
+  const renderItemContent = (item: string) => {
+    if (item === 'ASSINATURA') {
+      return (
+        <>
+          <StarIcon 
+            className={styles.assinaturaStar}
+            size={20} 
+            color="currentColor" 
+          />
+          {item}
+        </>
+      );
+    }
+    return item;
   };
 
   return (
@@ -71,7 +83,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
                   handleItemClick(item);
                 }}
               >
-                {item}
+                {renderItemContent(item)}
               </a>
             </li>
           ))}

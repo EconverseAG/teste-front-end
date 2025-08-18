@@ -68,6 +68,7 @@
     white-space: nowrap;
     border-bottom: 3px solid transparent;
     position: relative;
+    gap: 0.5rem;
     
     &:hover {
       color: #3442B5;
@@ -101,6 +102,15 @@
     @media (max-width: 768px) {
       padding: 0 1rem;
       font-size: 0.8rem;
+    }
+  }
+  
+  .assinaturaStar {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }

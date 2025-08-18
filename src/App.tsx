@@ -2,7 +2,9 @@ import './App.css'
 import './styles/main.scss'
 import Modal from './components/Shared/organisms/Modal/Modal';
 import Newsletter from './components/Shared/organisms/Newsletter/Newsletter';
-import HomeSection from './components/Shared/organisms/HomeSection';
+import CategoryCards from './components/Shared/organisms/CategoryCards';
+import { Vitrine } from './components/Shared/organisms/Carousel';
+import PartnersSection from './components/Shared/organisms/PartnersSection';
 
 import { useEffect, useState } from 'react';
 import { fetchProducts } from './services/products.ts';
@@ -91,8 +93,13 @@ function App() {
       <Header />
       <main>
         <Banner />
-        <HomeSection products={products} onBuyClick={handleBuy} />
+        <CategoryCards />
+        <Vitrine products={products} onBuyClick={handleBuy} showOnlyVerTodos={false}/>
+        <PartnersSection />
+        <Vitrine products={products} onBuyClick={handleBuy} showOnlyVerTodos={true}/>
+        <PartnersSection />
         <BrandNavigation title="Navegue por marcas" partners={partners} />
+        <Vitrine products={products} onBuyClick={handleBuy} showOnlyVerTodos={true}/>
         <Newsletter />
       </main>
       <Footer />

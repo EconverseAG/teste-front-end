@@ -9,8 +9,7 @@ const LogoEconverse: React.FC<LogoEconverseProps> = ({
   className = '',
   size = 139
 }) => {
-  // Calcula a altura proporcional baseada na largura
-  const height = (size * 42) / 139;
+  const height = (size * 40) / 200;
   
   return (
     <svg 
