@@ -1,0 +1,24 @@
+.userNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  
+  .iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: #F5F5F5;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #9F9F9F;
+    }
+  }
+}

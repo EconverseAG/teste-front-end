@@ -1,0 +1,93 @@
+.partnerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  &.small {
+    width: 8rem;
+    height: 8rem;
+    
+    .logoImage {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+  
+  &.medium {
+    width: 10rem;
+    height: 10rem;
+    
+    .logoImage {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
+  }
+  
+  &.large {
+    width: 13.1875rem;
+    height: 13.1875rem;
+    
+    .logoImage {
+      width: 7.3125rem;
+      height: 7.3125rem;
+    }
+  }
+}
+
+.logoImage {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .partnerLogo {
+    &.large {
+      width: 12rem;
+      height: 12rem;
+      
+      .logoImage {
+        width: 6.5rem;
+        height: 6.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .partnerLogo {
+    &.large {
+      width: 11rem;
+      height: 11rem;
+      
+      .logoImage {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .partnerLogo {
+    &.large {
+      width: 10rem;
+      height: 10rem;
+      
+      .logoImage {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+    }
+  }
+}

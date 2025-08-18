@@ -1,59 +1,47 @@
 import React from 'react';
 import styles from './Card.module.scss';
+import type { Product } from '../../../types';
 
-// Tipagem das props para garantir segurança de tipos
 interface CardProps {
-  imageSrc: string;
-  imageAlt: string;
-  description: string;
-  originalPrice?: number;
-  currentPrice: number;
-  installments?: {
-    count: number;
-    value: number;
-  };
-  freeShipping?: boolean;
-  onBuyClick: () => void;
+  product: Product;
+  onBuyClick: (product: Product) => void;
 }
 
-const Card: React.FC<CardProps> = ({
-  imageSrc,
-  imageAlt,
-  description,
-  originalPrice,
-  currentPrice,
-  installments,
-  freeShipping,
-  onBuyClick,
-}) => {
+const Card: React.FC<CardProps> = ({ product, onBuyClick }) => {
+  const handleBuyClick = () => {
+    onBuyClick(product);
+  };
+
+  // Lógica para preço riscado (6.47% a mais)
+  const originalPrice = product.price * 1.0647;
+  
+  // Lógica para parcelamento (2x sem juros)
+  const installmentValue = product.price / 2;
+
   return (
     <div className={styles.card}>
+      <div className={styles.cardContainer}>
       <div className={styles.cardImageContainer}>
-        <img src={imageSrc} alt={imageAlt} className={styles.cardImage} />
+        <img src={product.photo} alt={product.productName} className={styles.cardImage} />
       </div>
       <div className={styles.cardContent}>
-        <p className={styles.description}>{description}</p>
+        <p className={styles.description}>{product.descriptionShort || 'Descrição não disponível'}</p>
         <div className={styles.pricing}>
-          {originalPrice && (
-            <span className={styles.originalPrice}>
-              R$ {originalPrice.toFixed(2).replace('.', ',')}
-            </span>
-          )}
+          <span className={styles.originalPrice}>
+            R$ {originalPrice.toFixed(2).replace('.', ',')}
+          </span>
           <h3 className={styles.currentPrice}>
-            R$ {currentPrice.toFixed(2).replace('.', ',')}
+            R$ {product.price ? product.price.toFixed(2).replace('.', ',') : '0,00'}
           </h3>
-          {installments && (
-            <p className={styles.installments}>
-              ou {installments.count}x de R$ {installments.value.toFixed(2).replace('.', ',')} sem juros
-            </p>
-          )}
         </div>
-        {freeShipping && (
-          <p className={styles.freeShipping}>Frete grátis</p>
-        )}
-        <button className={styles.buyButton} onClick={onBuyClick}>
+        <p className={styles.installments}>
+            ou 2x de R$ {installmentValue.toFixed(2).replace('.', ',')} sem juros
+        </p>
+        <p className={styles.freeShipping}>Frete grátis</p>
+        <button className={styles.buyButton} onClick={handleBuyClick}>
           COMPRAR
         </button>
+      </div>
       </div>
     </div>
   );

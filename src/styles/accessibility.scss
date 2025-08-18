@@ -1,0 +1,99 @@
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+*:focus {
+  outline: 2px solid #3019B2;
+  outline-offset: 2px;
+}
+
+button:focus,
+a:focus,
+input:focus {
+  outline: 2px solid #3019B2;
+  outline-offset: 2px;
+}
+
+.loading-section,
+.error-section {
+  text-align: center;
+  padding: 2rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-section h2,
+.error-section h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.loading-section p,
+.error-section p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.error-section button {
+  background: #3019B2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.error-section button:hover {
+  background: #1a0f6b;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a[href^="http"]:after {
+  content: " (abre em nova aba)";
+  font-size: 0.8em;
+  color: #666;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea, select {
+  font-size: 16px;
+}
+
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+nav {
+  role: navigation;
+}
+
+main {
+  role: main;
+}
+
+footer {
+  role: contentinfo;
+}

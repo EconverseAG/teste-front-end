@@ -1,0 +1,140 @@
+.categorySection {
+  padding: 2rem 0;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.categoryGrid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 0;
+}
+
+.iconContainer {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background-color: #F4F4F4;
+  transition: all 0.3s ease;
+}
+
+.categoryIcon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.categoryName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #E4E4E4;
+  text-align: center;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.categoryCard.active {
+  .iconContainer {
+    background-color: #fff;
+  }
+  
+  .categoryName {
+    color: #3019B2;
+    font-weight: 600;
+  }
+}
+
+.categoryCard:hover {
+  .iconContainer {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 1024px) {
+  .categoryGrid {
+    gap: 1.25rem;
+  }
+  
+  .iconContainer {
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .categoryIcon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  
+  .categoryName {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .categorySection {
+    padding: 1.5rem 0;
+  }
+  
+  .categoryGrid {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .iconContainer {
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .categoryIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .categoryName {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryGrid {
+    gap: 0.75rem;
+  }
+  
+  .iconContainer {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .categoryIcon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  
+  .categoryName {
+    font-size: 0.6875rem;
+  }
+}

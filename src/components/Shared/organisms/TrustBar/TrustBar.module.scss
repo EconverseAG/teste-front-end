@@ -1,0 +1,79 @@
+.topInfoBar {
+  background: transparent !important;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #F0F0F0;
+  
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    .iconContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.25rem;
+      height: 1.25rem;
+      flex-shrink: 0;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    
+    span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      color: #9F9F9F;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    
+    strong {
+      color: #3019B2;
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .topInfoBar {
+    .container {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+    
+    .infoItem {
+      gap: 0.5rem;
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .topInfoBar {
+    .container {
+      padding: 0 0.5rem;
+    }
+    
+    .infoItem {
+      gap: 0.5rem;
+      
+      span {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}

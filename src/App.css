@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,6 @@
 
 main {
   flex: 1;
-  padding: 2rem;
   text-align: center;
 }
 

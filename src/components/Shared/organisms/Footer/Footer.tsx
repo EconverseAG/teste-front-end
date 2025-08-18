@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-import logo from '../../../../assets/logo-econverse.svg';
+import { LogoEconverse } from '../../atoms/Icons';
 
 const Footer: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <div className={styles.brandSection}>
             <div className={styles.logo}>
               <a href="https://www.econverse.com.br/" target="_blank" rel="noopener noreferrer">
-                <img src={logo} alt="Econverse" />
+                <LogoEconverse size={120} />
               </a>
             </div>
             <p className={styles.description}>
