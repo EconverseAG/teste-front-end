@@ -16,8 +16,13 @@ A aplicação foi construída em **React com TypeScript** e **Sass**, com foco e
 
 ## 📂 Estrutura do projeto
 
-O projeto foi totalmente **componentizado**, cada parte da interface possui seu próprio diretório e arquivo de estilos:
+O projeto foi totalmente **componentizado**, cada parte da interface possui seu próprio diretório e arquivo de estilos.  
+Nos estilos, utilizei **variáveis** para padronizar cores e breakpoints, além de **mixins** para evitar repetição de código, como por exemplo:
 
+- `@mixin container` → garante que todos os containers sigam o mesmo padrão de largura máxima, alinhamento e espaçamento.  
+- `@mixin button` → centraliza estilos comuns de botões, permitindo criar variantes (`btn--primary`, `btn--secondary`) de forma consistente.  
+
+Isso torna os estilos **mais reutilizáveis, fáceis de manter e escaláveis**.
 
 ---
 
