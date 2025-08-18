@@ -1,21 +1,29 @@
-@use 'variaveis' as *; 
-@use 'buttons' as *;   
+@use 'variaveis' as *;
+@use 'buttons' as *;
 
 
 body {
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    padding-top: 0;
-    transition: padding-top 0.3s ease-in-out;
-    
-    &.has-fixed-header {
-        padding-top: 150px; 
-    }
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  padding-top: 0;
+  transition: padding-top 0.3s ease-in-out;
+
+  &.has-fixed-header {
+    padding-top: 150px;
+  }
 }
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-p  { font-size: $font-size-base; }
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+p {
+  font-size: $font-size-base;
+}
 
 *,
 *::before,
@@ -29,15 +37,29 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul,
-figure, hr, fieldset, legend {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -46,12 +68,19 @@ a {
   color: inherit;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
   border: none;
   background: none;

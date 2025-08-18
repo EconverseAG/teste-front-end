@@ -202,6 +202,7 @@ export const Produtos = ({ mostrarLinks = false }: ProdutosProps) => {
                                     <span>{formatarPreco(produto.price)}</span>
                                     <button
                                         className="btn--secondary"
+                                        title={`Comprar ${produto.productName}`}
                                         onClick={() => abrirModal(produto)}
                                     >
                                         Comprar

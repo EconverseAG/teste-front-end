@@ -1,23 +1,8 @@
 @use 'variaveis' as *;
-
-// estilos base do botão
-.btn {
-    padding: .7rem 2rem;
-    border-radius: $border-radius-base-01;
-    font-size: $font-size-base;
-    border: none;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    width: 100%;
-    max-width: 200px;
-}
+@use 'mixins' as *;
 
 .btn--primary {
-    @extend .btn;
+    @include btn-base;
     background-color: $color-secondary;
     color: $color-dark;
 
@@ -29,7 +14,7 @@
 }
 
 .btn--secondary {
-    @extend .btn;
+    @include btn-base;
     background-color: $color-primary;
     color: $color-white;
 

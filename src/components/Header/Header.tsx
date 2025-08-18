@@ -13,9 +13,24 @@ import icon6 from "../../assets/icons/icon-06.png";
 import icon7 from "../../assets/icons/icon-07.png";
 import icon8 from "../../assets/icons/icon-08.png";
 
-type Icon = { src: string; alt: string; title: string; };
-type IconTopo = { src: string; alt: string; title: string; before: string; highlight: string; after: string; };
-interface Link { href: string; label: string; icon?: string; }
+interface Icon {
+    src: string;
+    alt: string;
+    title: string;
+}
+
+interface IconTopo extends Icon {
+    before: string;
+    highlight: string;
+    after: string;
+}
+
+interface Link {
+    href: string;
+    label: string;
+    icon?: Icon | string;
+}
+
 
 const icons: Icon[] = [
     { src: icon1, alt: "Loja", title: "Loja" },
@@ -130,7 +145,13 @@ const Header = () => {
                         {links.map((link, index) => (
                             <li key={index}>
                                 <a href={link.href} title={link.label} className="header__links--box">
-                                    {link.icon && <img src={link.icon} alt={`${link.label} ícone`} className="header__links--icon" />}
+                                    {link.icon && (
+                                        <img
+                                            src={typeof link.icon === "string" ? link.icon : link.icon.src}
+                                            alt={`${link.label} ícone`}
+                                            className="header__links--icon"
+                                        />
+                                    )}
                                     {link.label}
                                 </a>
                             </li>
@@ -153,7 +174,13 @@ const Header = () => {
                             {links.map((link, index) => (
                                 <li key={index}>
                                     <a href={link.href} title={link.label} className="header__links--box">
-                                        {link.icon && <img src={link.icon} alt={`${link.label} ícone`} className="header__links--icon" />}
+                                        {link.icon && (
+                                            <img
+                                                src={typeof link.icon === "string" ? link.icon : link.icon.src}
+                                                alt={`${link.label} ícone`}
+                                                className="header__links--icon"
+                                            />
+                                        )}
                                         {link.label}
                                     </a>
                                 </li>
