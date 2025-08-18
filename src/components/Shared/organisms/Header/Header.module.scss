@@ -2,7 +2,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Main Header */
 .mainHeader {
   background-color: #FFFFFF;
   padding: 1.5rem 0;
@@ -89,8 +88,6 @@
   }
 }
 
-
-
 @media (max-width: 768px) {
   .mainHeader .container {
     flex-direction: column;
@@ -101,7 +98,5 @@
   .searchBar {
     max-width: 100% !important;
   }
-  
-
 }
 

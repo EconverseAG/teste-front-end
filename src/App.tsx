@@ -20,7 +20,6 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  // Dados de exemplo para os parceiros
   const partners = [
     {
       id: 1,
@@ -74,14 +73,7 @@ function App() {
   if (loading) return (
     <>
       <Header />
-      <main role="main" aria-label="Conteúdo principal">
-        <section aria-label="Carregando produtos" className="loading-section">
-          <div role="status" aria-live="polite">
-            <h2>Carregando produtos...</h2>
-            <p>Por favor, aguarde enquanto carregamos as melhores ofertas para você.</p>
-          </div>
-        </section>
-      </main>
+      <div>Carregando...</div>
       <Footer />
     </>
   );
@@ -89,17 +81,7 @@ function App() {
   if (error) return (
     <>
       <Header />
-      <main role="main" aria-label="Conteúdo principal">
-        <section aria-label="Erro ao carregar" className="error-section">
-          <div role="alert" aria-live="assertive">
-            <h2>Erro ao carregar produtos</h2>
-            <p>Desculpe, ocorreu um erro: {error}</p>
-            <button onClick={() => window.location.reload()}>
-              Tentar novamente
-            </button>
-          </div>
-        </section>
-      </main>
+      <div>Erro: {error}</div>
       <Footer />
     </>
   );
@@ -107,7 +89,7 @@ function App() {
   return (
     <>
       <Header />
-      <main role="main" aria-label="Conteúdo principal da Econverse">
+      <main>
         <Banner />
         <HomeSection products={products} onBuyClick={handleBuy} />
         <BrandNavigation title="Navegue por marcas" partners={partners} />

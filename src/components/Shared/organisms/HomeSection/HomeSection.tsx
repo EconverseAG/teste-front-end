@@ -3,6 +3,7 @@ import styles from './HomeSection.module.scss';
 import { Vitrine } from '../Carousel';
 import CategoryCards from '../CategoryCards';
 import PartnersSection from '../PartnersSection';
+
 import type { Product } from '../../../../types';
 
 interface HomeSectionProps {
@@ -12,12 +13,13 @@ interface HomeSectionProps {
 
 const HomeSection: React.FC<HomeSectionProps> = ({ products, onBuyClick }) => {
   return (
-    <section className={styles.homeSection} aria-label="Seção principal de produtos">
+    <section className={styles.homeSection}>
       <div className={styles.container}>
         <CategoryCards />
         <Vitrine products={products} onBuyClick={onBuyClick} showOnlyVerTodos={false}/>
         <PartnersSection />
         <Vitrine products={products} onBuyClick={onBuyClick} showOnlyVerTodos={true}/>
+        <PartnersSection />
         <Vitrine products={products} onBuyClick={onBuyClick} showOnlyVerTodos={true}/>
       </div>
     </section>

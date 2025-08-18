@@ -74,10 +74,9 @@ const CategoryCards: React.FC = () => {
   };
 
   return (
-    <section className={styles.categorySection} aria-label="Categorias de produtos">
+    <section className={styles.categorySection}>
       <div className={styles.container}>
-        <h2 className="sr-only">Categorias disponíveis</h2>
-        <div className={styles.categoryGrid} role="tablist" aria-label="Filtros de categoria">
+        <div className={styles.categoryGrid}>
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
@@ -86,12 +85,8 @@ const CategoryCards: React.FC = () => {
                 className={`${styles.categoryCard} ${category.isActive ? styles.active : ''}`}
                 onClick={() => handleCategoryClick(category.id)}
                 aria-label={`Filtrar por ${category.name}`}
-                role="tab"
-                aria-selected={category.isActive}
-                aria-controls={`products-${category.id}`}
-                type="button"
               >
-                <div className={styles.iconContainer} aria-hidden="true">
+                <div className={styles.iconContainer}>
                   <IconComponent 
                     className={styles.categoryIcon}
                     size={48}

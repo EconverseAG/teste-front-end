@@ -126,7 +126,7 @@ npm run lint
 
 ### Paleta de Cores
 - **Primária**: #3019B2 (Azul Econverse)
-- **Secundária**: #FFD700 (Amarelo)
+- **Secundária**: #F7CA11 (Amarelo)
 - **Neutra**: #9F9F9F (Cinza)
 - **Fundo**: #F8F9FA (Cinza claro)
 

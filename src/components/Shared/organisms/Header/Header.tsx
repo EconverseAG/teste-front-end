@@ -11,85 +11,52 @@ const Header: React.FC = () => {
   const handleMenuItemClick = (item: string) => {
     setActiveMenuItem(item);
 
-    // Aqui você pode adicionar lógica específica para cada item
     switch (item) {
       case 'OFERTAS DO DIA':
-        // Adicione aqui as ações específicas para ofertas
         break;
       case 'SUPERMERCADO':
-        // Navegação para Supermercado
         break;
       case 'LIVROS':
-        // Navegação para Livros
         break;
       case 'MODA':
-        // Navegação para Moda
         break;
       case 'LANÇAMENTOS':
-        // Navegação para Lançamentos
         break;
       case 'ASSINATURA':
-        // Navegação para Assinatura
         break;
       case 'TODAS CATEGORIAS':
-        // Navegação para Todas as Categorias
         break;
       default:
-        // Navegação padrão
     }
   };
 
   return (
-    <header className={styles.header} role="banner" aria-label="Cabeçalho principal">
-      {/* Top Information Bar */}
+    <header className={styles.header}>
       <TrustBar />
 
-      {/* Main Header */}
       <div className={styles.mainHeader}>
         <div className={styles.container}>
-          {/* Logo */}
           <div className={styles.logo}>
-            <a 
-              href="https://www.econverse.com.br/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Ir para o site principal da Econverse"
-            >
+            <a href="https://www.econverse.com.br/" target="_blank" rel="noopener noreferrer">
               <LogoEconverse />
             </a>
           </div>
 
-          {/* Search Bar */}
-          <div className={styles.searchBar} role="search">
-            <label htmlFor="search-input" className="sr-only">
-              Buscar produtos
-            </label>
+          <div className={styles.searchBar}>
             <input
-              id="search-input"
-              type="search"
+              type="text"
               placeholder="O que você está buscando?"
               className={styles.searchInput}
-              aria-label="Campo de busca de produtos"
-              aria-describedby="search-description"
             />
-            <button 
-              className={styles.searchButton}
-              type="submit"
-              aria-label="Buscar produtos"
-            >
+            <button className={styles.searchButton}>
               <MagnifyingGlassIcon />
             </button>
-            <div id="search-description" className="sr-only">
-              Digite o nome do produto que você deseja encontrar
-            </div>
           </div>
 
-          {/* User Navigation */}
           <UserNavigation />
         </div>
       </div>
 
-      {/* Navigation Bar */}
       <NavigationMenu
         activeItem={activeMenuItem}
         onItemClick={handleMenuItemClick}

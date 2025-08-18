@@ -1,16 +1,15 @@
-/* Variáveis para facilitar a manutenção */
 $primary-color: #3F3F40;
 $secondary-color: #808080;
-$tertiary-color: #3442B5; // Cor do botão e frete
+$tertiary-color: #3442B5;
 $border-color: #e0e0e0;
 $background-color: #fff;
 $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
 .card {
-  width: 100%; // Responsivo ao container
-  max-width: 304px; // Tamanho máximo para desktop
-  height: auto; // Altura automática
-  min-height: 480px; // Altura mínima para manter proporção
+  width: 100%;
+  max-width: 304px;
+  height: auto;
+  min-height: 480px;
   background-color: #fff;
   border-radius: 0.75rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
@@ -34,7 +33,7 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 
 .cardImageContainer {
   width: 100%;
-  height: 278px; // Altura fixa de 278px
+  height: 278px;
   overflow: hidden;
   flex-shrink: 0;
   padding: 1rem 0.5rem 0.5rem 0.5rem;
@@ -45,7 +44,7 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
 
 .cardImage {
   width: 100%;
-  height: 278px; // Altura fixa de 278px
+  height: 278px;
   object-fit: contain;
 }
 
@@ -53,10 +52,10 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // Distribui o espaço melhor
+  justify-content: space-between;
   gap: 0.75rem;
   text-align: left;
-  padding-bottom: 0.5rem; // Reduz o padding inferior
+  padding-bottom: 0.5rem;
 }
 
 .description {
@@ -144,7 +143,7 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
   
   .cardImageContainer,
   .cardImage {
-    height: 250px; // Proporcional ao breakpoint
+    height: 250px;
   }
 }
 
@@ -165,7 +164,7 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
   
   .cardImageContainer,
   .cardImage {
-    height: 220px; // Proporcional ao breakpoint
+    height: 220px;
   }
 }
 
@@ -191,7 +190,7 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
   
   .cardImageContainer,
   .cardImage {
-    height: 190px; // Proporcional ao breakpoint
+    height: 190px;
   }
 }
 
@@ -218,6 +217,6 @@ $font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
   
   .cardImageContainer,
   .cardImage {
-    height: 160px; // Proporcional ao breakpoint
+    height: 160px;
   }
 }
