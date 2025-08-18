@@ -17,12 +17,12 @@ A aplicação foi construída em **React com TypeScript** e **Sass**, com foco e
 ## 📂 Estrutura do projeto
 
 O projeto foi totalmente **componentizado**, cada parte da interface possui seu próprio diretório e arquivo de estilos.  
-Nos estilos, utilizei **variáveis** para padronizar cores e breakpoints, além de **mixins** para evitar repetição de código, como por exemplo:
+Nos estilos, utilizei **variáveis** para padronizar cores e breakpoints, além de **mixins e classes utilitárias** para evitar repetição de código, como por exemplo:
 
-- `@mixin container` → garante que todos os containers sigam o mesmo padrão de largura máxima, alinhamento e espaçamento.  
+- `.container` → garante que todos os containers sigam o mesmo padrão de largura máxima, alinhamento e espaçamento, podendo ser aplicada diretamente nas `<div>`s.  
 - `@mixin button` → centraliza estilos comuns de botões, permitindo criar variantes (`btn--primary`, `btn--secondary`) de forma consistente.  
 
-Isso torna os estilos **mais reutilizáveis, fáceis de manter e escaláveis**.
+Isso torna os estilos **mais reutilizáveis, fáceis de manter e escaláveis**, sem precisar repetir CSS global ou mixins em vários arquivos.
 
 ---
 
