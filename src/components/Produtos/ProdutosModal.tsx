@@ -10,6 +10,8 @@ interface ProdutosModalProps {
     formatarPreco: (preco: number) => string;
 }
 
+
+
 const ProdutosModal = ({
     produto,
     quantidade,
@@ -40,7 +42,7 @@ const ProdutosModal = ({
 
                     <div className="modal__info">
                         <h2>{produto.productName.toUpperCase()}</h2>
-                        <span>{formatarPreco(produto.price)}</span>
+                        <span>{formatarPreco(produto.price * quantidade)}</span>
                         <p>Many desktop publishing packages and web <br/> page editors now many desktop publishing</p>
                         <a href="#" title="Veja mais detalhes do produto">Veja mais detalhes do produto </a>
                         
