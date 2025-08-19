@@ -217,8 +217,9 @@
         align-items: center;
         gap: 1rem;
 
-        @media (max-width: 575px) {
+        @media (max-width: 1024px) {
             flex-direction: column;
+            align-items: start;
         }
 
         .btn--primary {
