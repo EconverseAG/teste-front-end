@@ -17,7 +17,8 @@ export const Produtos = ({ mostrarLinks = false }: ProdutosProps) => {
     const [quantidade, setQuantidade] = useState(1);
 
     const formatarPreco = (preco: number) =>
-        new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco / 100);
+        new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(preco);
+
 
     const alterarQuantidade = (delta: number) =>
         setQuantidade((q) => Math.max(1, q + delta));
@@ -76,9 +77,11 @@ export const Produtos = ({ mostrarLinks = false }: ProdutosProps) => {
                                     />
                                 </div>
                                 <div className="card-produto__info">
-                                    <h3>{p.productName}</h3>
-                                    <p>{p.descriptionShort}</p>
-                                    <span>{formatarPreco(p.price)}</span>
+                                    <h3>{p.productName.toUpperCase()}</h3>
+                                    <span className="card-produto__risk">{formatarPreco(30.90)}</span>
+                                    <span className="card-produto__price">{formatarPreco(p.price)}</span>
+                                    <span>ou 2x de R$ 49,95 sem juros</span>
+                                    <span className="card-produto__frete">Frete gratis</span>
                                     <button
                                         className="btn--secondary"
                                         onClick={() => { setProdutoSelecionado(p); setQuantidade(1); }}

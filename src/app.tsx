@@ -11,6 +11,7 @@ import "./styles/global.scss";
 import '@splidejs/splide/dist/css/splide.min.css';
 
 
+
 export default function App() {
     return (
         <div>
