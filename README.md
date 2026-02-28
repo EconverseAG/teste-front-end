@@ -21,7 +21,7 @@ Para instalar o projeto, siga os passos abaixo:
 
 Clone o repositório em sua máquina local. Para isso, use o comando:
 
-git clone https://github.com/lucasrq/teste-front-end.git
+git clone https://github.com/lucasrq/teste-front-end/tree/processo-2026
 
 Após clonar o repositório, navegue até a pasta do projeto usando o comando:
 
