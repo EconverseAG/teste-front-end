@@ -1,0 +1,29 @@
+.RelatedProducts{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow-x: hidden;
+    .ListProducts{
+        button{
+            border: none;
+            width: 214px;
+            height: 40px;
+            padding: 12px;
+            gap: 10px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 16px;
+            border: 1px solid #ccc;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-bottom: 24px;
+            &:nth-child(1){
+                color: #3442B5;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.NewsletterContainer{
+    background-color: #271C47;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 162px;
+
+    .DetailsNewsletter{
+        margin: 0 auto;
+        h2, p{
+            color: #fff;
+            font-family: Poppins;
+            text-align: left;
+            width: 100%;
+        }
+        h2{
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 38.4px;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+            text-align: left;
+        }
+    }
+
+    .SendNewsletter{
+        align-items: left;
+        text-align: left;
+        label{
+            color: #fff;
+            margin-left: 8px;
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            
+
+        }
+        div:nth-child(1){
+            input{
+                width: 233px;
+                height: 42px;
+                padding-left: 20px;
+                margin-right: 8px;
+                border-radius: 8px;
+                border: none;
+                margin-bottom:8px ;
+            }
+           
+            button{
+                font-weight: bold;
+                font-family: Poppins;
+                width: 157px;
+                height: 42px;
+                background-color:#F7CA11 ;
+                color:#161615 ;
+                text-transform: uppercase;
+                border:none;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.card{
+    height: 171px;
+    width: 128px;
+    margin-top: 39px;
+    
+}
+
+.card-image{
+    
+    height:128px;
+    margin-bottom:22px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 9px 0px #00000038;
+    cursor: pointer;
+}
+.card-text{
+    font-family: Poppins;
+    text-align: center;
+}
