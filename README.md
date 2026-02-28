@@ -36,8 +36,6 @@ Para rodar o projeto em modo de desenvolvimento, execute o seguinte comando:
 
 npm run dev
 
-O projeto estará disponível em http://localhost:3000.
-
 
 Estrutura de Pastas
 A estrutura de pastas foi organizada da seguinte forma:

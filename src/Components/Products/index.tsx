@@ -8,7 +8,7 @@ import './style.scss'
 function Products() {
   const [products, setProducts] = useState<ProductProps[]>([]);
   const [position, setPosition] = useState(0);
-  const [selectedProduct, setSelectedProduct] = useState<ProductProps | null>(null); // Produto selecionado para o modal
+  const [selectedProduct, setSelectedProduct] = useState<ProductProps | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [buyItem, setButItem] = useState(0)
@@ -38,13 +38,13 @@ function Products() {
   };
 
   const handleBuyClick = (product: ProductProps) => {
-    setSelectedProduct(product); // Define o produto selecionado
-    setIsModalOpen(true); // Abre o modal
+    setSelectedProduct(product); 
+    setIsModalOpen(true); 
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); // Fecha o modal
-    setSelectedProduct(null); // Limpa o produto selecionado
+    setIsModalOpen(false); 
+    setSelectedProduct(null); 
   };
   useEffect(() => {
     fetch('/api/produtos')

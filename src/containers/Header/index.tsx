@@ -12,7 +12,7 @@ import CrownSimple from '../../assets/images/header/CrownSimple.png';
 import './style.scss';
 
 function Header() {
-    const [selectedIndex, setSelectedIndex] = useState<number>(5); // Inicializa com o índice 5
+    const [selectedIndex, setSelectedIndex] = useState<number>(5);
 
     const handleSpanClick = (index: number) => {
         setSelectedIndex(index);

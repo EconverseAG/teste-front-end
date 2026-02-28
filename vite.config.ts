@@ -10,6 +10,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) =>
           path.replace(/^\/api\/produtos/, '/teste-front-end/junior/tecnologia/lista-produtos/produtos.json'),
+
       },
     },
   },

@@ -3,7 +3,7 @@ import './style.scss'
 type Props = {
     title: string
     subTitle?: string
-    hr?: boolean // Prop para controlar a exibição do <hr />
+    hr?: boolean 
 }
 
 function RelatedProductsTitle({title, subTitle, hr = true}: Props) {
