@@ -1,0 +1,23 @@
+.container-circulo{
+    height: 211px;
+    width: 211px;
+    border-radius: 50%;
+    box-shadow: 2px 1px 15px rgba(0, 0, 0, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 1440px) {
+    height: 180px;
+    width: 180px;
+    @media screen and (max-width: 1150px) {
+    height: 140px;
+    width: 140px;
+  }
+  }
+  .img-marcas{
+    @media screen and (max-width: 1150px) {
+    width: 100px;
+  }
+  }
+
+}

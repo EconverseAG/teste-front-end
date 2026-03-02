@@ -8,11 +8,23 @@
     border: none;
     background-color: #F4F4F4 ;
     box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.12);
+    @media screen and (max-width: 1500px) {
+    width: 132px;
+    height: 112px;
+  }
+  @media screen and (max-width: 1150px) {
+    width: 100px;
+    height: 90px;
+  }
 
 }
 .img-btn{
     width: 61px;
     height: 61px;
+@media screen and (max-width: 1500px) {
+    width: 41px;
+    height: 41px;
+  }
 }
 .btn-categoria.active {
   background-color: #ffff;

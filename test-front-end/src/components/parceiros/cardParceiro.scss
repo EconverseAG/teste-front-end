@@ -1,0 +1,47 @@
+@use '../../styles/variaveis' as *;
+
+.img-parceiro{
+  max-width: 600px;
+  height: 350px; 
+  position: absolute;
+  z-index: -5;
+
+}
+.container-card{
+  min-width: 49%;
+  border-radius: 20px;
+  height: 350px; 
+  background-image: url('../../assets/images/imagemCard.svg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: flex-start;
+  padding: 30px;
+}
+.container-info-parceiro{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    color: white;
+    font-size: 40px;
+}
+.descricao-parceiros{
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+}
+.btn-confira{
+    background-color: $amarelo;
+    border: none;
+    width: 144px;
+    height: 48px;
+    border-radius: 6px;
+    color: $roxo;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 40px;
+
+}

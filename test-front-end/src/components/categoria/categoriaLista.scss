@@ -6,9 +6,13 @@
 }
 .container-lista-categorias{
     @include flex(space-between, row);
-    width: 75%;
+    width: 80%;
     list-style: none;
     flex-wrap: wrap;
+    @media screen and (max-width: 1150px) {
+        width: 90%;
+
+  }
 }
 .estilo-itens-categoria{
     @include flex(center, column);

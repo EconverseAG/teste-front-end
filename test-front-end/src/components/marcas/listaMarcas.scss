@@ -1,0 +1,22 @@
+@use '../../styles/mixin' as *;
+.section-marcas{
+    width: 100%;
+    @include flex(center, column);
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+}
+.section-marcas h2{
+        color: #3442B5;
+        margin-bottom: 20px;
+
+}
+.container-todas-marcas{
+    @include flex(space-between, row);
+    width: 80%;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    @media screen and (min-width: 2000px) {
+    width: 70%;
+  }
+}

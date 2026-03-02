@@ -1,0 +1,134 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variaveis' as *;
+
+.container-letter{
+    @include flex(center, row);
+    background-color: $roxo;
+    width: 100%;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-top: 80px;
+}
+.info-letter{
+    width: 50%;
+}
+.container-inputs{
+    @include flex(space-between, row);
+    width: 100%;
+    column-gap: 5px;
+
+    @media screen and (min-width: 2000px) {
+    width: 100%;
+  }
+
+
+}
+.container-ajuste{
+    width: 90%;
+    @include flex(space-between, row);
+    flex-wrap: wrap;
+    @media screen and (min-width: 2000px) {
+    width: 76%;
+  }
+}
+.title-letter{
+    color: $branco;
+    font-size: 32px;
+    font-weight: 600;
+}
+.descricao-letter{
+    font-size: 14px;
+    color: $branco;
+    font-weight: 200;
+}
+.estilo-input{
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    height: 42px;
+    font-size: 14px;
+    padding-left: 25px;
+    width: 40%;
+    margin-bottom: 5px;
+
+}
+
+.btn-inscrever{
+    background-color: $amarelo;
+    height: 42px;
+    width: 157px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+.container-inputs-check{
+    width: 50%;
+     
+}
+.text-label{
+    color: $branco;
+    font-size: 14px;
+    font-weight: 300; 
+    padding-left: 5px;
+}
+.container-footer{
+    @include flex(space-between, row);
+    width: 90%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-right: 7%;
+    flex-wrap: wrap;
+    @media screen and (min-width: 2000px) {
+    width: 76%;
+  }
+    
+
+}
+.container-footer-background{
+    width: 100%;
+    background-color: #F4F4F4;
+     @include flex(center, column);
+     
+}
+.logo-footer{
+      width: 164px;
+      height: 48px; 
+}
+.text-footer{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 12px;
+}
+.text-footer-logo{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 7px;
+}
+.title-footer{
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222af;
+}
+.divider-footer{
+    color: #ff0000;
+    height: 100px;
+    width: 5px;
+    display: flex;
+    
+}
+.redesSociais{
+    @include flex(space-between, row);
+    width: 124px;
+    margin-top: 30px;
+}
+.rodape{
+    background-color: #fff;
+    width: 100%;
+    @include flex(center, row);
+    height: 50px;
+    font-size: 13px;
+    color: #3F3F40;
+
+}

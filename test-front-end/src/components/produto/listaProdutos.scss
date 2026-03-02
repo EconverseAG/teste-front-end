@@ -1,0 +1,43 @@
+@use '../../styles/mixin' as *;
+
+.slider-container {
+  position: relative;
+  @include flex(center, row);
+  width: 100%;
+
+}
+.section-lista-produtos{
+    @include flex(center, row);
+    width: 100%; 
+    
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;  
+  column-gap: 47px; 
+  scroll-behavior: smooth;
+  width: 90%;
+  padding: 15px;
+  @media screen and (min-width: 2000px) {
+    width: 76%;
+  }
+  @media screen and (max-width: 1150px) {
+    column-gap: 30px;
+  }
+}
+
+.slider::-webkit-scrollbar {
+  display: none; 
+}
+
+.seta {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 2;
+}

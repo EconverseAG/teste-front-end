@@ -45,6 +45,7 @@ span{
 }
 .container-header{
     @include flex(center, column);
+    
 }
 .logo{
       width: 139px;

@@ -1,0 +1,71 @@
+.section-tipo-produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 60px;
+}
+.divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; 
+  width: 90%;
+  @media screen and (min-width: 2000px) {
+    width: 76%;
+  }
+   @media screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+}
+
+.divider {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+.divider-container h2{
+    color: #3442B5;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.categorias-tabs {
+  display: flex;
+  width: 90%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  @media screen and (min-width: 2000px) {
+    width: 76%;
+  }
+   @media screen and (max-width: 500px) {
+    flex-wrap: wrap;
+  }
+}
+
+.categorias-tabs li {
+  flex: 1; 
+}
+
+.btn-tipo-produto {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-right: 1px solid #ddd;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.btn-tipo-produto:hover {
+  background-color: #eaeaea;
+}
+
+.btn-tipo-produto.ativo {
+  color: #3442B5;
+  font-weight: 600;
+  background-color: white;
+}
