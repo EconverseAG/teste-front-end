@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  height: 32px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header img {
+  width: 20px;
+  height: 20px;
+}
+.header p {
+  font-size: 12px;
+  color: var(--gray-1, #9F9F9F);
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding-left: 10px;
+}
+.header span {
+  color: #F71963;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}/*# sourceMappingURL=TopHeader.module.css.map */

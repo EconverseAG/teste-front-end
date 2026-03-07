@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0px 3px 19px 0px rgba(0, 0, 0, 0.22);
+  width: 270px;
+  padding: 20px 15px;
+}
+.container h2 {
+  color: var(--preto, #3F3F40);
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.container p {
+  margin: 0;
+  margin-bottom: 7px;
+}
+.container .price_line {
+  color: #808080;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: line-through;
+}
+.container .price_common {
+  color: var(--preto, #3F3F40);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.container .price_buy {
+  color: var(--preto, #3F3F40);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container .free {
+  color: var(--rosa-primario, #F71963);
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.container .btn {
+  border-radius: 4px;
+  background: var(--rosa-primario, #F71963);
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 13px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.container .btn:hover {
+  background: var(--rosa-primario, #8f0030);
+}
+.container .modal {
+  margin: 0;
+}/*# sourceMappingURL=ProductCard.module.css.map */

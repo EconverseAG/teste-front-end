@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+}
+.container h1 {
+  color: var(--rosa-primario, #F71963);
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+}
+.container hr {
+  width: 360px;
+  height: 1px;
+  border: none;
+  background: #DEDEDE;
+}/*# sourceMappingURL=TItleContent.module.css.map */
