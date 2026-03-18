@@ -2,21 +2,20 @@
 @use "../../styles/variaveis" as *;
 
 .marcas-home {
-    padding: 3rem 0;
-   
+  padding: 3rem 0;
 
-    &__content {
-        h2 {
-            color: $color-primary;
-            text-align: center;
-        }
+  &__content {
+    h2 {
+      color: $color-primary;
+      text-align: center;
     }
+  }
 
-    &__logos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        margin-top: 1.5rem;
-    }
+  &__logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
 }
