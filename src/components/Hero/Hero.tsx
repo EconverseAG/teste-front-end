@@ -1,14 +1,14 @@
 import "./Hero.scss";
-import banner from "/images/banner.webp";
 
 const Banner = () => {
   return (
     <section className="banner" aria-label="Banner de promoções">
       <img
-        src={banner}
+        src="/images/banner.webp"
         alt="Banner de promoções"
-        className="banner__img"
+      className="banner__img"
         fetchPriority="high"
+        loading="eager"
         decoding="async"
       />
       <div className="container banner__content">
