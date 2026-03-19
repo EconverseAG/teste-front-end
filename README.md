@@ -60,6 +60,20 @@ src/
 └─ App.tsx
 
 ````
+## 🔍 SEO e Acessibilidade
+
+O projeto foi desenvolvido seguindo boas práticas de **SEO** e **acessibilidade**, garantindo uma aplicação mais eficiente, indexável e inclusiva.
+
+### 📌 Boas práticas aplicadas
+
+- 🏷️ **Uso correto de semântica HTML:** utilização de tags como `header`, `main`, `section`, `article` e `footer`, melhorando a estrutura da página e a leitura por mecanismos de busca  
+- 🔝 **Apenas um `<h1>` por página:** garantindo hierarquia correta de títulos e melhor indexação  
+- 🖼️ **Uso adequado do atributo `alt` em imagens:** essencial para acessibilidade e SEO, permitindo que leitores de tela interpretem o conteúdo  
+- 🧾 **Uso de `title` quando necessário:** fornecendo informações complementares ao usuário  
+- ♿ **Atributos `aria` aplicados corretamente:** melhorando a navegação para usuários que utilizam tecnologias assistivas  
+- 🔗 **Links acessíveis e descritivos:** evitando textos genéricos como "clique aqui"  
+- 📱 **Responsividade:** garantindo boa experiência em diferentes dispositivos
+  
 ## 🎯 Funcionalidades e Destaques
 - ✅ **Header fixo (HeaderFIXED):** facilita a navegação sem precisar rolar até o topo.  
 - ✅ **Componentização completa:** cada componente isolado, com seu próprio arquivo de estilos Sass.  
@@ -88,11 +102,15 @@ Essas melhorias foram implementadas para proporcionar uma navegação mais fluid
    ```bash
    cd teste-front-end
    
-3. Instale as dependências:
+3. Entre na Branch:
+   ```bash
+   git checkout milton-andrade
+   
+4. Instale as dependências:
    ```bash
    npm install
    
-4. Execute o projeto:
+5. Execute o projeto:
    ```bash
    npm run dev
    
