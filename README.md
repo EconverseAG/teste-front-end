@@ -20,48 +20,60 @@ O projeto foi totalmente **componentizado**, cada parte da interface possui seu 
 Segue a estrutura detalhada com destaques das principais mudanças:
 
 ```text
+public/
+└─ images/                # Imagens, ícones e arquivos estáticos acessados via URL
 src/
-├─ assets/                # Imagens, ícones e logotipos
-│  ├─ icones/
-│  ├─ marcas/
-│  └─ parceiros/
 ├─ components/
 │  ├─ Header/
 │  │  ├─ Header.tsx
 │  │  ├─ Header.scss
-│  │  ├─ IconTopo.tsx          # Subcomponente dos ícones do topo
-│  │  └─ headerData.ts         # Dados dos ícones e links
+│  │  ├─ IconTopo.tsx
+│  │  └─ headerData.ts
 │  ├─ Footer/
 │  │  ├─ Footer.tsx
 │  │  ├─ Footer.scss
-│  │  └─ footerData.ts         # Dados de links e redes sociais
+│  │  └─ footerData.ts
 │  ├─ IconesHome/
 │  │  ├─ IconesHome.tsx
 │  │  ├─ IconesHome.scss
-│  │  └─ IconeHomeItem.tsx     # Subcomponente de cada ícone
+│  │  └─ IconeHomeItem.tsx
 │  ├─ Marcas/
 │  │  ├─ Marcas.tsx
 │  │  ├─ Marcas.scss
-│  │  └─ marcasData.ts         # Dados das marcas
+│  │  └─ marcasData.ts
 │  ├─ Newsletter/
 │  │  ├─ Newsletter.tsx
 │  │  └─ Newsletter.scss
 │  ├─ Parceiros/
 │  │  ├─ Parceiros.tsx
 │  │  ├─ Parceiros.scss
-│  │  └─ parceirosData.ts      # Dados dos parceiros
+│  │  └─ parceirosData.ts
 │  └─ Produtos/
-│     ├─ Produtos.tsx           # Componente principal
-│     ├─ ProdutosModal.tsx      # Modal de produto
+│     ├─ Produtos.tsx
+│     ├─ ProdutosModal.tsx
 │     ├─ Produtos.scss
-│     ├─ ProdutoData.ts         # Tipos e links do produto
+│     ├─ ProdutoData.ts
 │     └─ @types/
 │        └─ splidejs__react-splide.d.ts
 ├─ hooks/
-│  └─ useProdutos.ts            # Hook para consumo da API de produtos
+│  └─ useProdutos.ts
 └─ App.tsx
 
 ````
+## 🔍 SEO e Acessibilidade
+
+O projeto foi desenvolvido seguindo boas práticas de **SEO** e **acessibilidade**, garantindo uma aplicação mais eficiente, indexável e inclusiva.
+
+### 📌 Boas práticas aplicadas
+
+- 🏷️ **Uso correto de semântica HTML:** utilização de tags como `header`, `main`, `section`, `article` e `footer`, melhorando a estrutura da página e a leitura por mecanismos de busca  
+- 🔝 **Apenas um `<h1>` por página:** garantindo hierarquia correta de títulos e melhor indexação  
+- 🖼️ **Uso adequado do atributo `alt` em imagens:** essencial para acessibilidade e SEO, permitindo que leitores de tela interpretem o conteúdo  
+- 🧾 **Uso de `title` quando necessário:** fornecendo informações complementares ao usuário  
+- ♿ **Atributos `aria` aplicados corretamente:** melhorando a navegação para usuários que utilizam tecnologias assistivas  
+- 🔗 **Links acessíveis e descritivos:** evitando textos genéricos como "clique aqui"  
+- 📱 **Responsividade:** garantindo boa experiência em diferentes dispositivos
+  
 ## 🎯 Funcionalidades e Destaques
 - ✅ **Header fixo (HeaderFIXED):** facilita a navegação sem precisar rolar até o topo.  
 - ✅ **Componentização completa:** cada componente isolado, com seu próprio arquivo de estilos Sass.  
@@ -73,6 +85,13 @@ src/
 - ✅ **Reutilização de subcomponentes** (ex.: `IconeHomeItem.tsx`) para maior modularidade e manutenção mais fácil.  
 - ✅ **Estilos reutilizáveis e consistentes:** uso de mixins (`@mixin button`) e classes utilitárias (`.container`) em todo o projeto.
 
+## ✨ Melhorias de UX
+🔝 Botão "Voltar ao topo": aparece ao rolar a página, permitindo retornar rapidamente ao início
+
+🔗 Botão flutuante para o repositório: acesso rápido ao GitHub do projeto, facilitando navegação e transparência
+
+Essas melhorias foram implementadas para proporcionar uma navegação mais fluida, intuitiva e moderna.
+
 ## ⚙️ Como rodar o projeto localmente
 
 1. Clone este repositório:
@@ -83,11 +102,15 @@ src/
    ```bash
    cd teste-front-end
    
-3. Instale as dependências:
+3. Entre na Branch:
+   ```bash
+   git checkout milton-andrade
+   
+4. Instale as dependências:
    ```bash
    npm install
    
-4. Execute o projeto:
+5. Execute o projeto:
    ```bash
    npm run dev
    
