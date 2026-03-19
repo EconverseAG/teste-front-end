@@ -2,64 +2,75 @@
 @use "../../styles/variaveis" as *;
 
 .banner {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 390px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
     position: relative;
+    z-index: 2;
+    gap: 30px;
 
-    &__content {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 2;
-        gap: 30px;
-
-        .banner__title {
-            color: $color-white;
-            font-size: $font-size-h1;
-        }
-
-        .banner__title span {
-            display: block;
-            margin: 0;
-            line-height: 90%;
-        }
-
-        .banner__subtitle {
-            color: $color-white;
-            font-size: $font-size-h2;
-            font-weight: 500;
-            margin-top: 1rem;
-        }
-
-        .banner__subtitle span {
-            color: $color-secondary;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .banner__title {
-                font-size: $font-size-h2;
-            }
-        }
+    .banner__title {
+      color: $color-white;
+      font-size: $font-size-h1;
     }
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right,
-                rgba(0, 0, 0, 0.7) 0%,
-                rgba(0, 0, 0, 0.3) 50%,
-                rgba(0, 0, 0, 0) 100%);
-        z-index: 1;
+    .banner__title span {
+      display: block;
+      margin: 0;
+      line-height: 90%;
     }
+
+    .banner__subtitle {
+      color: $color-white;
+      font-size: $font-size-h2;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+
+    .banner__subtitle span {
+      color: $color-secondary;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .banner__title {
+        font-size: $font-size-h2;
+      }
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1;
+  }
 }

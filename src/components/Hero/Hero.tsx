@@ -3,11 +3,14 @@ import banner from "/images/banner.webp";
 
 const Banner = () => {
   return (
-    <section
-      className="banner"
-      style={{ backgroundImage: `url(${banner})` }}
-      aria-label="Banner de promoções"
-    >
+    <section className="banner" aria-label="Banner de promoções">
+      <img
+        src={banner}
+        alt="Banner de promoções"
+        className="banner__img"
+        fetchPriority="high"
+        decoding="async"
+      />
       <div className="container banner__content">
         <div>
           <h1 className="banner__title">
