@@ -3,14 +3,16 @@ import "./Hero.scss";
 const Banner = () => {
   return (
     <section className="banner" aria-label="Banner de promoções">
+
       <img
         src="/images/banner.webp"
         alt="Banner de promoções"
-      className="banner__img"
+        className="banner__img"
         fetchPriority="high"
         loading="eager"
         decoding="async"
       />
+      
       <div className="container banner__content">
         <div>
           <h1 className="banner__title">
