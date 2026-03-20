@@ -75,11 +75,14 @@ O projeto foi desenvolvido seguindo boas práticas de **SEO** e **acessibilidade
 - 📱 **Responsividade:** garantindo boa experiência em diferentes dispositivos
   
 ## 🎯 Funcionalidades e Destaques
+
 - ✅ **Header fixo (HeaderFIXED):** facilita a navegação sem precisar rolar até o topo.  
 - ✅ **Componentização completa:** cada componente isolado, com seu próprio arquivo de estilos Sass.  
 - ✅ **Boas práticas de SEO:** HTML semântico, uso correto de atributos `alt` em imagens e estrutura clara.  
 - ✅ **Carrosséis responsivos** implementados com **Splide.js**, adaptando-se a diferentes telas.  
-- ✅ **Consumo de API via proxy**, garantindo funcionamento local mesmo com restrições de CORS.  
+- ✅ **Consumo de API com estratégia híbrida (DEV + PROD):**  
+  - Em ambiente local, é utilizado um proxy para contornar restrições de CORS.  
+  - Em produção, a aplicação utiliza uma **API serverless na Vercel (`/api/produtos`)**, garantindo maior estabilidade e eliminando dependência de serviços externos.  
 - ✅ **Organização de dados** em arquivos separados (`headerData.ts`, `footerData.ts`, `marcasData.ts`, `parceirosData.ts`, `ProdutoData.ts`) para maior clareza e manutenção.  
 - ✅ **Modal de produtos** com controle de quantidade, botão de compra e fallback de imagens.  
 - ✅ **Reutilização de subcomponentes** (ex.: `IconeHomeItem.tsx`) para maior modularidade e manutenção mais fácil.  
@@ -97,23 +100,24 @@ Essas melhorias foram implementadas para proporcionar uma navegação mais fluid
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/teste-front-end.git
-
-2. Entre na pasta do projeto:
-   ```bash
-   cd teste-front-end
    
-3. Entre na Branch:
+2. Entre na Branch:
    ```bash
    git checkout milton-andrade
    
-4. Instale as dependências:
+3. Instale as dependências:
    ```bash
    npm install
    
-5. Execute o projeto:
+4. Execute o projeto:
    ```bash
    npm run dev
-   
+
+## 🔗 Acesse o Projeto
+
+Você pode visualizar o projeto em produção através da Vercel:
+
+👉 https://teste-front-end-3lp6.vercel.app
 
 ## 📝 Conclusão
 
