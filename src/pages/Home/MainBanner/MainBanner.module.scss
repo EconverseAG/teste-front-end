@@ -1,0 +1,45 @@
+.mainBanner {
+  background:
+    linear-gradient(to left, transparent, #000 120%),
+    url("../../../assets/MainBanner.jpg") no-repeat center;
+  background-size: cover;
+  height: 390px;
+  align-content: center;
+
+  .mainBannerContent {
+    @include grid($my: 0);
+
+    .bannerTitle {
+      @include text($size: 3rem, $color: $color-white, $weight: 600);
+      margin-bottom: 1.25rem;
+    }
+
+    .bannerSubtitle {
+      @include text($size: 2rem, $color: $color-white, $weight: 400);
+      margin-bottom: 2.5rem;
+
+      .bannerDiscount {
+        @include text($size: 2rem, $color: $color-yellow, $weight: 700);
+      }
+    }
+
+    .bannerButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $color-yellow;
+      padding: 0.4375rem 1rem;
+      width: 206px;
+      height: 50px;
+      border-radius: 0.3125rem;
+      cursor: pointer;
+      @include text($size: 1rem, $color: $color-secondary, $weight: 600);
+      text-decoration: none;
+      transition: $transition-default;
+
+      &:hover {
+        background-color: #f8db67;
+      }
+    }
+  }
+}

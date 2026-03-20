@@ -1,0 +1,39 @@
+.mosaic {
+  @include grid();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.625rem;
+  flex-wrap: wrap;
+
+  .mosaicItem {
+    text-decoration: none;
+
+    &:hover {
+      .mosaicItemImage {
+        background-color: $color-white;
+      }
+
+      .mosaicItemText {
+        color: $color-primary-dark;
+        font-weight: 600;
+      }
+    }
+
+    .mosaicItemImage {
+      background-color: #f4f4f4;
+      box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.13);
+      border-radius: 0.625rem;
+      padding: 2.125rem;
+      transition: $transition-default;
+    }
+
+    .mosaicItemText {
+      @include text($size: 0.875rem, $color: $text-secondary, $weight: 500);
+      text-decoration: none;
+      text-align: center;
+      margin-top: 1.375rem;
+      transition: $transition-default;
+    }
+  }
+}

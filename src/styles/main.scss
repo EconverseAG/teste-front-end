@@ -1,0 +1,15 @@
+@use './mixins.scss' as *;
+@use './variables' as *;
+
+* {
+  font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+

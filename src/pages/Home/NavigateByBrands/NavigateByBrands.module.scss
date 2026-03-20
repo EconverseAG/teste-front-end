@@ -1,0 +1,27 @@
+.navigateByBrands {
+  @include grid();
+
+  .navigateByBrandsTitle {
+    @include text($size: 1.875rem, $color: $color-primary, $weight: 700);
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .navigateByBrandsItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.625rem;
+    flex-wrap: wrap;
+
+    .navigateByBrandsItem {
+      width: 211px;
+      height: 211px;
+      border-radius: 50%;
+      box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.13);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

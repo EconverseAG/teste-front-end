@@ -1,0 +1,21 @@
+.filter {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.625rem;
+
+  td {
+    width: 200px;
+    border: 1px solid $border-primary;
+    padding: 0.75rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    @include text($size: 1rem, $color: $text-tertiary, $weight: 400);
+    transition: $transition-default;
+
+    &:hover {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+}

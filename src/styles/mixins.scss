@@ -1,0 +1,28 @@
+@use "./variables.scss" as *;
+
+@mixin media($width, $type: min) {
+  @if $type == max {
+    $width: $width - 1px;
+  }
+  @media only screen and (#{$type}-width: $width) {
+    @content;
+  }
+}
+
+@mixin text(
+  $size: 1rem,
+  $color: $text-general,
+  $weight: 500,
+  $line-height: 100%
+) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $line-height;
+}
+
+@mixin grid($my: 3.75rem) {
+  max-width: 1280px;
+  margin: $my auto;
+  padding: 0 1rem;
+}

@@ -1,0 +1,48 @@
+.partners {
+  @include grid();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .partner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    max-width: 634px;
+    height: 350px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2.75rem;
+    border-radius: 1.25rem;
+
+    .partnerTitle {
+      @include text($size: 2.5rem, $color: $color-white, $weight: 700);
+    }
+
+    .partnerText {
+      @include text($size: 1rem, $color: $color-white, $weight: 400);
+      margin: 1rem 0;
+      max-width: 190px;
+    }
+
+    .partnerButton {
+      width: 100%;
+      max-width: 145px;
+      height: 48px;
+      background-color: $color-yellow;
+      @include text($size: 1rem, $color: $color-secondary, $weight: 700);
+      letter-spacing: 8%;
+      padding: 0.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: $transition-default;
+    }
+  }
+}

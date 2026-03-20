@@ -1,0 +1,74 @@
+.productsShelf {
+  @include grid();
+  text-align: center;
+
+  .productsShelfTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    hr {
+      position: absolute;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $border-secondary;
+    }
+
+    h2 {
+      background-color: #fff;
+      padding: 0 1.25rem;
+      z-index: 1;
+      @include text($size: 1.875rem, $color: $color-primary, $weight: 700);
+    }
+  }
+
+  .productsShelfSeeAll {
+    display: block;
+    @include text($size: 0.9375rem, $color: $text-primary, $weight: 700);
+    text-decoration: none;
+    padding-top: 0.625rem;
+  }
+
+  .carouselWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    .containerCarousel {
+      overflow: hidden;
+      padding: 1.25rem 0.5rem;
+
+      .contentCarousel {
+        display: flex;
+        gap: 1.125rem;
+        transition: $transition-default;
+      }
+    }
+
+    .buttonCarouselLeft,
+    .buttonCarouselRight {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $color-white;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    .buttonCarouselLeft {
+      left: -2rem;
+    }
+
+    .buttonCarouselRight {
+      right: -2rem;
+    }
+  }
+}
