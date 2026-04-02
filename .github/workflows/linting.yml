@@ -16,3 +16,5 @@ jobs:
       - run: npm ci
 
       - run: npm run lint:prettier:check
+
+      - run: npm run lint:prettier:fix
