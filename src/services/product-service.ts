@@ -1,7 +1,7 @@
 import type { Product, ProductResponse } from "../types/product";
 
 const API_URL =
-  "https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
+  "/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
 
 export const productService = {
   getAll: async (): Promise<Product[]> => {
