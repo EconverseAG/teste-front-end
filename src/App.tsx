@@ -5,6 +5,7 @@ import { CategoryList } from "./components/CategoryList";
 import { ProductGrid } from "./components/ProductGrid";
 import { PartnerBanners } from "./components/PartnerBanners";
 import "./components/ProductCard/style.scss";
+import { BrandCarousel } from "./components/BrandCarousel";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <CategoryList />
         <ProductGrid />
         <PartnerBanners />
+        <BrandCarousel />
       </main>
     </div>
   );
