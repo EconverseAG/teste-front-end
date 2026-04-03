@@ -1,0 +1,57 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.main-banner {
+  position: relative;
+  width: 100%;
+
+  &__container {
+    max-width: 1364px;
+    display: flex;
+    align-items: center;
+    height: 390px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 80px;
+  }
+
+  &__content {
+    max-width: 822px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    @include typography(48px, 600, #ffffff);
+    line-height: 50px;
+    margin: 0;
+  }
+
+  &__subtitle {
+    @include typography(32px, 700, #ffffff);
+    line-height: 100%;
+    margin: 0;
+
+    span {
+      color: #f7ca11;
+    }
+  }
+
+  &__button {
+    width: 206px;
+    height: 50px;
+    background: #f7ca11;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 24px;
+
+    @include typography(16px, 600, #271c47);
+    transition: filter 0.2 ease;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
