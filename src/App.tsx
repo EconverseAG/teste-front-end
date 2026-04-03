@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { MainBanner } from "./components/MainBanner";
 import { ProductGrid } from "./components/ProductGrid";
 import "./components/ProductCard/style.scss";
+import { CategoryList } from "./components/CategoryList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
 
       <main>
         <MainBanner />
+        <CategoryList />
         <ProductGrid />
       </main>
     </div>

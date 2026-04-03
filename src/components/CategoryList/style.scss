@@ -1,0 +1,63 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.category-list {
+  width: 100%;
+  margin-top: 34px;
+
+  &__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: 128px;
+    cursor: pointer;
+
+    p {
+      @include typography(14px, 600, #4e4e4e);
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+
+      &.active-text {
+        color: #3019b2;
+      }
+    }
+
+    &:hover {
+      p {
+        color: #3019b2;
+      }
+      .category-list__card {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  &__card {
+    width: 128px;
+    height: 128px;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease;
+
+    img {
+      width: 61px;
+      height: 61px;
+      object-fit: contain;
+    }
+  }
+}
