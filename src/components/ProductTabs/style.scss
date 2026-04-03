@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.product-tabs {
+  width: 100%;
+  max-width: 1280px;
+  height: 40px;
+  display: flex;
+  border: 1px solid #dedede;
+  background: #fff;
+  margin-bottom: 24px;
+
+  &__item {
+    flex: 1;
+    height: 100%;
+    background: #ffffff;
+    border: none;
+    border-right: 1px solid #dedede;
+    cursor: pointer;
+    @include typography(14px, 400, #3b3b3b);
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.active {
+      color: #3442b5;
+      font-weight: 700;
+    }
+
+    &:hover:not(.active) {
+      background-color: #f5f5f5;
+    }
+  }
+}

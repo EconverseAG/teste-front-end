@@ -2,7 +2,7 @@ import { Header } from "./components/Header";
 import { Navbar } from "./components/Navbar";
 import { MainBanner } from "./components/MainBanner";
 import { CategoryList } from "./components/CategoryList";
-import { ProductGrid } from "./components/ProductGrid";
+import { ProductShelf } from "./components/ProductShelf";
 import { PartnerBanners } from "./components/PartnerBanners";
 import { BrandCarousel } from "./components/BrandCarousel";
 import { Newsletter } from "./components/Newsletter";
@@ -19,9 +19,20 @@ function App() {
         <MainBanner />
         <CategoryList />
 
-        <ProductGrid />
+        <ProductShelf
+          title="Produtos relacionados"
+          showTabs={true}
+          activeTab="Celular"
+        />
         <PartnerBanners />
 
+        <ProductShelf
+          title="Produtos relacionados"
+          showTabs={false}
+          activeTab="Celular"
+        />
+
+        <PartnerBanners />
         <BrandCarousel />
         <Newsletter />
       </main>

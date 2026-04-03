@@ -1,0 +1,114 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.product-shelf {
+  width: 100%;
+  max-width: 1364px;
+  margin: 84px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    @include typography(30px, 700, #3442b5);
+    width: 100%;
+    max-width: 1138px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #dedede;
+      margin: 0 20px;
+    }
+  }
+
+  &__view-all {
+    @include typography(15px, 700, #3f3f40);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #3442b5;
+    }
+  }
+
+  &__carousel {
+    position: relative;
+    width: 1270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+
+  .nav-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    &::after {
+      @include typography(24px, 400, #3f3f40);
+      line-height: 1;
+    }
+
+    &.prev {
+      left: -56px;
+      &::after {
+        content: "\2039";
+        padding-right: 2px;
+      }
+    }
+
+    &.next {
+      right: -56px;
+      &::after {
+        content: "\203A";
+        padding-left: 2px;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(.disabled) {
+      background-color: #f9f9f9;
+      &::after {
+        color: #3442b5;
+      }
+    }
+  }
+}
