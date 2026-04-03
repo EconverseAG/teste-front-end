@@ -6,6 +6,7 @@ import { ProductGrid } from "./components/ProductGrid";
 import { PartnerBanners } from "./components/PartnerBanners";
 import { BrandCarousel } from "./components/BrandCarousel";
 import { Newsletter } from "./components/Newsletter";
+import { Footer } from "./components/Footer";
 import "./components/ProductCard/style.scss";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <BrandCarousel />
         <Newsletter />
       </main>
+
+      <Footer />
     </div>
   );
 }
