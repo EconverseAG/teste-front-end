@@ -1,7 +1,12 @@
 @use "variables" as *;
 
-@mixin container($max-w: 1364px, $padding: 0) {
+@mixin container($max-w: null, $padding: 0) {
   width: 100%;
+
+  @if $max-w != null {
+    max-width: $max-w;
+  }
+
   max-width: $max-w;
   margin-left: auto;
   margin-right: auto;

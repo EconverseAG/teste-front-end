@@ -33,7 +33,15 @@ function App() {
         />
 
         <PartnerBanners />
+
         <BrandCarousel />
+
+        <ProductShelf
+          title="Produtos relacionados"
+          showTabs={false}
+          activeTab="Celular"
+        />
+
         <Newsletter />
       </main>
 

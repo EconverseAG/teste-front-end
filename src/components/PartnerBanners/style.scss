@@ -9,11 +9,12 @@
     @include container(1281px, 20px);
     @include flex-center;
     gap: 13px;
+    padding: 0;
   }
 
   &__card {
     position: relative;
-    width: 611px;
+    width: 634px;
     height: 350px;
     border-radius: 20px;
     overflow: hidden;

@@ -17,6 +17,7 @@ export const BrandCarousel = () => {
     { id: 2, logo: logoEconverse },
     { id: 3, logo: logoEconverse },
     { id: 4, logo: logoEconverse },
+    { id: 5, logo: logoEconverse },
   ];
 
   return (

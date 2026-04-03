@@ -3,19 +3,21 @@
 
 .header {
   width: 100%;
-
-  &__container {
-    @include container($padding: 20px);
-    @include flex-between;
-  }
+  background-color: $color-white;
 
   &__top-bar {
-    padding: 8px 0;
-
     .header__container {
+      @include container(1280px, 20px);
       justify-content: center;
       gap: 110px;
+      border-bottom: 1px solid $color-border-light;
+      padding: 6px 0;
     }
+  }
+
+  &__container {
+    @include container(1280px, 20px);
+    @include flex-between;
   }
 
   &__top-item {
@@ -82,17 +84,23 @@
 
   &__actions {
     display: flex;
+    align-items: center;
     gap: 32px;
 
     img {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       cursor: pointer;
       opacity: 0.8;
       transition: opacity $transition-default;
 
       &:hover {
         opacity: 1;
+      }
+
+      &[alt="Pedidos"] {
+        width: 24px;
+        height: 24px;
       }
     }
   }

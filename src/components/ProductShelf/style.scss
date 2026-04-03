@@ -2,10 +2,10 @@
 @use "../../styles/mixins" as *;
 
 .product-shelf {
-  @include container; // 1364px default
+  @include container;
   @include flex-center;
   flex-direction: column;
-  margin: 84px auto;
+  margin: 90px auto;
 
   &__title {
     @include typography(30px, 700, $color-brand-blue);
@@ -47,15 +47,9 @@
     display: flex;
     gap: 18px;
     width: 100%;
-    overflow: hidden;
     padding: 10px 0;
-
-    & > * {
-      flex-shrink: 0;
-    }
   }
 
-  // Estilo dos botões de navegação (Reaproveitando lógica global)
   .nav-button {
     @include flex-center;
     width: 32px;

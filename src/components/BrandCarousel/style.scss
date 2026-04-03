@@ -2,7 +2,8 @@
 @use "../../styles/mixins" as *;
 
 .brand-carousel {
-  @include container(1250px);
+  // Largura total ocupada pelos parceiros acima (611 + 13 + 611)
+  @include container(1235px);
   @include flex-center;
   flex-direction: column;
   margin: 80px auto;
@@ -17,7 +18,11 @@
   }
 
   &__container {
-    @include flex-between;
+    display: flex;
+    // Centraliza o bloco de marcas para que o respiro lateral seja igual ao dos banners
+    justify-content: center;
+    // Força o espaçamento exato do Figma
+    gap: 42px;
     width: 100%;
     padding: 10px 0;
   }
@@ -27,8 +32,15 @@
     width: 211px;
     height: 211px;
     background: $color-white;
-    border-radius: 105.5px;
+    border-radius: 50%;
     box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.13);
+    // Impede que o navegador aperte o círculo para tentar caber no gap
+    flex-shrink: 0;
+    transition: transform $transition-default;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 
   &__logo {

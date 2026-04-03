@@ -1,136 +1,130 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+// @use "../../styles/variables" as *;
+// @use "../../styles/mixins" as *;
 
-.product-grid-section {
-  @include container;
-  margin: 84px auto;
-  position: relative;
-  @include flex-center;
-  flex-direction: column;
-}
+// .product-grid-section {
+//   @include container;
+//   margin: 90px auto;
+//   position: relative;
+//   @include flex-center;
+//   flex-direction: column;
+// }
 
-.product-grid {
-  width: 100%;
-  @include flex-center;
-  flex-direction: column;
+// .product-grid {
+//   width: 100%;
+//   @include flex-center;
+//   flex-direction: column;
 
-  &__title {
-    @include typography(30px, 700, $color-brand-blue);
-    @include flex-center;
-    width: 100%;
-    max-width: 1138px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
+//   &__title {
+//     @include typography(30px, 700, $color-brand-blue);
+//     @include flex-center;
+//     width: 100%;
+//     max-width: 1138px;
+//     margin-bottom: 24px;
+//     text-transform: uppercase;
 
-    &::before,
-    &::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: $color-border-divider;
-      margin: 0 20px;
-    }
-  }
+//     &::before,
+//     &::after {
+//       content: "";
+//       flex: 1;
+//       height: 1px;
+//       background: $color-border-divider;
+//       margin: 0 20px;
+//     }
+//   }
 
-  &__tabs {
-    width: 1280px;
-    height: 40px;
-    display: flex;
-    border: 1px solid $color-border-divider;
-    background: $color-white;
-    margin-bottom: 24px;
-  }
+//   &__tabs {
+//     width: 1280px;
+//     height: 40px;
+//     display: flex;
+//     border: 1px solid $color-border-divider;
+//     background: $color-white;
+//     margin-bottom: 24px;
+//   }
 
-  &__tab-item {
-    flex: 1;
-    height: 100%;
-    background: $color-white;
-    border: none;
-    border-right: 1px solid $color-border-divider;
-    cursor: pointer;
-    @include typography(14px, 400, #3b3b3b);
-    text-transform: uppercase;
-    transition: all $transition-default;
+//   &__tab-item {
+//     flex: 1;
+//     height: 100%;
+//     background: $color-white;
+//     border: none;
+//     border-right: 1px solid $color-border-divider;
+//     cursor: pointer;
+//     @include typography(14px, 400, #3b3b3b);
+//     text-transform: uppercase;
+//     transition: all $transition-default;
 
-    &:last-child {
-      border-right: none;
-    }
+//     &:last-child {
+//       border-right: none;
+//     }
 
-    &--active {
-      color: $color-brand-blue;
-      font-weight: 700;
-    }
+//     &--active {
+//       color: $color-brand-blue;
+//       font-weight: 700;
+//     }
 
-    &:hover:not(&--active) {
-      background-color: $color-background;
-    }
-  }
+//     &:hover:not(&--active) {
+//       background-color: $color-background;
+//     }
+//   }
 
-  &__carousel-wrapper {
-    position: relative;
-    width: 1270px;
-    @include flex-center;
-    min-height: 500px;
-  }
+//   &__carousel-wrapper {
+//     position: relative;
+//     width: 1270px;
+//     @include flex-center;
+//     min-height: 500px;
+//   }
 
-  &__list {
-    display: flex;
-    gap: 18px;
-    width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
+//   &__list {
+//     display: flex;
+//     gap: 18px;
+//     width: 100%;
+//   }
 
-    & > * {
-      flex-shrink: 0;
-    }
-  }
+//   &__nav-button {
+//     @include flex-center;
+//     width: 32px;
+//     height: 32px;
+//     border-radius: 50%;
+//     border: none;
+//     background: $color-white;
+//     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+//     cursor: pointer;
+//     position: absolute;
+//     z-index: 10;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     transition: all $transition-default;
 
-  &__nav-button {
-    @include flex-center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: none;
-    background: $color-white;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all $transition-default;
+//     &::after {
+//       @include typography(24px, 400, $color-text-main);
+//       line-height: 1;
+//     }
 
-    &::after {
-      @include typography(24px, 400, $color-text-main);
-      line-height: 1;
-    }
+//     &--prev {
+//       left: -56px;
+//       &::after {
+//         content: "\2039";
+//         padding-right: 2px;
+//       }
+//     }
 
-    &--prev {
-      left: -56px;
-      &::after {
-        content: "\2039";
-        padding-right: 2px;
-      }
-    }
+//     &--next {
+//       right: -56px;
+//       &::after {
+//         content: "\203A";
+//         padding-left: 2px;
+//       }
+//     }
 
-    &--next {
-      right: -56px;
-      &::after {
-        content: "\203A";
-        padding-left: 2px;
-      }
-    }
+//     &:disabled {
+//       opacity: 0.3;
+//       cursor: not-allowed;
+//     }
 
-    &:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    &:hover:not(:disabled) {
-      background-color: #f9f9f9;
-      &::after {
-        color: $color-brand-blue;
-      }
-    }
-  }
-}
+//     &:hover:not(:disabled) {
+//       background-color: #f9f9f9;
+//       &::after {
+//         color: $color-brand-blue;
+//       }
+//     }
+//   }
+// }
