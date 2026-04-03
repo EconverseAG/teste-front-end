@@ -1,0 +1,76 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.partner-banners {
+  width: 100%;
+  margin: 80px 0;
+
+  &__container {
+    max-width: 1281px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    padding: 0 20px;
+  }
+
+  &__card {
+    position: relative;
+    width: 611px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    position: absolute;
+    top: 114px;
+    left: 44.18px;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+  }
+
+  &__title {
+    width: 216.48px;
+    height: 60px;
+    margin: 0;
+
+    @include typography(40px, 700, #ffffff);
+    line-height: 100%;
+  }
+
+  &__text {
+    width: 199.91px;
+    height: 48px;
+    margin-top: 8px;
+
+    @include typography(16px, 400, #ffffff);
+    line-height: 100%;
+  }
+
+  &__button {
+    width: 131px;
+    height: 48px;
+    margin-top: 32px;
+
+    background: #f7ca11;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @include typography(16px, 900, #1e1e1e);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    transition: filter 0.2s ease;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
