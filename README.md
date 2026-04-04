@@ -1,35 +1,61 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Econverse - Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+Este projeto é o resultado do desafio técnico para a vaga de Desenvolvedor Front-End na **Econverse**. A aplicação consiste em uma **Landing Page de e-commerce** totalmente responsiva, consumindo dados de uma API externa e apresentando interações avançadas como modais e vitrines dinâmicas.
 
-Segue abaixo as instruções para a execução do teste.
+---
 
-## Instruções
+## Tecnologias Utilizadas
 
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas**
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail julia.gardiano@econverse.com.br com o título **Teste Vaga FrontEnd**
+- **React** com **TypeScript** (Vite)
+- **Sass (SCSS)** — Pré-processador para estilização modular
+- **Context API / Hooks** — Para gerenciamento de estado (Modais e Produtos)
+- **Fetch API** — Para consumo do JSON de produtos
 
-## Especificações Técnicas
+---
 
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Organização do Projeto
 
-## Pontos Extras
+O projeto foi reestruturado para seguir padrões de escalabilidade e **Clean Code**:
 
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- `src/pages` — Separação da lógica de rotas e telas (ex: Home)
+- `src/components` — Componentes reutilizáveis e independentes
+- `src/assets` — Organização centralizada de ícones e imagens
+- **Encapsulamento** — Cada componente gerencia seu próprio arquivo de estilo `.scss`
 
-## O que avaliaremos em seu teste
+---
 
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## Como rodar o projeto
 
-**Boa sorte! ;)**
+Siga os passos abaixo para executar o projeto localmente:
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/SEU_USUARIO/NOME_DO_REPO.git
+```
+
+### 2. Entrar na pasta do projeto
+
+```bash
+cd NOME_DO_REPO
+```
+
+### 3. Instalar as dependências
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+### 4. Executar o projeto em modo de desenvolvimento
+
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+### 5. Acessar no navegador
+
+O projeto estará disponível em `http://localhost:5173` (ou a porta indicada no terminal).
