@@ -5,11 +5,21 @@
   width: 100%;
   margin: 80px 0;
 
+  @include mobile {
+    margin: 40px 0;
+  }
+
   &__container {
     @include container(1281px, 20px);
     @include flex-center;
     gap: 13px;
     padding: 0;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 20px;
+    }
   }
 
   &__card {
@@ -24,6 +34,15 @@
       position: center;
       repeat: no-repeat;
     }
+
+    @include tablet {
+      width: 100%;
+      max-width: 634px;
+    }
+
+    @include mobile {
+      height: 250px;
+    }
   }
 
   &__content {
@@ -33,22 +52,38 @@
     display: flex;
     flex-direction: column;
     color: $color-white;
+
+    @include mobile {
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
   }
 
   &__title {
     width: 216.48px;
-    height: 60px;
+    height: auto;
     margin: 0;
     @include typography(40px, 700, $color-white);
     line-height: 100%;
+
+    @include mobile {
+      font-size: 30px;
+      width: 100%;
+    }
   }
 
   &__text {
     width: 199.91px;
-    height: 48px;
+    height: auto;
     margin-top: 8px;
     @include typography(16px, 400, $color-white);
-    line-height: 100%;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 14px;
+      width: 100%;
+    }
   }
 
   &__button {
@@ -63,5 +98,12 @@
 
     @include typography(16px, 900);
     letter-spacing: 0.05em;
+
+    @include mobile {
+      margin-top: 16px;
+      width: 110px;
+      height: 40px;
+      font-size: 14px;
+    }
   }
 }

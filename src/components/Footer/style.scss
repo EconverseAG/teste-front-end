@@ -6,13 +6,28 @@
   background: $color-background;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   &__container {
-    @include container(1440px);
+    @include container(1440px, 80px);
     @include flex-between;
     height: 282px;
-    padding: 0 80px;
     gap: 90px;
+    max-width: 100%;
+
+    @include tablet {
+      height: auto;
+      padding: 40px 20px;
+      gap: 40px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include mobile {
+      padding: 40px 20px;
+      gap: 30px;
+    }
   }
 
   &__info {
@@ -20,6 +35,12 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+    max-width: 100%;
+
+    @include tablet {
+      width: 100%;
+      align-items: center;
+    }
   }
 
   &__logo {
@@ -29,8 +50,12 @@
 
   &__description {
     @include typography(14px, 300, $color-text-main);
-    line-height: 100%;
+    line-height: 1.4;
     margin: 0;
+
+    @include mobile {
+      font-size: 13px;
+    }
   }
 
   &__socials {
@@ -54,11 +79,27 @@
     height: 198px;
     background: #2828282e;
     align-self: center;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__links-container {
     display: flex;
     gap: 100px;
+    max-width: 100%;
+
+    @include tablet {
+      gap: 60px;
+      justify-content: center;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+    }
   }
 
   &__column {
@@ -82,6 +123,7 @@
   &__link {
     @include typography(14px, 300, $color-text-main);
     transition: color $transition-default;
+    text-decoration: none;
 
     &:hover {
       color: $color-brand-blue;
@@ -90,14 +132,16 @@
 
   &__copyright {
     width: 100%;
-    height: 46.8px;
+    height: auto;
+    min-height: 46.8px;
     background: $color-white;
     @include flex-center;
+    padding: 10px 0;
 
     &-container {
-      @include container(1280px);
+      @include container(1280px, 20px);
       @include flex-center;
-      padding: 0 80px;
+      max-width: 100%;
     }
 
     &-text {
@@ -105,6 +149,11 @@
       text-transform: uppercase;
       text-align: center;
       margin: 0;
+
+      @include mobile {
+        font-size: 11px;
+        line-height: 1.4;
+      }
     }
   }
 }

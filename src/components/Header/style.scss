@@ -6,6 +6,10 @@
   background-color: $color-white;
 
   &__top-bar {
+    @include tablet {
+      display: none;
+    }
+
     .header__container {
       @include container(1280px, 20px);
       justify-content: center;
@@ -18,6 +22,11 @@
   &__container {
     @include container(1280px, 20px);
     @include flex-between;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   &__top-item {
@@ -44,6 +53,11 @@
     img {
       width: 139px;
       height: 41px;
+
+      @include mobile {
+        width: 100px;
+        height: auto;
+      }
     }
   }
 
@@ -51,6 +65,12 @@
     position: relative;
     width: 630px;
     height: 48px;
+
+    @include tablet {
+      width: 100%;
+      margin-top: 15px;
+      order: 2;
+    }
 
     input {
       width: 100%;
@@ -87,12 +107,26 @@
     align-items: center;
     gap: 32px;
 
+    @include tablet {
+      margin-bottom: 0;
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: 15px;
+    }
+
     img {
       width: 32px;
       height: 32px;
       cursor: pointer;
       opacity: 0.8;
       transition: opacity $transition-default;
+
+      @include mobile {
+        width: 24px;
+        height: 24px;
+      }
 
       &:hover {
         opacity: 1;
@@ -101,6 +135,11 @@
       &[alt="Pedidos"] {
         width: 24px;
         height: 24px;
+
+        @include mobile {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }

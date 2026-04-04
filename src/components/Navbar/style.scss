@@ -9,6 +9,11 @@
   box-shadow: 0px 8px 16px 0px rgba(57, 48, 19, 0.12);
   border-top: 1px solid $color-border-light;
 
+  @include tablet {
+    height: auto;
+    padding: 10px 0;
+  }
+
   &__container {
     width: 100%;
     padding: 0 20px;
@@ -17,6 +22,16 @@
   &__list {
     @include flex-between;
     width: 100%;
+
+    @include tablet {
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      gap: 15px;
+    }
   }
 
   &__item {
@@ -26,9 +41,14 @@
       gap: 8px;
       text-transform: uppercase;
       transition: color $transition-default;
+      white-space: nowrap;
 
       &:hover {
         color: $color-brand-blue;
+      }
+
+      @include mobile {
+        font-size: 10px;
       }
     }
 
@@ -49,5 +69,9 @@
     width: 17px;
     height: 13px;
     object-fit: contain;
+
+    @include mobile {
+      width: 14px;
+    }
   }
 }

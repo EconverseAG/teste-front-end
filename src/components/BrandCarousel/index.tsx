@@ -1,4 +1,4 @@
-import logoEconverse from "../../assets/icons/Logo.svg";
+import logoEconverse from "../../assets/Logo.svg";
 import "./style.scss";
 
 interface BrandCardProps {

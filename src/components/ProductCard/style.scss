@@ -44,8 +44,15 @@
 
   &__shipping,
   &__installments {
-    @include typography(12px, 400, $color-brand-blue);
     margin-top: 4px;
+  }
+
+  &__shipping {
+    @include typography(12px, 400, $color-brand-blue);
+  }
+
+  &__installments {
+    @include typography(12px, 400, $color-text-main);
   }
 
   &__button {

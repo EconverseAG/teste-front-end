@@ -6,6 +6,11 @@
   @include flex-center;
   flex-direction: column;
   margin: 90px auto;
+  width: 100%;
+
+  @include mobile {
+    margin: 40px auto;
+  }
 
   &__title {
     @include typography(30px, 700, $color-brand-blue);
@@ -14,6 +19,16 @@
     max-width: 1138px;
     margin-bottom: 24px;
     text-transform: uppercase;
+    text-align: center;
+
+    @include mobile {
+      font-size: 20px;
+
+      &::before,
+      &::after {
+        margin: 0 10px;
+      }
+    }
 
     &::before,
     &::after {
@@ -39,8 +54,19 @@
   &__carousel {
     position: relative;
     width: 1270px;
+    max-width: 100%;
     @include flex-center;
     min-height: 500px;
+
+    @include tablet {
+      width: 100%;
+      padding: 0 40px;
+    }
+
+    @include mobile {
+      padding: 0 10px;
+      min-height: auto;
+    }
   }
 
   &__list {
@@ -48,6 +74,15 @@
     gap: 18px;
     width: 100%;
     padding: 10px 0;
+
+    @include tablet {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
   }
 
   .nav-button {
@@ -64,6 +99,28 @@
     top: 50%;
     transform: translateY(-50%);
     transition: all $transition-default;
+
+    @media (max-width: 1380px) {
+      &.prev {
+        left: 10px;
+      }
+      &.next {
+        right: 10px;
+      }
+    }
+
+    @include tablet {
+      &.prev {
+        left: 5px;
+      }
+      &.next {
+        right: 5px;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
 
     &::after {
       @include typography(24px, 400, $color-text-main);
