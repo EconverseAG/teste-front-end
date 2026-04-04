@@ -24,8 +24,7 @@ export const ProductShelf = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 4;
 
-  if (loading) return <div className="shelf-status">Carregando...</div>;
-  if (error) return <div className="shelf-status">Erro: {error}</div>;
+  if (loading || error || !products) return null;
 
   const visibleProducts = products?.slice(
     currentIndex,
