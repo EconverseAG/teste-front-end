@@ -1,3 +1,5 @@
+import "./style.scss";
+
 import type { Product } from "../../types/product";
 
 interface ProductCardProps {
@@ -36,7 +38,7 @@ export const ProductCard = ({ product, openModal }: ProductCardProps) => {
         </div>
 
         <p className="product-card__installments">
-          ou 2x de {formatPrice(product.price / 2)}
+          ou 2x de {formatPrice(product.price / 2)} sem juros
         </p>
 
         <span className="product-card__shipping">Frete grátis</span>

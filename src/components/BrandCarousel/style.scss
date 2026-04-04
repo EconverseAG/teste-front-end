@@ -2,12 +2,23 @@
 @use "../../styles/mixins" as *;
 
 .brand-carousel {
-  // Largura total ocupada pelos parceiros acima (611 + 13 + 611)
-  @include container(1235px);
+  @include container(1235px, 20px);
   @include flex-center;
   flex-direction: column;
   margin: 80px auto;
-  gap: 40px;
+  gap: 42px;
+  width: 100%;
+  padding: 0;
+
+  @include tablet {
+    margin: 60px auto;
+    gap: 30px;
+  }
+
+  @include mobile {
+    margin: 40px auto;
+    gap: 24px;
+  }
 
   &__title {
     width: 100%;
@@ -15,16 +26,30 @@
     @include typography(30px, 700, $color-brand-blue);
     text-align: center;
     line-height: 100%;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   &__container {
     display: flex;
-    // Centraliza o bloco de marcas para que o respiro lateral seja igual ao dos banners
-    justify-content: center;
-    // Força o espaçamento exato do Figma
-    gap: 42px;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 0;
+    gap: 20px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    @include mobile {
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
   }
 
   &__card {
@@ -34,9 +59,18 @@
     background: $color-white;
     border-radius: 50%;
     box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.13);
-    // Impede que o navegador aperte o círculo para tentar caber no gap
     flex-shrink: 0;
     transition: transform $transition-default;
+
+    @include tablet {
+      width: 160px;
+      height: 160px;
+    }
+
+    @include mobile {
+      width: 140px;
+      height: 140px;
+    }
 
     &:hover {
       transform: translateY(-5px);
@@ -47,5 +81,13 @@
     width: 117px;
     height: auto;
     object-fit: contain;
+
+    @include tablet {
+      width: 90px;
+    }
+
+    @include mobile {
+      width: 80px;
+    }
   }
 }

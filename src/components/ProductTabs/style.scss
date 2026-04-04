@@ -9,6 +9,12 @@
   border: 1px solid $color-border-divider;
   margin-bottom: 24px;
 
+  @include mobile {
+    height: auto;
+    flex-wrap: wrap;
+    border-bottom: none;
+  }
+
   &__item {
     flex: 1;
     height: 100%;
@@ -19,6 +25,19 @@
     @include typography(14px, 400, #3b3b3b);
     text-transform: uppercase;
     transition: all $transition-default;
+    white-space: nowrap;
+
+    @include mobile {
+      flex: none;
+      width: 50%;
+      height: 44px;
+      border-bottom: 1px solid $color-border-divider;
+      font-size: 12px;
+
+      &:nth-child(2n) {
+        border-right: none;
+      }
+    }
 
     &:last-child {
       border-right: none;

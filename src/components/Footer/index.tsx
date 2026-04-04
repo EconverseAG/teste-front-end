@@ -1,4 +1,4 @@
-import logoEconverse from "../../assets/icons/Logo.svg";
+import logoEconverse from "../../assets/Logo.svg";
 import instagramIcon from "../../assets/icons/InstagramIcon.svg";
 import facebookIcon from "../../assets/icons/FacebookIcon.svg";
 import linkedinIcon from "../../assets/icons/LinkedinIcon.svg";

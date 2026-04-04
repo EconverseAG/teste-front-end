@@ -7,14 +7,35 @@
   background: $color-deep-purple;
   @include flex-center;
   margin-top: 80px;
+  overflow: hidden;
+  @include tablet {
+    height: auto;
+    padding: 40px 0;
+  }
 
   &__container {
     @include container(1440px, 80px);
     @include flex-between;
+    max-width: 100%;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    @include mobile {
+      padding: 0 20px;
+    }
   }
 
   &__content {
     max-width: 515px;
+
+    @include tablet {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -23,6 +44,10 @@
     font-size: 32px;
     line-height: 120%;
     color: $color-white;
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   &__subtitle {
@@ -30,17 +55,33 @@
     @include typography(14px, 300, $color-white);
     line-height: 18px;
     max-width: 515px;
+
+    @include tablet {
+      max-width: 100%;
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 12px;
+
+    @include tablet {
+      width: 100%;
+      max-width: 500px;
+      align-items: center;
+    }
   }
 
   &__inputs-group {
     display: flex;
     gap: 8px;
+
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+    }
   }
 
   &__input {
@@ -51,6 +92,10 @@
     border-radius: 8px;
     padding: 12px 24px;
     @include typography(14px, 400, $color-deep-purple);
+
+    @include mobile {
+      width: 100%;
+    }
 
     &::placeholder {
       color: $color-text-muted;
@@ -72,6 +117,10 @@
     );
     @include typography(14px, 600, $color-btn-text-dark);
     line-height: 12px;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__terms {
@@ -79,16 +128,26 @@
     justify-content: flex-start;
     gap: 10px;
 
+    @include tablet {
+      justify-content: center;
+    }
+
     label {
       @include typography(14px, 400, $color-white);
       line-height: 150%;
       cursor: pointer;
+
+      @include mobile {
+        font-size: 12px;
+        text-align: left;
+      }
     }
 
     input[type="checkbox"] {
       cursor: pointer;
       width: 14px;
       height: 14px;
+      flex-shrink: 0;
     }
   }
 }
