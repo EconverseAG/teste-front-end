@@ -59,5 +59,3 @@ yarn dev
 ### 5. Acessar no navegador
 
 O projeto estará disponível em `http://localhost:5173` (ou a porta indicada no terminal).
-
----
