@@ -1,0 +1,19 @@
+.CicleBrandContainer{
+    width: 211px;
+    height:211px;
+    box-shadow: 0px 7px 20px 0px #00000021;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px;
+    .CicleImg{
+        img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}

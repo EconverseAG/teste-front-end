@@ -1,0 +1,74 @@
+.CardPartenerContainer{
+    background-image: url('../../assets/images/partner/partner.png');
+    width: 100%;
+    height:350px ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    border-radius: 20px;
+   .TextPartener{
+    display: flex;
+    border-radius:21px;
+    background-color: #01010184;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: left;
+    height: 100%;
+    padding-left: 44px;
+    padding-top:42px ;
+    p{
+        font-family: Poppins;
+        color: #fff;
+    }
+    p:nth-child(1){
+    width: 216.49px;
+    height: 60px;
+    
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+    }
+    p:nth-child(2){
+        width: 200px;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-top: 22px;
+    }
+
+    .ButtonPartner{
+        align-items: left;
+        margin-top: 32px;
+        button{
+            width: 144px;
+            height: 48px;
+            top: 274px;
+            left: 70.69px;
+            gap: 0px;
+            border-radius: 5px;
+            opacity: 0px;
+            border: none;
+            color: #271C47;
+            background-color: #F7CA11;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            letter-spacing: 0.08em;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover{
+                color: #271c47fe;
+                background-color: #f7c911de;
+            }
+        }
+    }
+   } 
+}
