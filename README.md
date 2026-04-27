@@ -15,25 +15,22 @@ Uma vitrine de produtos desenvolvida em **React + TypeScript + Vite**, consumind
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **React 18** - Biblioteca UI
-- **TypeScript** - Tipagem estática
-- **Vite** - Build tool rápida
-- **Sass** - Pré-processador CSS
-- **Fetch API** - Consumo de dados
+React
+TypeScript
+Vite
+Sass
+JSON
+Pré-requisitos
+Antes de rodar o projeto, certifique-se de ter as seguintes dependências instaladas:
 
-## 📋 Pré-requisitos
+Node.js (versão 16 ou superior)
+npm ou yarn
+Instalação
+Para instalar o projeto, siga os passos abaixo:
 
-- Node.js >= 16.x
-- npm ou yarn
+Clone o repositório em sua máquina local. Para isso, use o comando:
 
-## 🚀 Como Usar
-
-### 1. Clone o repositório
-
-```bash
 git clone https://github.com/lucasrq/teste-front-end.git
-cd teste-front-end
-```
 
 ### 2. Instale as dependências
 
