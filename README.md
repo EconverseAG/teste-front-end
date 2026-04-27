@@ -8,7 +8,6 @@ Uma vitrine de produtos desenvolvida em **React + TypeScript + Vite**, consumind
 ✅ Consumo de API (JSON externo)  
 ✅ Modal interativo ao clicar no produto  
 ✅ Pré-processador Sass  
-✅ Layout pixel-perfect conforme Figma  
 ✅ Sem uso de bibliotecas UI (Bootstrap, Foundation)  
 ✅ HTML Semântico  
 ✅ Boas práticas de SEO  
@@ -134,5 +133,3 @@ Lucas Rodrigues
 [LinkedIn](https://linkedin.com/in/lucasrrq) | [GitHub](https://github.com/lucasrq)
 
 ---
-
-**Data de Conclusão:** Abril de 2026

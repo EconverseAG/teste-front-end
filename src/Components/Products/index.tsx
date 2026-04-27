@@ -33,18 +33,20 @@ function Products() {
 
   const Next = () => {
     setPosition((prev) =>
-      Math.max(prev - itemWidth, -(itemWidth * (products.length - 3.3)))
+      Math.max(prev - itemWidth, -(itemWidth * (products.length - 3.5)))
     );
   };
 
   const handleBuyClick = (product: ProductProps) => {
     setSelectedProduct(product); 
     setIsModalOpen(true); 
+    setButItem(0);
   };
 
   const closeModal = () => {
     setIsModalOpen(false); 
     setSelectedProduct(null); 
+
   };
   useEffect(() => {
     fetch('/api/produtos')
