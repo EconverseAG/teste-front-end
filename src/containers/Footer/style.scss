@@ -4,6 +4,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height:282px;
+    width: 1440px;
+    margin: 0 auto;
     .FooterAbout{
         display: flex;
         flex-direction: column;

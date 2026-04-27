@@ -33,7 +33,7 @@ function Products() {
 
   const Next = () => {
     setPosition((prev) =>
-      Math.max(prev - itemWidth, -(itemWidth * (products.length - 3.5)))
+      Math.max(prev - itemWidth, -(itemWidth * (products.length - 3.3)))
     );
   };
 
@@ -57,7 +57,7 @@ function Products() {
   }, []);
   return (
     <div className="Products">
-      <div className="vector" onClick={Prev}>
+      <div className="vector vector-left " onClick={Prev}>
         <img src={VectorLeft} alt="VectorLeft" />
       </div>
       <main>

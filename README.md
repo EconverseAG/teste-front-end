@@ -1,57 +1,141 @@
-# React + TypeScript + Vite
+# Teste Econverse - Vaga Desenvolvedor Front-End Jr
 
-Teste Econverse: Vaga Desenvolvedor Front-End
+Uma vitrine de produtos desenvolvida em **React + TypeScript + Vite**, consumindo dados de uma API JSON e apresentando uma interface interativa com modal de detalhes do produto.
 
-Este projeto é uma vitrine de produtos desenvolvida com React, TypeScript e Vite. Ele consome dados de produtos em formato JSON e exibe as informações de forma interativa. Ao clicar em um produto, um modal é aberto exibindo as principais informações do produto, conforme o layout fornecido.
+## 🎯 Requisitos Implementados
 
-Tecnologias Utilizadas
+✅ React com TypeScript  
+✅ Consumo de API (JSON externo)  
+✅ Modal interativo ao clicar no produto  
+✅ Pré-processador Sass  
+✅ Layout pixel-perfect conforme Figma  
+✅ Sem uso de bibliotecas UI (Bootstrap, Foundation)  
+✅ HTML Semântico  
+✅ Boas práticas de SEO  
 
-React
-TypeScript
-Vite
-Sass
-JSON
-Pré-requisitos
-Antes de rodar o projeto, certifique-se de ter as seguintes dependências instaladas:
+## 🛠️ Tecnologias Utilizadas
 
-Node.js (versão 16 ou superior)
-npm ou yarn
-Instalação
-Para instalar o projeto, siga os passos abaixo:
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool rápida
+- **Sass** - Pré-processador CSS
+- **Fetch API** - Consumo de dados
 
-Clone o repositório em sua máquina local. Para isso, use o comando:
+## 📋 Pré-requisitos
 
+- Node.js >= 16.x
+- npm ou yarn
+
+## 🚀 Como Usar
+
+### 1. Clone o repositório
+
+```bash
 git clone https://github.com/lucasrq/teste-front-end.git
+cd teste-front-end
+```
 
-Após clonar o repositório, navegue até a pasta do projeto usando o comando:
+### 2. Instale as dependências
 
-cd nome-do-projeto
-
-Agora, instale todas as dependências necessárias para rodar o projeto com o comando:
-
+```bash
 npm install
+```
 
-Compilar e Rodar o Projeto
-Para rodar o projeto em modo de desenvolvimento, execute o seguinte comando:
+### 3. Execute em modo desenvolvimento
 
+```bash
 npm run dev
+```
 
+O projeto será aberto em `http://localhost:5173`
 
-Estrutura de Pastas
-A estrutura de pastas foi organizada da seguinte forma:
+### 4. Build para produção
 
-src/: Contém o código-fonte do projeto.
-components/: Contém os componentes reutilizáveis do projeto.
-    Cada componente possui um arquivo index.tsx para a lógica e um arquivo style.scss para o estilo.
+```bash
+npm run build
+```
 
-containers/: Contém as páginas ou seções do projeto.
-    Cada container também possui um arquivo index.tsx e um arquivo style.scss para o estilo.
+## 📁 Estrutura do Projeto
 
-Essa organização visa tornar o código mais modular e fácil de manter, com componentes e containers separados de acordo com suas responsabilidades.
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Product/        # Card de produto
+│   ├── Products/       # Grade de produtos
+│   ├── Modal/          # Modal de detalhes
+│   └── ...outros
+├── containers/         # Containers/páginas
+│   ├── Banner/
+│   ├── Header/
+│   ├── Footer/
+│   └── ...outros
+├── assets/            # Imagens e recursos
+├── App.tsx
+├── main.tsx
+├── global.scss
+└── vite-env.d.ts
+```
 
-Como Usar
-Ao acessar a página, você verá uma lista de produtos exibidos na vitrine.
-Clique em um produto para abrir um modal com as principais informações extraídas do arquivo JSON.
+## ✨ Funcionalidades
 
-Desenvolvimento
-O layout foi desenvolvido conforme o design fornecido no Figma. 
+### Vitrine de Produtos
+- Exibe lista de produtos consumidos de API JSON
+- Cards com imagem, nome, preço e descrição
+- Design responsivo e moderno
+
+### Modal Interativo
+- Clique em um produto abre modal com detalhes completos
+- Exibe todas as informações do produto em JSON
+- Close ao clicar fora ou no botão X
+- Animação suave de entrada/saída
+
+### Boas Práticas
+- **Componentização** - Componentes pequenos e reutilizáveis
+- **HTML Semântico** - Uso correto de tags semânticas
+- **CSS Organizado** - Sass com estrutura clara
+- **Performance** - Otimizado com React hooks
+- **Acessibilidade** - Estrutura acessível
+
+## 🔗 Referências
+
+- **Layout Figma:** [Acesse aqui](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr)
+- **API JSON:** [https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json)
+
+## 🧪 Testando o Projeto
+
+1. Após rodar `npm run dev`, acesse `http://localhost:5173`
+2. Visualize a lista de produtos
+3. Clique em qualquer produto para abrir o modal
+4. Verifique as informações exibidas
+5. Feche o modal clicando fora ou no X
+
+## 📊 Organização do Código
+
+- **Componentes** estão em `src/components` com padrão: `component/index.tsx` e `component/style.scss`
+- **Containers** estão em `src/containers` com a mesma estrutura
+- **Assets** organizados por tipo: `assets/images`, `assets/brands`, etc
+- **Estilos globais** em `src/global.scss`
+
+## 🎨 Design
+
+O projeto segue fielmente o design fornecido no Figma, respeitando:
+- Paleta de cores exata
+- Tamanhos de fonte especificados
+- Espaçamento e proporções
+- Efeitos visuais (hover, animações)
+
+## 📝 Notas Técnicas
+
+- Uso de **hooks** (useState, useEffect) para gerenciamento de estado
+- **Consumo assíncrono** de dados com tratamento de erros
+- **Tipagem TypeScript** em todos os componentes
+- **Sass** com variáveis e mixins para CSS reutilizável
+
+## 👨‍💻 Autor
+
+Lucas Rodrigues  
+[LinkedIn](https://linkedin.com/in/lucasrrq) | [GitHub](https://github.com/lucasrq)
+
+---
+
+**Data de Conclusão:** Abril de 2026
