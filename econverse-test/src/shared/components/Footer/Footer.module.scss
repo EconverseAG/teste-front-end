@@ -1,0 +1,125 @@
+@use "@/src/shared/styles/variables" as *;
+@use "@/src/shared/styles/mixins" as *;
+
+.footer {
+  margin-top: $space-12;
+  background: #f4f4f6;
+  color: $color-muted;
+
+  small {
+    display: block;
+    padding: $space-3;
+    border-top: 1px solid $color-border;
+    text-align: center;
+  }
+}
+
+.newsletter {
+  display: grid;
+  gap: $space-5;
+  background: $color-night;
+  color: $color-white;
+  padding: $space-6 max(1rem, calc((100vw - 70rem) / 2));
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+  }
+
+  p {
+    max-width: 34rem;
+    margin: $space-1 0 0;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  form {
+    display: grid;
+    gap: $space-2;
+  }
+
+  label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  input {
+    min-height: 2.45rem;
+    border: 0;
+    border-radius: $radius-sm;
+    padding: 0 $space-4;
+  }
+
+  button {
+    min-height: 2.45rem;
+    border: 0;
+    border-radius: $radius-sm;
+    background: $color-brand;
+    color: $color-ink;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1.45fr;
+    align-items: center;
+
+    form {
+      grid-template-columns: 1fr 1fr auto;
+    }
+  }
+}
+
+.links {
+  @include container;
+
+  display: grid;
+  gap: $space-8;
+  padding-block: $space-10;
+
+  @include tablet {
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+  }
+
+  nav {
+    display: grid;
+    gap: $space-2;
+    align-content: start;
+  }
+
+  h2 {
+    margin: 0 0 $space-2;
+    color: $color-ink;
+    font-size: 0.86rem;
+  }
+
+  a,
+  p {
+    margin: 0;
+    font-size: 0.78rem;
+  }
+}
+
+.brand {
+  display: grid;
+  gap: $space-3;
+  align-content: start;
+
+  strong {
+    color: $color-ink;
+    font-size: 1.15rem;
+  }
+
+  span {
+    display: inline-grid;
+    width: 1.25rem;
+    height: 1.25rem;
+    place-items: center;
+    border-radius: $radius-pill;
+    background: $color-brand;
+    font-size: 0.65rem;
+  }
+}
