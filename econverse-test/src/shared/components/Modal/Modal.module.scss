@@ -1,0 +1,33 @@
+@use "@/src/shared/styles/variables" as *;
+@use "@/src/shared/styles/mixins" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  display: grid;
+  place-items: center;
+  padding: $space-4;
+  background: rgba(10, 10, 14, 0.54);
+  animation: fade-up $transition-base both;
+}
+
+.dialog {
+  position: relative;
+  width: min(100%, 39rem);
+  max-height: min(88vh, 34rem);
+  overflow: auto;
+  border-radius: $radius-lg;
+  background: $color-white;
+  box-shadow: $shadow-modal;
+  animation: scale-in $transition-slow both;
+}
+
+.close {
+  position: absolute;
+  top: $space-3;
+  right: $space-3;
+  z-index: 1;
+  font-size: 1.4rem;
+  line-height: 1;
+}
