@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Smartphone premium</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <rect x="74" y="28" width="112" height="204" rx="22" fill="#f8f8f3" stroke="#cdd0d7" stroke-width="3"/>
+  <rect x="92" y="46" width="84" height="168" rx="16" fill="url(#screen)"/>
+  <circle cx="91" cy="50" r="9" fill="#15151b"/>
+  <circle cx="113" cy="50" r="7" fill="#15151b"/>
+  <circle cx="91" cy="72" r="7" fill="#15151b"/>
+  <defs>
+    <linearGradient id="screen" x1="92" x2="176" y1="46" y2="214">
+      <stop stop-color="#07131f"/>
+      <stop offset=".35" stop-color="#12d8b5"/>
+      <stop offset=".62" stop-color="#08316d"/>
+      <stop offset="1" stop-color="#01030a"/>
+    </linearGradient>
+  </defs>
+</svg>

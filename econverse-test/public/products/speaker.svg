@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Speaker inteligente</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <rect x="72" y="42" width="116" height="176" rx="38" fill="#16161d"/>
+  <circle cx="130" cy="103" r="34" fill="#2d36c9"/>
+  <circle cx="130" cy="103" r="16" fill="#18c2a3"/>
+  <path d="M102 159h56M109 178h42" stroke="#f6c600" stroke-width="10" stroke-linecap="round"/>
+</svg>

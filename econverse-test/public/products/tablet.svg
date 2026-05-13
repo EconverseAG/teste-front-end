@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Tablet criativo</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <rect x="50" y="38" width="160" height="184" rx="24" fill="#15151d"/>
+  <rect x="66" y="55" width="128" height="150" rx="14" fill="url(#paint)"/>
+  <circle cx="130" cy="214" r="5" fill="#eceef5"/>
+  <defs>
+    <linearGradient id="paint" x1="66" x2="194" y1="55" y2="205">
+      <stop stop-color="#f6c600"/>
+      <stop offset=".48" stop-color="#ef6a80"/>
+      <stop offset="1" stop-color="#2d36c9"/>
+    </linearGradient>
+  </defs>
+</svg>

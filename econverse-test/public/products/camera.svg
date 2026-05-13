@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Câmera compacta 4K</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <rect x="50" y="76" width="160" height="112" rx="24" fill="#15151d"/>
+  <rect x="78" y="56" width="54" height="28" rx="10" fill="#2d36c9"/>
+  <circle cx="137" cy="132" r="42" fill="#2d36c9"/>
+  <circle cx="137" cy="132" r="25" fill="#0b1220"/>
+  <circle cx="145" cy="124" r="10" fill="#18c2a3"/>
+  <circle cx="76" cy="101" r="9" fill="#f6c600"/>
+</svg>

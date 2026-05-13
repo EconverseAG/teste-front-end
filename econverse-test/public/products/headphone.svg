@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Headphone wireless</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <path d="M70 131c0-42 24-75 60-75s60 33 60 75" fill="none" stroke="#16161d" stroke-width="14" stroke-linecap="round"/>
+  <rect x="45" y="121" width="48" height="76" rx="18" fill="#2d36c9"/>
+  <rect x="167" y="121" width="48" height="76" rx="18" fill="#2d36c9"/>
+  <path d="M93 181c20 15 55 15 74 0" fill="none" stroke="#18c2a3" stroke-width="10" stroke-linecap="round"/>
+</svg>

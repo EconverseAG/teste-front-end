@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-labelledby="title">
+  <title id="title">Notebook ultrafino</title>
+  <rect width="260" height="260" rx="32" fill="#f5f6fb"/>
+  <rect x="45" y="58" width="170" height="112" rx="12" fill="#15151d"/>
+  <rect x="58" y="72" width="144" height="84" rx="6" fill="url(#screen)"/>
+  <path d="M31 178h198l-18 24H49z" fill="#d9dde8"/>
+  <path d="M105 184h50l-5 8h-40z" fill="#b7bcc9"/>
+  <defs>
+    <linearGradient id="screen" x1="58" x2="202" y1="72" y2="156">
+      <stop stop-color="#16161d"/>
+      <stop offset=".5" stop-color="#2d36c9"/>
+      <stop offset="1" stop-color="#18c2a3"/>
+    </linearGradient>
+  </defs>
+</svg>
