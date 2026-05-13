@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Econverse Test
 
-## Getting Started
+Projeto de teste técnico para a Econverse: uma landing page e-commerce responsiva com vitrine de produtos, consumo de JSON externo e modal de detalhes do produto.
 
-First, run the development server:
+## Tecnologias
+
+- Next.js 16 com App Router
+- React 19
+- TypeScript
+- Sass/SCSS Modules
+- ESLint
+- Prettier
+
+## Decisões de arquitetura
+
+A estrutura segue uma organização feature-first leve. A feature `products` concentra tipos, service, hook e componentes da vitrine, enquanto elementos reutilizáveis ficam em `shared/components`. Os estilos globais foram separados em tokens, mixins e animações para manter consistência visual sem acoplar componentes.
+
+O service normaliza respostas em diferentes formatos comuns de JSON (`products`, `items`, `data`, `results`) e evita `any`, recebendo dados externos como `unknown` antes de mapear para o tipo `Product`.
+
+## Como instalar
+
+```bash
+npm install
+```
+
+## Como rodar localmente
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Como gerar build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## Como rodar lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Como formatar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run format
+```
 
-## Deploy on Vercel
+## API de produtos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Por padrão o projeto consome o endpoint externo por meio da rota interna `/api/products`, evitando problemas de CORS no navegador:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```txt
+https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
+```
+
+Se o endpoint externo estiver indisponível durante o desenvolvimento, a rota retorna um fallback local tipado para manter a vitrine navegável. Para usar outro endpoint externo, crie um `.env.local`:
+
+```bash
+NEXT_PUBLIC_PRODUCTS_API_URL=https://seu-endpoint.com/produtos.json
+```
+
+Também é possível apontar o cliente diretamente para outro JSON:
+
+```bash
+NEXT_PUBLIC_PRODUCTS_API_URL_CLIENT=https://seu-endpoint.com/produtos.json
+```
+
+## Responsividade, SEO e acessibilidade
+
+- Layout mobile first com breakpoints em SCSS para tablet, desktop e telas largas.
+- Metadata configurada no `layout.tsx` com title, description e Open Graph.
+- HTML semântico com `header`, `main`, `section`, `article` e `footer`.
+- Modal com `role="dialog"`, `aria-modal`, fechamento por ESC, overlay e botão acessível.
+- Scroll da página bloqueado enquanto o modal está aberto.
+- Foco visível e suporte a `prefers-reduced-motion`.
+- Imagens com `alt` e cards operáveis por botões reais.
