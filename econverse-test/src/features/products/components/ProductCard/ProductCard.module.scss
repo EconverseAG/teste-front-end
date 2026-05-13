@@ -1,0 +1,96 @@
+@use "@/src/shared/styles/variables" as *;
+
+.card {
+  display: grid;
+  gap: $space-2;
+  min-width: 0;
+  padding: $space-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-white;
+  box-shadow: 0 6px 18px rgba(22, 22, 29, 0.08);
+  transition:
+    transform $transition-slow,
+    box-shadow $transition-slow,
+    border-color $transition-base;
+
+  &:hover {
+    border-color: rgba(45, 54, 201, 0.28);
+    box-shadow: $shadow-card;
+    transform: translateY(-4px);
+  }
+}
+
+.openDetails {
+  display: grid;
+  gap: $space-2;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  text-align: left;
+}
+
+.imageWrap {
+  display: grid;
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  border-radius: $radius-sm;
+  background: linear-gradient(180deg, #fafafa, #f1f2f7);
+
+  img {
+    width: min(76%, 8.4rem);
+    height: min(76%, 8.4rem);
+    object-fit: contain;
+    transition: transform $transition-slow;
+  }
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+.info {
+  display: grid;
+  gap: 0.12rem;
+}
+
+.name,
+.description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.name {
+  min-height: 2rem;
+  color: $color-ink;
+  font-size: 0.74rem;
+  font-weight: 600;
+  -webkit-line-clamp: 2;
+}
+
+.description {
+  min-height: 1.7rem;
+  color: $color-muted;
+  font-size: 0.62rem;
+  -webkit-line-clamp: 2;
+}
+
+.oldPrice {
+  color: #8b8e9b;
+  font-size: 0.62rem;
+  text-decoration: line-through;
+}
+
+.info strong {
+  color: $color-ink;
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+
+.info small {
+  color: $color-primary;
+  font-size: 0.58rem;
+}

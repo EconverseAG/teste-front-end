@@ -1,0 +1,98 @@
+@use "@/src/shared/styles/variables" as *;
+@use "@/src/shared/styles/mixins" as *;
+
+.content {
+  display: grid;
+  gap: $space-4;
+  padding: $space-6 $space-4 $space-4;
+
+  @include tablet {
+    grid-template-columns: 0.85fr 1fr;
+    align-items: center;
+    padding: $space-8;
+  }
+}
+
+.media {
+  display: grid;
+  min-height: 12.5rem;
+  place-items: center;
+  border-radius: $radius-md;
+  background: linear-gradient(180deg, #f8f8fb, #eef0f8);
+
+  img {
+    width: min(78%, 13rem);
+    max-height: 13.5rem;
+    object-fit: contain;
+  }
+}
+
+.details {
+  display: grid;
+  gap: $space-3;
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    color: $color-ink;
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  strong {
+    color: $color-ink;
+    font-size: 1.12rem;
+  }
+
+  p,
+  small {
+    color: $color-muted;
+    font-size: 0.78rem;
+  }
+}
+
+.category {
+  color: $color-primary !important;
+  font-size: 0.58rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.purchase {
+  display: grid;
+  gap: $space-3;
+  margin-top: $space-2;
+
+  @include tablet {
+    grid-template-columns: 6.5rem 1fr;
+  }
+}
+
+.quantity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  min-height: 2rem;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  overflow: hidden;
+  text-align: center;
+
+  button {
+    height: 100%;
+    border: 0;
+    background: $color-white;
+    color: $color-primary;
+    font-weight: 800;
+  }
+
+  span {
+    color: $color-ink;
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+}
