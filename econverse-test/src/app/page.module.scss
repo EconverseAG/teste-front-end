@@ -1,0 +1,235 @@
+@use "@/src/shared/styles/variables" as *;
+@use "@/src/shared/styles/mixins" as *;
+
+.hero {
+  min-height: clamp(12rem, 23vw, 15.5rem);
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(8, 10, 18, 0.82), rgba(8, 10, 18, 0.36) 58%, rgba(8, 10, 18, 0.14)),
+    url("https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=1800&q=82")
+      center / cover;
+  color: $color-white;
+}
+
+.heroContent {
+  @include container;
+
+  padding-block: $space-6;
+
+  h1 {
+    max-width: 24rem;
+    margin: 0;
+    font-size: clamp(1.65rem, 4vw, 2.25rem);
+    line-height: 0.98;
+  }
+
+  p {
+    max-width: 24rem;
+    margin: $space-2 0 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: clamp(0.86rem, 2vw, 1.05rem);
+  }
+
+  strong {
+    color: $color-brand;
+  }
+}
+
+.heroEyebrow {
+  margin: 0 0 $space-2 !important;
+  color: $color-brand !important;
+  font-size: 0.58rem !important;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.75rem;
+  min-height: 2rem;
+  margin-top: $space-3;
+  border-radius: $radius-sm;
+  background: $color-brand;
+  color: $color-ink;
+  font-size: 0.58rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition:
+    background-color $transition-base,
+    transform $transition-base;
+
+  &:hover {
+    background: $color-brand-strong;
+    transform: translateY(-1px);
+  }
+}
+
+.categories {
+  @include container;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-3;
+  padding-block: $space-4 $space-5;
+
+  @include tablet {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.category {
+  display: grid;
+  min-height: 5.35rem;
+  place-items: center;
+  gap: $space-2;
+  border-radius: $radius-md;
+  background: $color-soft;
+  box-shadow: 0 8px 20px rgba(22, 22, 29, 0.06);
+  text-align: center;
+  transition:
+    color $transition-base,
+    transform $transition-slow,
+    box-shadow $transition-slow;
+
+  span {
+    display: grid;
+    width: 2.35rem;
+    height: 2.35rem;
+    place-items: center;
+    border-radius: $radius-md;
+    background: $color-white;
+    color: $color-ink;
+    font-size: 1.15rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 0.56rem;
+  }
+
+  &:hover {
+    box-shadow: $shadow-card;
+    transform: translateY(-3px);
+  }
+}
+
+.activeCategory {
+  color: $color-primary;
+}
+
+.partnerGrid {
+  @include container;
+
+  display: grid;
+  gap: $space-4;
+  padding-block: $space-4;
+
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.partnerCard {
+  min-height: 9.5rem;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: $radius-md;
+  background:
+    linear-gradient(90deg, rgba(8, 10, 18, 0.82), rgba(8, 10, 18, 0.2)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80")
+      center / cover;
+  color: $color-white;
+
+  div {
+    padding: $space-5;
+  }
+
+  h2,
+  p {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    line-height: 1;
+  }
+
+  p {
+    max-width: 20rem;
+    margin-top: $space-1;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.74rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.95rem;
+    margin-top: $space-3;
+    padding-inline: $space-4;
+    border-radius: $radius-sm;
+    background: $color-brand;
+    color: $color-ink;
+    font-size: 0.58rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.brands {
+  @include container;
+
+  padding-block: $space-6;
+  text-align: center;
+
+  h2 {
+    margin: 0 0 $space-5;
+    color: $color-primary;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-5;
+
+    @include tablet {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+
+.brand {
+  display: grid;
+  width: min(100%, 8.2rem);
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  justify-self: center;
+  border-radius: $radius-pill;
+  background: $color-white;
+  box-shadow: $shadow-soft;
+  color: $color-ink;
+  font-size: 0.85rem;
+  font-weight: 800;
+
+  span {
+    display: inline-grid;
+    width: 1.15rem;
+    height: 1.15rem;
+    place-items: center;
+    margin-right: 0.02rem;
+    border-radius: $radius-pill;
+    background: $color-brand;
+    font-size: 0.58rem;
+  }
+}
