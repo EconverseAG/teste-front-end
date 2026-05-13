@@ -1,0 +1,51 @@
+@use "@/src/shared/styles/variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  border: 0;
+  border-radius: $radius-sm;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transition:
+    transform $transition-base,
+    background-color $transition-base,
+    box-shadow $transition-base;
+}
+
+.primary {
+  background: $color-primary;
+  color: $color-white;
+  box-shadow: 0 8px 16px rgba(45, 54, 201, 0.22);
+
+  &:hover {
+    background: $color-primary-dark;
+    transform: translateY(-1px);
+  }
+}
+
+.ghost {
+  background: rgba(45, 54, 201, 0.08);
+  color: $color-primary;
+
+  &:hover {
+    background: rgba(45, 54, 201, 0.14);
+  }
+}
+
+.icon {
+  width: 2.5rem;
+  min-height: 2.5rem;
+  border-radius: $radius-pill;
+  background: transparent;
+  color: $color-muted;
+
+  &:hover {
+    background: $color-soft;
+    color: $color-ink;
+  }
+}
