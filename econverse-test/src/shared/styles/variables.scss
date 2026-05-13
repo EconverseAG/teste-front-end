@@ -1,0 +1,40 @@
+$color-brand: #f6c600;
+$color-brand-strong: #e3b500;
+$color-primary: #2d36c9;
+$color-primary-dark: #1f2498;
+$color-ink: #16161d;
+$color-muted: #666979;
+$color-soft: #f6f7fb;
+$color-border: #e8e9f0;
+$color-white: #ffffff;
+$color-night: #20133f;
+$color-danger: #bd1e43;
+
+$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+
+$radius-sm: 0.375rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-pill: 999px;
+
+$shadow-soft: 0 12px 30px rgba(22, 22, 29, 0.08);
+$shadow-card: 0 10px 22px rgba(22, 22, 29, 0.1);
+$shadow-modal: 0 24px 70px rgba(22, 22, 29, 0.24);
+
+$transition-fast: 160ms ease;
+$transition-base: 240ms ease;
+$transition-slow: 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+
+$z-header: 20;
+$z-modal: 100;

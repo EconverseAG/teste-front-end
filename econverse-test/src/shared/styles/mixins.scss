@@ -1,0 +1,31 @@
+@mixin tablet {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 64rem) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: 80rem) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: 3px solid rgba(45, 54, 201, 0.28);
+  outline-offset: 3px;
+}
+
+@mixin container {
+  width: min(100% - 2rem, 63rem);
+  margin-inline: auto;
+
+  @include tablet {
+    width: min(100% - 4rem, 63rem);
+  }
+}
