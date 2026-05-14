@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
 import { fallbackProducts } from "@/src/shared/data/fallback-products";
 
-const PRODUCTS_API_URL =
-  process.env.NEXT_PUBLIC_PRODUCTS_API_URL ??
-  "https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
+const PRODUCTS_API_URL = process.env.NEXT_PUBLIC_PRODUCTS_API_URL;
 
 export async function GET() {
+  // If the env var is not set, return the fallback immediately to avoid passing undefined to fetch
+  if (!PRODUCTS_API_URL) {
+    return NextResponse.json({ products: fallbackProducts, source: "fallback" });
+  }
+
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 2500);
 
