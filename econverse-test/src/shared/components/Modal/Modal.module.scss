@@ -14,10 +14,10 @@
 
 .dialog {
   position: relative;
-  width: min(100%, 39rem);
-  max-height: min(88vh, 34rem);
+  width: min(100%, 48.0625rem);
+  max-height: min(88vh, 28rem);
   overflow: auto;
-  border-radius: $radius-lg;
+  border-radius: 0.375rem;
   background: $color-white;
   box-shadow: $shadow-modal;
   animation: scale-in $transition-slow both;

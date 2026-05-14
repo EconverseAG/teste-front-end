@@ -27,6 +27,7 @@ export function ProductCard({ onSelect, product }: ProductCardProps) {
           ) : null}
           <strong>{currencyFormatter.format(product.price)}</strong>
           <small>{product.installment}</small>
+          <em>Frete grátis</em>
         </span>
       </button>
       <Button onClick={() => onSelect(product)}>Comprar</Button>

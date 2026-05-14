@@ -3,6 +3,7 @@
 import { Button } from "@/src/shared/components/Button/Button";
 import { Modal } from "@/src/shared/components/Modal/Modal";
 import type { Product } from "@/src/features/products/types/product";
+import { useState } from "react";
 import styles from "./ProductModal.module.scss";
 
 type ProductModalProps = {
@@ -17,6 +18,7 @@ const currencyFormatter = new Intl.NumberFormat("pt-BR", {
 
 export function ProductModal({ onClose, product }: ProductModalProps) {
   const titleId = "product-modal-title";
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <Modal isOpen={Boolean(product)} onClose={onClose} titleId={titleId}>
@@ -33,11 +35,15 @@ export function ProductModal({ onClose, product }: ProductModalProps) {
             <small>Entrega rápida, compra segura e parcelamento em {product.installment}.</small>
             <div className={styles.purchase}>
               <div aria-label="Quantidade" className={styles.quantity}>
-                <button type="button">−</button>
-                <span>01</span>
-                <button type="button">+</button>
+                <button onClick={() => setQuantity((current) => Math.max(1, current - 1))} type="button">
+                  −
+                </button>
+                <span>{String(quantity).padStart(2, "0")}</span>
+                <button onClick={() => setQuantity((current) => current + 1)} type="button">
+                  +
+                </button>
               </div>
-              <Button>Comprar</Button>
+              <Button className={styles.buyButton}>Comprar</Button>
             </div>
           </div>
         </div>

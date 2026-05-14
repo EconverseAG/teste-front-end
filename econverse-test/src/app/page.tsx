@@ -4,13 +4,13 @@ import { Header } from "@/src/shared/components/Header/Header";
 import styles from "./page.module.scss";
 
 const categories = [
-  { label: "Tecnologia", icon: "▣", active: true },
-  { label: "Supermercado", icon: "⌂" },
-  { label: "Bebidas", icon: "♢" },
-  { label: "Ferramentas", icon: "⌁" },
-  { label: "Saúde", icon: "♡" },
-  { label: "Esportes", icon: "◬" },
-  { label: "Moda", icon: "♧" },
+  { label: "Tecnologia", image: "/figma-assets/category-tech.png", active: true },
+  { label: "Supermercado", image: "/figma-assets/category-market.png" },
+  { label: "Bebidas", image: "/figma-assets/category-drinks.png" },
+  { label: "Ferramentas", image: "/figma-assets/category-tools.png" },
+  { label: "Saúde", image: "/figma-assets/category-health.png" },
+  { label: "Esportes e Fitness", image: "/figma-assets/category-sports.png" },
+  { label: "Moda", image: "/figma-assets/category-fashion.png" },
 ];
 
 const tabs = ["Celular", "Acessórios", "Tablets", "Notebooks", "TVs", "Ver todos"];
@@ -39,7 +39,9 @@ export default function Home() {
               className={`${styles.category} ${category.active ? styles.activeCategory : ""}`}
               key={category.label}
             >
-              <span aria-hidden="true">{category.icon}</span>
+              <span aria-hidden="true">
+                <img alt="" src={category.image} />
+              </span>
               <h2>{category.label}</h2>
             </article>
           ))}
@@ -78,7 +80,7 @@ export default function Home() {
           <div>
             {[1, 2, 3, 4, 5].map((brand) => (
               <article className={styles.brand} key={brand} aria-label="Econverse">
-                <span>ec</span>onverse
+                <img alt="" src="/figma-assets/logo.svg" />
               </article>
             ))}
           </div>

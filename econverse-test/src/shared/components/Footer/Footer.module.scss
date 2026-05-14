@@ -2,7 +2,7 @@
 @use "@/src/shared/styles/mixins" as *;
 
 .footer {
-  margin-top: $space-12;
+  margin-top: 5.625rem;
   background: #f4f4f6;
   color: $color-muted;
 
@@ -19,25 +19,26 @@
   gap: $space-5;
   background: $color-night;
   color: $color-white;
-  padding: $space-6 max(1rem, calc((100vw - 70rem) / 2));
+  min-height: 10.125rem;
+  padding: 2.5rem max(1rem, calc((100vw - 80rem) / 2));
 
   h2 {
     margin: 0;
-    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    font-size: clamp(1.55rem, 3vw, 2rem);
   }
 
   p {
-    max-width: 34rem;
+    max-width: 32.2rem;
     margin: $space-1 0 0;
     color: rgba(255, 255, 255, 0.72);
   }
 
   form {
     display: grid;
-    gap: $space-2;
+    gap: 0.5rem;
   }
 
-  label {
+  > form > label:not(.accept) {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -73,12 +74,27 @@
   }
 }
 
+.accept {
+  display: inline-flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  gap: 0.35rem;
+  color: $color-white;
+  font-size: 0.875rem;
+
+  input {
+    width: 0.95rem;
+    min-height: 0.95rem;
+    accent-color: $color-brand;
+  }
+}
+
 .links {
   @include container;
 
   display: grid;
   gap: $space-8;
-  padding-block: $space-10;
+  padding-block: 2.625rem;
 
   @include tablet {
     grid-template-columns: 1.5fr repeat(3, 1fr);
@@ -108,18 +124,18 @@
   gap: $space-3;
   align-content: start;
 
-  strong {
-    color: $color-ink;
-    font-size: 1.15rem;
+  > img {
+    width: 10.25rem;
+    height: auto;
   }
+}
 
-  span {
-    display: inline-grid;
-    width: 1.25rem;
-    height: 1.25rem;
-    place-items: center;
-    border-radius: $radius-pill;
-    background: $color-brand;
-    font-size: 0.65rem;
+.social {
+  display: flex;
+  gap: 1.625rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }

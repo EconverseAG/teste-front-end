@@ -2,33 +2,33 @@
 @use "@/src/shared/styles/mixins" as *;
 
 .hero {
-  min-height: clamp(12rem, 23vw, 15.5rem);
+  min-height: 24.375rem;
   display: grid;
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(8, 10, 18, 0.82), rgba(8, 10, 18, 0.36) 58%, rgba(8, 10, 18, 0.14)),
-    url("https://images.unsplash.com/photo-1607082350899-7e105aa886ae?auto=format&fit=crop&w=1800&q=82")
-      center / cover;
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.32) 62%, rgba(0, 0, 0, 0.04) 100%),
+    url("/figma-assets/hero.png") center 43% / cover;
   color: $color-white;
 }
 
 .heroContent {
   @include container;
 
-  padding-block: $space-6;
+  padding-block: 4.9rem 3.5rem;
 
   h1 {
-    max-width: 24rem;
+    max-width: 51.5rem;
     margin: 0;
-    font-size: clamp(1.65rem, 4vw, 2.25rem);
-    line-height: 0.98;
+    font-size: clamp(2.45rem, 4.45vw, 4rem);
+    line-height: 1;
+    font-weight: 700;
   }
 
   p {
-    max-width: 24rem;
-    margin: $space-2 0 0;
+    max-width: 28rem;
+    margin: 0.1rem 0 0;
     color: rgba(255, 255, 255, 0.86);
-    font-size: clamp(0.86rem, 2vw, 1.05rem);
+    font-size: clamp(1.1rem, 2vw, 2rem);
   }
 
   strong {
@@ -37,7 +37,8 @@
 }
 
 .heroEyebrow {
-  margin: 0 0 $space-2 !important;
+  display: none;
+  margin: 0 !important;
   color: $color-brand !important;
   font-size: 0.58rem !important;
   font-weight: 900;
@@ -50,12 +51,13 @@
   align-items: center;
   justify-content: center;
   min-width: 6.75rem;
-  min-height: 2rem;
-  margin-top: $space-3;
-  border-radius: $radius-sm;
+  min-width: 12.875rem;
+  min-height: 3.125rem;
+  margin-top: 2rem;
+  border-radius: 0.3125rem;
   background: $color-brand;
-  color: $color-ink;
-  font-size: 0.58rem;
+  color: #271c47;
+  font-size: 1rem;
   font-weight: 900;
   text-transform: uppercase;
   transition:
@@ -73,8 +75,8 @@
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: $space-3;
-  padding-block: $space-4 $space-5;
+  gap: 2.625rem;
+  padding-block: 2.4375rem 5.625rem;
 
   @include tablet {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -87,12 +89,12 @@
 
 .category {
   display: grid;
-  min-height: 5.35rem;
+  min-height: 10.6875rem;
   place-items: center;
-  gap: $space-2;
+  gap: 1.375rem;
   border-radius: $radius-md;
-  background: $color-soft;
-  box-shadow: 0 8px 20px rgba(22, 22, 29, 0.06);
+  background: #f4f4f4;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.13);
   text-align: center;
   transition:
     color $transition-base,
@@ -101,18 +103,25 @@
 
   span {
     display: grid;
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 8rem;
+    height: 8rem;
     place-items: center;
     border-radius: $radius-md;
-    background: $color-white;
+    background: transparent;
     color: $color-ink;
-    font-size: 1.15rem;
+  }
+
+  img {
+    width: 3.9rem;
+    height: 3.9rem;
+    object-fit: contain;
   }
 
   h2 {
     margin: 0;
-    font-size: 0.56rem;
+    color: #4e4e4e;
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   &:hover {
@@ -123,14 +132,24 @@
 
 .activeCategory {
   color: $color-primary;
+
+  span {
+    background: $color-white;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
+  }
+
+  h2 {
+    color: $color-primary;
+    font-weight: 600;
+  }
 }
 
 .partnerGrid {
   @include container;
 
   display: grid;
-  gap: $space-4;
-  padding-block: $space-4;
+  gap: 0.8125rem;
+  padding-block: 4.1rem 4.5rem;
 
   @include tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -138,19 +157,18 @@
 }
 
 .partnerCard {
-  min-height: 9.5rem;
+  min-height: 21.875rem;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  border-radius: $radius-md;
+  border-radius: 1.25rem;
   background:
-    linear-gradient(90deg, rgba(8, 10, 18, 0.82), rgba(8, 10, 18, 0.2)),
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80")
-      center / cover;
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.8) 100%),
+    url("/figma-assets/partner.png") center / cover;
   color: $color-white;
 
   div {
-    padding: $space-5;
+    padding: 0 0 2.5rem 2.75rem;
   }
 
   h2,
@@ -159,28 +177,29 @@
   }
 
   h2 {
-    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-size: clamp(2rem, 3vw, 2.5rem);
     line-height: 1;
   }
 
   p {
     max-width: 20rem;
-    margin-top: $space-1;
+    margin-top: 0.5rem;
     color: rgba(255, 255, 255, 0.78);
-    font-size: 0.74rem;
+    font-size: 1rem;
   }
 
   a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 1.95rem;
-    margin-top: $space-3;
-    padding-inline: $space-4;
-    border-radius: $radius-sm;
+    min-height: 3rem;
+    margin-top: 2rem;
+    padding-inline: 1.65rem;
+    border-radius: 0.375rem;
     background: $color-brand;
     color: $color-ink;
-    font-size: 0.58rem;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -189,19 +208,19 @@
 .brands {
   @include container;
 
-  padding-block: $space-6;
+  padding-block: 2.9rem 4.6rem;
   text-align: center;
 
   h2 {
-    margin: 0 0 $space-5;
+    margin: 0 0 2rem;
     color: $color-primary;
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(1.45rem, 3vw, 1.875rem);
   }
 
   > div {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: $space-5;
+    gap: 2.625rem;
 
     @include tablet {
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -211,7 +230,7 @@
 
 .brand {
   display: grid;
-  width: min(100%, 8.2rem);
+  width: min(100%, 13.1875rem);
   aspect-ratio: 1 / 1;
   place-items: center;
   justify-self: center;
@@ -222,14 +241,8 @@
   font-size: 0.85rem;
   font-weight: 800;
 
-  span {
-    display: inline-grid;
-    width: 1.15rem;
-    height: 1.15rem;
-    place-items: center;
-    margin-right: 0.02rem;
-    border-radius: $radius-pill;
-    background: $color-brand;
-    font-size: 0.58rem;
+  img {
+    width: 7.3125rem;
+    height: auto;
   }
 }

@@ -4,7 +4,7 @@
 .showcase {
   @include container;
 
-  padding-block: $space-5;
+  padding-block: 2.75rem;
   animation: fade-up $transition-slow both;
 }
 
@@ -12,8 +12,8 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: $space-3;
-  margin-bottom: $space-2;
+  gap: 2.25rem;
+  margin-bottom: 0.25rem;
   text-align: center;
 
   span {
@@ -24,13 +24,14 @@
   h2 {
     margin: 0;
     color: $color-primary;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: clamp(1.45rem, 3vw, 1.875rem);
+    font-weight: 700;
     line-height: 1.15;
   }
 
   a {
     color: $color-ink;
-    font-size: 0.55rem;
+    font-size: 0.9375rem;
     font-weight: 700;
   }
 }
@@ -38,20 +39,20 @@
 .tabs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-bottom: $space-4;
+  margin-bottom: 1.375rem;
   border: 1px solid $color-border;
-  border-radius: $radius-sm;
+  border-radius: 0;
   overflow: hidden;
 
   button {
-    min-height: 1.55rem;
+    min-height: 2.5rem;
     border: 0;
     border-right: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
     background: $color-white;
-    color: $color-muted;
-    font-size: 0.5rem;
-    font-weight: 800;
+    color: #3b3b3b;
+    font-size: 1rem;
+    font-weight: 400;
     text-transform: uppercase;
     transition:
       color $transition-base,
@@ -74,6 +75,7 @@
 
 .activeTab {
   color: $color-primary !important;
+  font-weight: 700 !important;
 }
 
 .status {

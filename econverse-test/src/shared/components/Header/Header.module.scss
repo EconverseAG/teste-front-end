@@ -6,7 +6,7 @@
   top: 0;
   z-index: $z-header;
   background: $color-white;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid #eeeeee;
 }
 
 .topbar {
@@ -17,13 +17,26 @@
 
     display: flex;
     justify-content: center;
-    gap: $space-10;
-    padding-block: 0.22rem;
+    gap: 7.4rem;
+    min-height: 2rem;
+    padding-block: 0.35rem;
     color: $color-muted;
-    font-size: 0.62rem;
+    font-size: 0.75rem;
 
-    span::first-letter {
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    strong {
       color: $color-primary;
+      font-weight: 700;
     }
   }
 }
@@ -32,27 +45,19 @@
   @include container;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 10.25rem 1fr 13.5rem;
   align-items: center;
-  gap: $space-4;
-  padding-block: 0.55rem;
+  gap: 3rem;
+  min-height: 4.5rem;
+  padding-block: 0.72rem;
 }
 
 .logo {
-  color: $color-ink;
-  font-size: 1rem;
-  font-weight: 800;
+  display: inline-flex;
 
-  span {
-    display: inline-grid;
-    width: 1.1rem;
-    height: 1.1rem;
-    place-items: center;
-    margin-right: 0.02rem;
-    border-radius: $radius-pill;
-    background: $color-brand;
-    color: $color-ink;
-    font-size: 0.55rem;
+  img {
+    width: 8.7rem;
+    height: auto;
   }
 }
 
@@ -74,13 +79,13 @@
 
   input {
     width: 100%;
-    height: 2rem;
+    height: 3rem;
     border: 1px solid transparent;
-    border-radius: $radius-pill;
+    border-radius: $radius-md;
     background: $color-soft;
     color: $color-ink;
-    padding: 0 $space-10 0 $space-4;
-    font-size: 0.72rem;
+    padding: 0 3.5rem 0 1.45rem;
+    font-size: 0.875rem;
     transition:
       background-color $transition-base,
       border-color $transition-base;
@@ -99,14 +104,19 @@
   button {
     position: absolute;
     top: 50%;
-    right: $space-2;
-    width: 1.8rem;
-    height: 1.8rem;
+    right: 1.1rem;
+    width: 1.75rem;
+    height: 1.75rem;
     border: 0;
     border-radius: $radius-pill;
     background: transparent;
     color: $color-muted;
     transform: translateY(-50%);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -116,8 +126,8 @@
 
   a {
     display: grid;
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 2rem;
+    height: 2rem;
     place-items: center;
     border-radius: $radius-pill;
     color: $color-muted;
@@ -129,6 +139,11 @@
       background: $color-soft;
       color: $color-primary;
     }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 
@@ -138,9 +153,10 @@
   display: flex;
   gap: $space-5;
   overflow-x: auto;
-  padding-block: 0.55rem;
+  min-height: 2.5rem;
+  padding-block: 0.66rem;
   color: $color-muted;
-  font-size: 0.59rem;
+  font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
   white-space: nowrap;
@@ -161,6 +177,17 @@
 
   @include desktop {
     justify-content: center;
-    gap: $space-8;
+    gap: 5.65rem;
+  }
+}
+
+.subscription {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }

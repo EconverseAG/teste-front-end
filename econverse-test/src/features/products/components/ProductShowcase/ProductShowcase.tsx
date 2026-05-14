@@ -23,7 +23,8 @@ export function ProductShowcase({
   const { error, isLoading, products } = useProducts();
   const headingId = useId();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const visibleProducts = useMemo(() => products.slice(0, compact ? 4 : 8), [compact, products]);
+  const [activeTab, setActiveTab] = useState(tabs[0] ?? defaultTabs[0]);
+  const visibleProducts = useMemo(() => products.slice(0, compact ? 4 : 4), [compact, products]);
 
   return (
     <section className={styles.showcase} id={compact ? undefined : "produtos"} aria-labelledby={headingId}>
@@ -38,8 +39,14 @@ export function ProductShowcase({
 
       {!compact ? (
         <div className={styles.tabs} role="list" aria-label="Filtros de produtos">
-          {tabs.map((tab, index) => (
-            <button className={index === 0 ? styles.activeTab : ""} key={tab} type="button">
+          {tabs.map((tab) => (
+            <button
+              aria-pressed={activeTab === tab}
+              className={activeTab === tab ? styles.activeTab : ""}
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              type="button"
+            >
               {tab}
             </button>
           ))}

@@ -22,10 +22,10 @@
 }
 
 @mixin container {
-  width: min(100% - 2rem, 63rem);
+  width: min(100% - 2rem, 80rem);
   margin-inline: auto;
 
   @include tablet {
-    width: min(100% - 4rem, 63rem);
+    width: min(100% - 4rem, 80rem);
   }
 }
