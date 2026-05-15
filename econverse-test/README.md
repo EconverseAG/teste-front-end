@@ -1,6 +1,6 @@
 # Econverse Test
 
-Projeto de teste técnico para a Econverse: uma landing page e-commerce responsiva com vitrine de produtos, consumo de JSON externo e modal de detalhes do produto.
+Projeto de teste técnico para a Econverse: uma landing page e-commerce responsiva com vitrine de produtos, consumo de JSON externo, modal de detalhes, favoritos e carrinho persistido no navegador.
 
 ## Tecnologias
 
@@ -16,6 +16,8 @@ Projeto de teste técnico para a Econverse: uma landing page e-commerce responsi
 A estrutura segue uma organização feature-first leve. A feature `products` concentra tipos, service, hook e componentes da vitrine, enquanto elementos reutilizáveis ficam em `shared/components`. Os estilos globais foram separados em tokens, mixins e animações para manter consistência visual sem acoplar componentes.
 
 O service normaliza respostas em diferentes formatos comuns de JSON (`products`, `items`, `data`, `results`) e evita `any`, recebendo dados externos como `unknown` antes de mapear para o tipo `Product`.
+
+As ações de e-commerce ficam em um provider compartilhado (`shared/store`), mantendo carrinho, favoritos, contadores do header, toast de feedback e mini carrinho lateral com persistência em `localStorage`.
 
 ## Como instalar
 
@@ -75,6 +77,7 @@ NEXT_PUBLIC_PRODUCTS_API_URL_CLIENT=https://seu-endpoint.com/produtos.json
 - Metadata configurada no `layout.tsx` com title, description e Open Graph.
 - HTML semântico com `header`, `main`, `section`, `article` e `footer`.
 - Modal com `role="dialog"`, `aria-modal`, fechamento por ESC, overlay e botão acessível.
+- Mini carrinho com `role="dialog"`, fechamento por ESC, overlay, total, alteração de quantidade, remoção e limpeza.
 - Scroll da página bloqueado enquanto o modal está aberto.
 - Foco visível e suporte a `prefers-reduced-motion`.
 - Imagens com `alt` e cards operáveis por botões reais.

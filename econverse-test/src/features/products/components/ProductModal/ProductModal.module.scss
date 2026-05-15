@@ -75,6 +75,47 @@
   }
 }
 
+.favoriteAction {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.25rem;
+  padding: 0 0.95rem;
+  border: 1px solid rgba(52, 66, 181, 0.14);
+  border-radius: $radius-pill;
+  background: rgba(52, 66, 181, 0.06);
+  color: $color-primary;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  transition:
+    background-color $transition-base,
+    border-color $transition-base,
+    transform $transition-base;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  &:hover {
+    border-color: rgba(52, 66, 181, 0.26);
+    background: rgba(52, 66, 181, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
+.favoriteActionActive {
+  border-color: rgba(247, 202, 17, 0.5);
+  background: rgba(247, 202, 17, 0.22);
+  color: #271c47;
+
+  svg {
+    fill: rgba(39, 28, 71, 0.14);
+  }
+}
+
 .quantity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -101,9 +142,15 @@
 }
 
 .buyButton {
+  gap: 0.45rem;
   min-height: 2.25rem;
   background: $color-brand;
   color: #271c47;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
 
   &:hover {
     background: $color-brand-strong;

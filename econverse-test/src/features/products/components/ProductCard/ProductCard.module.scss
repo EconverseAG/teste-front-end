@@ -1,6 +1,7 @@
 @use "@/src/shared/styles/variables" as *;
 
 .card {
+  position: relative;
   display: grid;
   gap: 0.75rem;
   min-width: 0;
@@ -20,6 +21,47 @@
     border-color: rgba(45, 54, 201, 0.28);
     box-shadow: $shadow-card;
     transform: translateY(-4px);
+  }
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid rgba(52, 66, 181, 0.1);
+  border-radius: $radius-pill;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(22, 22, 29, 0.1);
+  transition:
+    transform $transition-base,
+    background-color $transition-base,
+    box-shadow $transition-base;
+
+  svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    color: $color-muted;
+    transition: transform $transition-base;
+  }
+
+  &:hover {
+    background: $color-white;
+    box-shadow: $shadow-card;
+    transform: translateY(-1px);
+  }
+}
+
+.favoriteButtonActive {
+  background: rgba(247, 202, 17, 0.95);
+
+  svg {
+    color: #271c47;
+    fill: rgba(39, 28, 71, 0.14);
+    transform: scale(1.08);
   }
 }
 
@@ -102,4 +144,29 @@
   color: $color-primary;
   font-size: 0.75rem;
   font-style: normal;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.buyButton,
+.detailsButton {
+  min-height: 2.55rem;
+}
+
+.buyButton {
+  gap: 0.45rem;
+
+  svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+}
+
+.detailsButton {
+  padding-inline: 0.8rem;
 }

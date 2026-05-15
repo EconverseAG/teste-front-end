@@ -1,29 +1,45 @@
+"use client";
+
+import { useCommerce } from "@/src/shared/store/CommerceContext";
+import {
+  CreditCard,
+  Crown,
+  Heart,
+  Search,
+  ShieldCheck,
+  ShoppingBag,
+  ShoppingCart,
+  Truck,
+  UserRound,
+} from "lucide-react";
 import Link from "next/link";
 import styles from "./Header.module.scss";
 
 const benefits = [
-  { icon: "/figma-assets/shield.svg", label: "Compra", strong: "100% segura" },
-  { icon: "/figma-assets/truck.svg", label: "acima de R$ 200", strong: "Frete grátis" },
-  { icon: "/figma-assets/credit-card.svg", label: "suas compras", strong: "Parcele" },
+  { Icon: ShieldCheck, label: "Compra", strong: "100% segura", strongFirst: false },
+  { Icon: Truck, label: "acima de R$ 200", strong: "Frete grátis", strongFirst: true },
+  { Icon: CreditCard, label: "suas compras", strong: "Parcele", strongFirst: true },
 ];
 
 const links = ["Todas categorias", "Supermercado", "Livros", "Moda", "Lançamentos", "Ofertas do dia"];
 
 const actions = [
-  { icon: "/figma-assets/bag.svg", label: "Pedidos" },
-  { icon: "/figma-assets/heart.svg", label: "Favoritos" },
-  { icon: "/figma-assets/user.svg", label: "Minha conta" },
-  { icon: "/figma-assets/cart.svg", label: "Carrinho" },
-];
+  { Icon: ShoppingBag, label: "Pedidos", target: "#produtos", badge: null },
+  { Icon: Heart, label: "Favoritos", target: "#produtos", badge: "favorites" },
+  { Icon: UserRound, label: "Minha conta", target: "#newsletter", badge: null },
+  { Icon: ShoppingCart, label: "Carrinho", target: "#produtos", badge: "cart" },
+] as const;
 
 export function Header() {
+  const { cartCount, favoritesCount, openCart } = useCommerce();
+
   return (
     <header className={styles.header}>
       <div className={styles.topbar} aria-label="Benefícios da loja">
         {benefits.map((benefit) => (
           <span key={benefit.strong}>
-            <img alt="" src={benefit.icon} />
-            {benefit.strong === "Frete grátis" ? (
+            <benefit.Icon aria-hidden="true" strokeWidth={2.2} />
+            {benefit.strongFirst ? (
               <>
                 <strong>{benefit.strong}</strong> {benefit.label}
               </>
@@ -45,16 +61,28 @@ export function Header() {
           <label htmlFor="search-products">O que você está buscando?</label>
           <input id="search-products" name="search" type="search" placeholder="O que você está buscando?" />
           <button type="submit" aria-label="Buscar produtos">
-            <img alt="" src="/figma-assets/search.svg" />
+            <Search aria-hidden="true" strokeWidth={2.1} />
           </button>
         </form>
 
         <nav className={styles.actions} aria-label="Ações rápidas">
-          {actions.map((action) => (
-            <a href="#produtos" aria-label={action.label} key={action.label}>
-              <img alt="" src={action.icon} />
-            </a>
-          ))}
+          {actions.map((action) => {
+            const count =
+              action.badge === "cart" ? cartCount : action.badge === "favorites" ? favoritesCount : 0;
+            const label = count > 0 ? `${action.label}: ${count}` : action.label;
+
+            return action.badge === "cart" ? (
+              <button onClick={openCart} aria-label={label} key={action.label} type="button">
+                <action.Icon aria-hidden="true" strokeWidth={1.9} />
+                {count > 0 ? <span className={styles.badge}>{count}</span> : null}
+              </button>
+            ) : (
+              <a href={action.target} aria-label={label} key={action.label}>
+                <action.Icon aria-hidden="true" strokeWidth={1.9} />
+                {count > 0 ? <span className={styles.badge}>{count}</span> : null}
+              </a>
+            );
+          })}
         </nav>
       </div>
 
@@ -65,7 +93,7 @@ export function Header() {
           </a>
         ))}
         <a className={styles.subscription} href="#newsletter">
-          <img alt="" src="/figma-assets/crown.svg" />
+          <Crown aria-hidden="true" strokeWidth={2} />
           Assinatura
         </a>
       </nav>

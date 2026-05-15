@@ -1,0 +1,269 @@
+@use "@/src/shared/styles/variables" as *;
+
+.cartLayer {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+}
+
+.cartOverlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(20, 20, 25, 0.46);
+  animation: fadeIn $transition-base both;
+}
+
+.cartPanel {
+  position: absolute;
+  right: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: min(28rem, 100vw);
+  height: 100%;
+  padding: 1.3rem;
+  background: $color-white;
+  box-shadow: $shadow-modal;
+  animation: slideIn $transition-slow both;
+}
+
+.cartHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.45);
+
+  p,
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    color: $color-primary;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    color: $color-ink;
+    font-size: 1.45rem;
+  }
+
+  button {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    border: 0;
+    border-radius: $radius-pill;
+    background: $color-soft;
+    color: $color-ink;
+    line-height: 1;
+
+    svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+  }
+}
+
+.cartList {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.cartItem {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid rgba(189, 189, 189, 0.45);
+  border-radius: $radius-md;
+  background: $color-white;
+
+  img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+  }
+
+  strong {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+    color: $color-ink;
+    font-size: 0.82rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  span {
+    color: $color-primary;
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+}
+
+.cartQuantity {
+  display: inline-grid;
+  grid-template-columns: 1.7rem 1.7rem 1.7rem;
+  overflow: hidden;
+  margin-top: 0.55rem;
+  border: 1px solid rgba(189, 189, 189, 0.55);
+  border-radius: $radius-sm;
+
+  button {
+    border: 0;
+    background: $color-white;
+    color: $color-primary;
+    font-weight: 900;
+  }
+
+  span {
+    display: grid;
+    place-items: center;
+    color: $color-ink;
+    font-size: 0.75rem;
+  }
+}
+
+.removeItem,
+.clearCartButton {
+  border: 0;
+  background: transparent;
+  color: $color-danger;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.cartFooter {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(189, 189, 189, 0.45);
+
+  span {
+    color: $color-muted;
+    font-weight: 800;
+  }
+
+  strong {
+    color: $color-ink;
+    font-size: 1.25rem;
+  }
+}
+
+.checkoutButton {
+  grid-column: 1 / -1;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: $radius-sm;
+  background: $color-brand;
+  color: #271c47;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.clearCartButton {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.emptyCart {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.65rem;
+  min-height: 24rem;
+  text-align: center;
+
+  svg {
+    width: 2.75rem;
+    height: 2.75rem;
+    color: $color-muted;
+    opacity: 0.55;
+  }
+
+  strong {
+    color: $color-ink;
+    font-size: 1.1rem;
+  }
+
+  p {
+    max-width: 16rem;
+    margin: 0;
+    color: $color-muted;
+    font-size: 0.86rem;
+  }
+}
+
+.toast {
+  position: fixed;
+  right: clamp(1rem, 4vw, 2rem);
+  bottom: clamp(1rem, 4vw, 2rem);
+  z-index: calc($z-modal + 10);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: min(24rem, calc(100vw - 2rem));
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(52, 66, 181, 0.14);
+  border-radius: $radius-md;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: $shadow-modal;
+  color: $color-ink;
+  font-size: 0.86rem;
+  font-weight: 700;
+  animation: toastIn $transition-slow both;
+
+  &::before {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: $radius-pill;
+    background: $color-brand;
+    content: "";
+    box-shadow: 0 0 0 0.35rem rgba(247, 202, 17, 0.18);
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(1.5rem);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
