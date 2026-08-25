@@ -1,0 +1,21 @@
+.container {
+  width: 1280px;
+  background: var(--white, #FFF);
+  box-shadow: 0px 8px 16px 0px rgba(57, 48, 19, 0.12);
+}
+.container ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.container .links {
+  text-decoration: none;
+  color: var(--gray-1, #9F9F9F);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}/*# sourceMappingURL=Navbar.module.css.map */
