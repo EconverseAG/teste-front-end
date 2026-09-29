@@ -1,0 +1,116 @@
+@use '../../styles/variables' as *;
+
+// FOOTER (1440x282, padding 42px 80px, gap 90px)
+.main-footer {
+    background-color: $color-footer-bg;
+    // sem padding aqui: a faixa branca do copyright (.footer-bottom) encosta
+    // no fim do footer. O respiro de 42px fica só ao redor do conteúdo.
+    padding: 0;
+    min-height: 282px;
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 400px 190px 190px 1fr;
+        gap: 90px;
+        align-items: start;
+        padding: 42px 0;
+
+        .footer-brand {
+            width: 400px;
+            padding-right: 40px;
+            border-right: 1px solid #DCDCDC;
+
+            .footer-logo {
+                width: auto;
+                height: 49px;
+                display: block;
+                margin-bottom: 17px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #4E4E4E;
+            }
+
+            .footer-social {
+                display: flex;
+                align-items: center;
+                gap: 26px;
+                margin-top: 27px;
+                list-style: none;
+
+                a {
+                    display: flex;
+                    line-height: 0;
+                    transition: opacity 0.2s;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+
+        .footer-column {
+            padding-top: 18px;
+
+            h3 {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 600;
+                color: #5E5E5E;
+                margin-bottom: 9px;
+            }
+
+            ul {
+                list-style: none;
+                font-size: 14px;
+                line-height: 32px;
+                color: $color-dark-text;
+
+                a:hover {
+                    color: $color-blue-btn;
+                }
+            }
+        }
+    }
+}
+
+// Faixa branca do copyright (1440x47)
+.footer-bottom {
+    background-color: $color-white;
+    min-height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    line-height: 18px;
+    color: $color-light-text;
+}
+
+@media (max-width: 1200px) {
+    // 400 + 3x90 + 3x190 = 1510px fixos não cabem: colunas viram frações
+    .main-footer .footer-links {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 32px;
+
+        .footer-brand {
+            width: auto;
+            padding-right: 24px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .main-footer .footer-links {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+}

@@ -1,0 +1,127 @@
+@use '../../styles/variables' as *;
+
+.product-carousel {
+    position: relative;
+    // -42px de cada lado => campo de 1364px (setas em x=37.5 e x=1401.5)
+    margin: 0 -42px;
+
+    // Recorta o track só na horizontal: nunca aparece pedaço do card vizinho,
+    // mas a sombra do card continua visível acima e abaixo.
+    // `overflow: clip` (e não `hidden`) porque não cria área rolável e permite
+    // overflow-y visível — o `hidden` cortava a sombra nas bordas top/bottom,
+    // já que a viewport tem exatamente a altura do card (500px).
+    .carousel-viewport {
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    .carousel-track {
+        display: flex;
+        width: 100%;
+        transition: transform 0.35s ease;
+    }
+
+    // 4 cards de 304px com gap de 18px, centralizados no campo de 1364px
+    .carousel-page {
+        // largura explícita igual à do campo: o recorte da viewport cai
+        // exatamente na borda da página, sem sobra do card seguinte
+        flex: 0 0 100%;
+        width: 100%;
+        display: grid;
+        // minmax(0, 304px): em 1440px cada track fica em 304px (pixel a pixel);
+        // em telas menores encolhe em vez de estourar e cortar o 4º card
+        grid-template-columns: repeat(4, minmax(0, 304px));
+        gap: 18px;
+        justify-content: center;
+
+        // Só a página atual projeta sombra: a das páginas vizinhas vazaria
+        // alguns pixels na borda do campo
+        &:not(.is-active) .product-card {
+            box-shadow: none;
+        }
+    }
+
+    // Setas: círculo branco de 32px nas extremidades do campo
+    .carousel-arrow {
+        position: absolute;
+        // 50% + 12px => centro em y=1209 com os cards começando em y=947
+        top: calc(50% + 12px);
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background-color: $color-white;
+        color: $color-dark-text;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        transition: color 0.2s, opacity 0.2s;
+
+        &:hover:not(:disabled) {
+            color: $color-blue-btn;
+        }
+
+        &:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+    }
+
+    .carousel-prev {
+        left: 0;
+    }
+
+    .carousel-next {
+        right: 0;
+    }
+
+    // Sem espaço para o campo de 1364px, as setas entram na área dos cards
+    @media (max-width: 1420px) {
+        margin: 0;
+
+        .carousel-prev {
+            left: 8px;
+        }
+
+        .carousel-next {
+            right: 8px;
+        }
+    }
+
+    // Telas estreitas: cards encolhem e o gap acompanha, sempre 4 inteiros
+    @media (max-width: 1340px) {
+        .carousel-page {
+            gap: 14px;
+            padding: 0 8px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .carousel-page {
+            gap: 12px;
+            padding: 0 44px;
+        }
+
+        .carousel-arrow {
+            width: 28px;
+            height: 28px;
+        }
+    }
+
+    @media (max-width: 820px) {
+        .carousel-page {
+            // 2 cards por página em vez de 4
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0 44px;
+        }
+
+        .product-card {
+            max-width: none;
+        }
+    }
+}

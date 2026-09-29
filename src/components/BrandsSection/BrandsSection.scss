@@ -1,0 +1,66 @@
+@use '../../styles/variables' as *;
+
+// NAVEGUE POR MARCAS (5 círculos de 211px)
+.brands-section {
+    // Título sem as réguas laterais: mantém o texto centralizado
+    .section-title {
+        margin-top: 24px;
+
+        &::before,
+        &::after {
+            visibility: hidden;
+        }
+    }
+}
+
+.brands-container {
+    display: grid;
+    grid-template-columns: repeat(5, 211px);
+    column-gap: 42px;
+    justify-content: flex-start;
+    // 21px => primeiro círculo em x=101 (centro 206.5), idêntico ao raster
+    padding-left: 21px;
+    list-style: none;
+    // 28px => mantém a altura total da seção após o título pasar de 36px para 45px
+    margin: 28px 0 0;
+
+    .brand-circle {
+        width: 211px;
+        height: 211px;
+        background: $color-white;
+        box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.13);
+        border-radius: 50%;
+        padding: 87px 47px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+
+        img {
+            width: 117px;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    // 5x211px + gaps = 1223px não cabem abaixo de 1200px: encolhem juntos
+    .brands-container {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 24px;
+        padding-left: 0;
+
+        .brand-circle {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            padding: 0;
+
+            img {
+                width: 55%;
+            }
+        }
+    }
+}

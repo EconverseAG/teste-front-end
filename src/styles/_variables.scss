@@ -1,0 +1,20 @@
+// Tokens de design extraídos do layout de referência.
+// Arquivo somente de variáveis: importado por todos os componentes com
+// `@use '../../styles/variables' as *`, então não gera CSS.
+
+$font-primary: 'Poppins', sans-serif;
+
+// Cores Oficiais do Layout
+$color-primary-blue: #3019B2; // Azul dos destaques do topo e do item ativo do menu
+$color-blue-btn: #3442B5; // Azul dos botões "Comprar" e dos títulos de seção
+$color-yellow: #F7CA11; // Amarelo dos botões "Ver produto", "Confira" e "Inscrever"
+$color-dark-text: #3F3F40; // Texto principal
+$color-muted: #808080; // Preço antigo riscado
+$color-light-text: #9F9F9F; // Textos secundários e placeholders
+$color-newsletter-bg: #271C47; // Fundo escuro do newsletter
+$color-footer-bg: #F4F4F4; // Fundo do rodapé
+$color-white: #FFFFFF;
+$color-border-card: #EAEAEA;
+
+$max-width: 1280px;
+$header-height: 144px; // topo 32px + linha divisória 1px + logo/busca 72px + menu 40px

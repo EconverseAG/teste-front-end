@@ -1,0 +1,138 @@
+@use 'sass:color';
+@use '../../styles/variables' as *;
+
+// Card 304x500 (x=85 + 322 de pitch, y=947)
+.product-card {
+    background: $color-white;
+    // preenche a track do grid (304px em telas largas, menor no responsivo)
+    width: 100%;
+    max-width: 304px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 26px 12px 16px;
+    // Sombra conforme Figma: 0 3 19 #00000038 (pico medido no raster: borda superior 2px acima)
+    box-shadow: 0 3px 19px rgba(0, 0, 0, 0.22);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    // Área clicável do card (foto + informações), mantém o layout do flex column
+    .product-card-hit {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        min-height: 0;
+        // reset de button nativo
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-family: $font-primary;
+        text-align: left;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    // Foto 278x241
+    .product-image {
+        width: 100%;
+        height: 241px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 7px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            font-size: 15px;
+            font-weight: 400;
+            color: $color-dark-text;
+            line-height: 24px;
+            height: 48px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: 5px;
+        }
+
+        // Preço riscado: y=327, 16px, cinza #808080
+        .old-price {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: $color-muted;
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        // Preço atual: y=353, 20px bold
+        .current-price {
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 700;
+            color: $color-dark-text;
+            margin-bottom: 2px;
+        }
+
+        // Parcelamento: y=385, 12px
+        .installments {
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 400;
+            color: $color-dark-text;
+            margin: 0 0 7px;
+        }
+
+        // Frete grátis: y=410, 12px azul
+        .shipping {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 400;
+            color: $color-blue-btn;
+        }
+    }
+
+    // Botão 277x44 #3442B5 (largura do raster: 277px dentro do card de 304px)
+    .buy-button {
+        flex: 0 0 auto;
+        width: calc(100% - 3px);
+        height: 44px;
+        margin-top: auto;
+        background-color: $color-blue-btn;
+        color: $color-white;
+        border: none;
+        padding: 0;
+        font-family: $font-primary;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 700;
+        letter-spacing: 0%;
+        text-align: center;
+        text-transform: uppercase;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background: color.adjust($color-blue-btn, $lightness: -8%);
+        }
+    }
+}

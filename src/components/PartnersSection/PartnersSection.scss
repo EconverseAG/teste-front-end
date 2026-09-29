@@ -1,0 +1,99 @@
+@use '../../styles/variables' as *;
+
+// PARCEIROS (dois banners de 634x350 com gradiente na base e textos no canto inferior esquerdo)
+.partners-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+    margin-top: 45px;
+
+    // Segundo bloco: distância após os cards
+    &--gap {
+        margin-top: 46px;
+    }
+
+    .partner-card {
+        position: relative;
+        height: 350px;
+        // Cantos arredondados nos 4 cantos (medido no PDF: inset ~14px no topo
+        // e na base, raio de 20px)
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: transparent;
+        color: $color-white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // textos: h2 em y=114, subtexto em y=182, botão em y=262 (base a 40px do banner)
+        padding: 0 0 40px 44px;
+
+        // Foto do banner preenchendo os 634x350 (vinda do componente)
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 350px;
+            background: var(--partner-image) no-repeat center center / cover;
+        }
+
+        // Gradiente de escurecimento na base (261px)
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 261px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 85.04%);
+            pointer-events: none;
+        }
+
+        h2,
+        p,
+        a {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 60px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 215px;
+            margin-bottom: 32px;
+        }
+
+        .confira-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 145px;
+            height: 48px;
+            background-color: $color-yellow;
+            color: $color-newsletter-bg;
+            border: none;
+            font-family: $font-primary;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 700;
+            letter-spacing: 8%;
+            text-transform: uppercase;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .partners-section {
+        grid-template-columns: 1fr;
+    }
+}

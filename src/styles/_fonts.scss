@@ -1,0 +1,37 @@
+// Poppins local (mesma fonte do PDF de referência).
+// Isolado em um arquivo próprio para que seja emitido uma única vez:
+// variáveis em _variables.scss são importadas por todos os componentes
+// via `@use ... as *`, e CSS dentro de um módulo usado várias vezes
+// seria duplicado no bundle.
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/Poppins-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: url('/fonts/Poppins-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: block;
+    src: url('/fonts/Poppins-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url('/fonts/Poppins-700.woff2') format('woff2');
+}

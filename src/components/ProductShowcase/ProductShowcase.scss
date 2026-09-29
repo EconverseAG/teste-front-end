@@ -1,0 +1,121 @@
+@use '../../styles/variables' as *;
+
+// VITRINE TABS (faixa de 6 células de 1px, fechando a caixa por completo)
+.vitrine-tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 40px;
+    margin: 0 0 20px;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-white;
+        border: 1px solid #BDBDBD;
+        // -1px => as células compartilham o mesmo separador vertical
+        margin-left: -1px;
+        padding: 0;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #3B3B3B;
+        cursor: pointer;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:hover,
+        &.active {
+            color: $color-blue-btn;
+            font-weight: 700;
+        }
+    }
+}
+
+// SKELETONS DE CARREGAMENTO (4 cartões de 304x500)
+.vitrine-skeletons {
+    display: grid;
+    grid-template-columns: repeat(4, 304px);
+    gap: 18px;
+    justify-content: center;
+}
+
+.vitrine-skeleton {
+    height: 500px;
+    background: linear-gradient(90deg, #F2F2F2 25%, #FAFAFA 37%, #F2F2F2 63%);
+    background-size: 400% 100%;
+    border-radius: 10px;
+    animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+// Estado de erro / vitrine vazia
+.showcase-message {
+    margin: 26px 0 0;
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-muted;
+    background: $color-footer-bg;
+    border-radius: 10px;
+}
+
+.showcase-message-detail {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: $color-light-text;
+}
+
+// Espaçamento por posição na home (era dependente de seletor irmão no CSS global)
+.showcase {
+    // 2ª vitrine: título 24px abaixo do banner de parceiros
+    &--after-partners {
+        .section-title {
+            margin-top: 24px;
+        }
+
+        .product-carousel,
+        .vitrine-skeletons,
+        .showcase-message {
+            margin-top: 26px;
+        }
+    }
+
+    // 3ª vitrine: último bloco de produtos, com respiro até o newsletter
+    &--last {
+        padding-bottom: 92px;
+
+        // +24px: alinha o topo dos cards da vitrine 3 com o raster (PDF y=3577)
+        .section-title {
+            margin-top: 94px;
+        }
+
+        .product-carousel,
+        .vitrine-skeletons,
+        .showcase-message {
+            margin-top: 26px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .vitrine-skeletons {
+        grid-template-columns: repeat(4, minmax(0, 304px));
+        padding: 0 16px;
+    }
+}

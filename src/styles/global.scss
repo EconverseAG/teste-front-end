@@ -1,0 +1,87 @@
+// Estilos globais: reset, tipografia base e utilitários compartilhados.
+// O layout por seção mora no .scss de cada componente.
+@use './fonts';
+@use './variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-dark-text;
+    background-color: $color-white;
+    -webkit-font-smoothing: antialiased;
+}
+
+// Visível apenas para leitores de tela (rótulos de inputs, SEO/acessibilidade)
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Container 1280px alinhado a x=80 no viewport de 1440px (conforme o PDF)
+.container {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0;
+}
+
+// TÍTULO DAS SEÇÕES (30px/45px com réguas de 1px nas laterais).
+// Compartilhado entre as vitrines e a seção de marcas.
+.section-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 0 70px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 45px;
+    color: $color-blue-btn;
+    font-weight: 700;
+    margin: 60px 0 0;
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        // 18px => régua em y=852 quando o título começa em y=834
+        margin-top: 18px;
+        background-color: #DEDEDE;
+    }
+
+    // "Ver todos" centralizado logo abaixo do título (4px abaixo da base do texto)
+    &+.view-all {
+        display: block;
+        text-align: center;
+        font-size: 15px;
+        line-height: 23px;
+        font-weight: 700;
+        color: $color-dark-text;
+        margin: 4px 0 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-title {
+        padding: 0 20px;
+        font-size: 22px;
+        line-height: 32px;
+    }
+}
