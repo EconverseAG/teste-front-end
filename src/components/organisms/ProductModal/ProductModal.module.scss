@@ -1,0 +1,144 @@
+@use "abstracts" as *;
+
+// O dialog ocupa a tela; o fundo escuro é um elemento animável (::backdrop não é).
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+
+  &::backdrop {
+    background: transparent;
+  }
+}
+
+.backdrop {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+  background: $color-overlay;
+}
+
+// 769x299, raio 6 — imagem a 56px da borda, conteúdo a 390px.
+.panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 247px minmax(0, 328px);
+  column-gap: 87px;
+  align-items: start;
+  width: 100%;
+  max-width: 769px;
+  min-height: 299px;
+  padding: 56px 51px 38px 56px;
+  color: $color-text;
+  background: $color-white;
+  border-radius: $radius-md;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 25%);
+
+  @include below("sm") {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    max-width: 420px;
+    padding: 48px 24px 24px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 17px;
+  right: 28px;
+  width: 24px;
+  height: 24px;
+  color: $color-icon-close;
+
+  @include below("sm") {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.media {
+  position: relative;
+  height: 192px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 7px;
+}
+
+.title {
+  @include text(20px, 20px);
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.price {
+  @include text(20px, 20px, 600);
+
+  margin-top: 18px;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  @include text(10px, 15.1px, 500, $font-secondary);
+
+  max-width: 290px;
+  margin-top: 32px;
+  color: $color-text-subtle;
+  letter-spacing: 0.05em;
+}
+
+.details {
+  @include text(11px, 11px, 600, $font-secondary);
+  @include focus-ring;
+
+  margin-top: 6px;
+  color: $color-primary;
+  letter-spacing: 0.05em;
+  border-radius: $radius-xs;
+
+  span {
+    display: inline-block;
+    transition: transform $duration-fast $ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover span {
+      transform: translateX(3px);
+    }
+  }
+}
+
+.purchase {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 32px;
+
+  @include below("xs") {
+    width: 100%;
+  }
+}
+
+.buy {
+  width: 188px;
+
+  @include below("xs") {
+    flex: 1;
+    width: auto;
+  }
+}

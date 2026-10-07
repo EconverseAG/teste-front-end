@@ -1,0 +1,44 @@
+@use "abstracts" as *;
+
+.card {
+  @include focus-ring(4px);
+
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 211px;
+  aspect-ratio: 1;
+  background: $color-white;
+  border-radius: 50%;
+  box-shadow: $shadow-brand;
+
+  @include motion-safe {
+    transition:
+      transform $duration-base $ease-out,
+      box-shadow $duration-base ease;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 12px 28px rgb(0 0 0 / 16%);
+      transform: translateY(-6px);
+    }
+  }
+
+  @include below("md") {
+    width: 160px;
+  }
+
+  @include below("sm") {
+    width: 128px;
+  }
+}
+
+.logo {
+  width: 117px;
+  height: auto;
+
+  @include below("sm") {
+    width: 84px;
+  }
+}

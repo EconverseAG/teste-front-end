@@ -1,0 +1,61 @@
+@use "abstracts" as *;
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 630px;
+  height: 48px;
+  background: $color-surface-search;
+  border-radius: $radius-xl;
+  transition: box-shadow $duration-fast ease;
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px rgb(52 66 181 / 35%);
+  }
+}
+
+.input {
+  @include text(14px, 21px, 500);
+
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 8px 0 16px;
+  color: $color-text;
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  &::placeholder {
+    color: $color-text-subtle;
+    opacity: 1;
+  }
+
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+}
+
+.submit {
+  @include reset-button;
+  @include focus-ring(0);
+
+  display: grid;
+  place-items: center;
+  margin-right: 24px;
+  color: $color-text-subtle;
+  border-radius: $radius-sm;
+  transition: color $duration-fast ease;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include below("sm") {
+    margin-right: 12px;
+  }
+}

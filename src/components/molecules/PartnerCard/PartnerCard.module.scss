@@ -1,0 +1,76 @@
+@use "abstracts" as *;
+
+.card {
+  position: relative;
+  isolation: isolate;
+  height: 350px;
+  overflow: hidden;
+  background: #1c1c1c;
+  border-radius: $radius-2xl;
+
+  // Degradê do Figma: começa a 89px do topo, preto a 85%, opacidade 80%.
+  &::after {
+    position: absolute;
+    inset: 89px 0 0;
+    z-index: -1;
+    content: "";
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 80%) 85%);
+  }
+
+  @media (hover: hover) {
+    &:hover .image {
+      transform: scale(1.05);
+    }
+  }
+
+  @include below("sm") {
+    height: 280px;
+  }
+}
+
+.image {
+  z-index: -2;
+  object-fit: cover;
+
+  @include motion-safe {
+    transition: transform 700ms $ease-out;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 114px 44px 40px;
+  color: $color-white;
+
+  @include below("sm") {
+    justify-content: flex-end;
+    padding: 24px;
+  }
+}
+
+.title {
+  @include text(40px, 60px, 700);
+
+  @include below("sm") {
+    @include text(30px, 42px, 700);
+  }
+}
+
+.description {
+  @include text(16px, 24px);
+
+  max-width: 200px;
+  margin-top: 8px;
+}
+
+.cta {
+  min-width: 145px;
+  margin-top: 32px;
+
+  @include below("sm") {
+    margin-top: 20px;
+  }
+}

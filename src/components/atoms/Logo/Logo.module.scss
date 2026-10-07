@@ -1,0 +1,9 @@
+@use "abstracts" as *;
+
+.logo {
+  @include focus-ring(4px);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: $radius-sm;
+}

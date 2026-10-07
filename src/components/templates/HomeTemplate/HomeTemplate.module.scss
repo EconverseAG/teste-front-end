@@ -1,0 +1,28 @@
+@use "abstracts" as *;
+
+.main {
+  display: block;
+}
+
+.skip {
+  @include visually-hidden;
+  @include text(14px, 21px, 600);
+
+  &:focus-visible {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: $z-modal;
+    width: auto;
+    height: auto;
+    padding: 8px 16px;
+    margin: 0;
+    overflow: visible;
+    color: $color-white;
+    clip-path: none;
+    white-space: nowrap;
+    background: $color-primary;
+    border-radius: $radius-md;
+    outline: 2px solid $color-accent;
+  }
+}

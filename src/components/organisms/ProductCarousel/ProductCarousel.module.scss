@@ -1,0 +1,96 @@
+@use "abstracts" as *;
+
+// Medidas do Figma (1440): faixa de 1364px com as setas nas pontas, quatro
+// cards de 304px com 18px de gap no meio (1270px).
+$shadow-room-x: 17px; // < gap (18px): a sombra aparece, o 5º card não
+$shadow-room-y: 24px;
+$arrow-zone: 30px;
+$gap: 18px;
+
+.carousel {
+  position: relative;
+  width: calc(100% + 84px);
+  margin-inline: -42px;
+
+  @include below("xl") {
+    width: 100%;
+    margin-inline: 0;
+  }
+}
+
+.track {
+  @include reset-list;
+  @include hide-scrollbar;
+
+  display: flex;
+  gap: $gap;
+  margin: (-$shadow-room-y) $arrow-zone;
+  padding: $shadow-room-y $shadow-room-x;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: $shadow-room-x;
+
+  @include below("xl") {
+    margin-inline: -$shadow-room-x;
+  }
+
+  @include below("sm") {
+    gap: 12px;
+  }
+}
+
+.slide {
+  flex: 0 0 calc((100% - #{$gap * 3}) / 4);
+  scroll-snap-align: start;
+
+  // Fora da janela a sombra some (só opacidade; ver ProductCard).
+  &[data-in-view="false"] {
+    --card-shadow: 0;
+  }
+
+  @include below("md") {
+    flex-basis: calc((100% - #{$gap * 2}) / 3);
+  }
+
+  @include below("sm") {
+    flex-basis: calc((100% - 12px) / 2);
+  }
+
+  @include below("xs") {
+    flex-basis: 78%;
+  }
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 246px;
+  z-index: 3;
+
+  @include below("sm") {
+    display: none !important;
+  }
+}
+
+.prev {
+  left: 0;
+
+  @include below("xl") {
+    left: -16px;
+  }
+}
+
+.next {
+  right: 0;
+
+  @include below("xl") {
+    right: -16px;
+  }
+}
+
+.empty {
+  max-width: none;
+  border: 1px dashed $color-border-tab;
+  border-radius: $radius-xl;
+}

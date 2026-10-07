@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  @include text(16px, 24px);
+
+  color: $color-text-muted;
+}
+
+.current {
+  @include text(20px, 30px, 700);
+
+  margin-top: 2px;
+  color: $color-text;
+}
+
+.installments {
+  @include text(12px, 18px);
+
+  margin-top: 2px;
+  color: $color-text;
+}

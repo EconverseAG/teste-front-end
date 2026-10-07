@@ -1,0 +1,145 @@
+@use "abstracts" as *;
+
+.newsletter {
+  margin-top: 91px;
+  color: $color-white;
+  background: $color-ink;
+
+  @include below("sm") {
+    margin-top: 56px;
+  }
+}
+
+.inner {
+  @include container;
+
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 162px;
+  padding-block: 40px;
+
+  @include below("md") {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 515px;
+}
+
+.title {
+  @include text(32px, 38.4px, 600, $font-display);
+
+  @include below("sm") {
+    @include text(24px, 30px, 600, $font-display);
+  }
+}
+
+.description {
+  @include text(14px, 18px, 300);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 5px;
+
+  @include below("md") {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+
+  @include below("sm") {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.field {
+  width: 233px;
+
+  @include below("md") {
+    flex: 1;
+    width: auto;
+  }
+}
+
+// "INSCREVER": 157x42, 14px semibold, raio 8.
+.submit {
+  @include reset-button;
+  @include text(14px, 12px, 600);
+  @include focus-ring;
+
+  width: 157px;
+  height: 42px;
+  color: $color-ink-strong;
+  text-transform: uppercase;
+  background: $color-accent;
+  border-radius: $radius-lg;
+  transition:
+    background-color $duration-fast ease,
+    transform $duration-fast $ease-out;
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      background: $color-accent-hover;
+    }
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    cursor: progress;
+    opacity: 0.8;
+  }
+
+  @include below("sm") {
+    width: 100%;
+  }
+}
+
+.terms {
+  // Os erros dos campos ficam abaixo deles; o checkbox desce só quando há erro.
+  .row:has([aria-invalid="true"]) + & {
+    margin-top: 18px;
+  }
+}
+
+.success {
+  @include text(16px, 24px, 500);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  max-width: 639px;
+  padding: 16px 24px;
+  margin-top: 5px;
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(247 202 17 / 60%);
+  border-radius: $radius-lg;
+}
+
+.again {
+  @include reset-button;
+  @include text(14px, 21px, 600);
+  @include focus-ring;
+
+  color: $color-accent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

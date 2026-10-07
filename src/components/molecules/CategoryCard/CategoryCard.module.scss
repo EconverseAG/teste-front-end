@@ -1,0 +1,97 @@
+@use "abstracts" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  width: 128px;
+  border-radius: $radius-xl;
+  outline: none;
+
+  &:focus-visible .tile {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    &:hover .tile {
+      background: $color-white;
+      box-shadow: $shadow-category-active;
+      transform: translateY(-4px);
+    }
+
+    &:hover .icon {
+      transform: scale(1.08);
+    }
+
+    &:hover .label {
+      color: $color-primary-strong;
+    }
+  }
+
+  @include below("sm") {
+    gap: 12px;
+    width: 96px;
+  }
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  width: 128px;
+  height: 128px;
+  background: $color-surface-muted;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-category;
+
+  @include motion-safe {
+    transition:
+      transform $duration-base $ease-out,
+      background-color $duration-base ease,
+      box-shadow $duration-base ease;
+  }
+
+  @include below("sm") {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.icon {
+  @include motion-safe {
+    transition: transform $duration-base $ease-out;
+  }
+
+  @include below("sm") {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.label {
+  @include text(14px, 21px, 500);
+
+  color: $color-text-category;
+  text-align: center;
+  white-space: nowrap;
+  transition: color $duration-fast ease;
+
+  @include below("sm") {
+    @include text(12px, 18px, 500);
+
+    white-space: normal;
+  }
+}
+
+.active {
+  .tile {
+    background: $color-white;
+    box-shadow: $shadow-category-active;
+  }
+
+  .label {
+    font-weight: 600;
+    color: $color-primary-strong;
+  }
+}

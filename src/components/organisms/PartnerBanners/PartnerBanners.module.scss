@@ -1,0 +1,24 @@
+@use "abstracts" as *;
+
+.section {
+  @include container;
+
+  margin-top: $section-gap;
+
+  @include below("sm") {
+    margin-top: 56px;
+  }
+}
+
+.list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+
+  @include below("md") {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

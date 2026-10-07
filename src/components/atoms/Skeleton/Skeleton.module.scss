@@ -1,0 +1,29 @@
+@use "abstracts" as *;
+
+.skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: $color-surface-muted;
+  border-radius: $radius-md;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(100deg, transparent 20%, rgb(255 255 255 / 65%) 50%, transparent 80%);
+    transform: translateX(-100%);
+  }
+
+  @include motion-safe {
+    &::after {
+      animation: shimmer 1.4s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}

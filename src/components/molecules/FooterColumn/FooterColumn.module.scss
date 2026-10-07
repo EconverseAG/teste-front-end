@@ -1,0 +1,42 @@
+@use "abstracts" as *;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  @include text(16px, 16px, 700);
+
+  color: $color-text-footer;
+}
+
+.links {
+  @include reset-list;
+  @include text(14px, 16px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// Institucional/Ajuda usam Work Sans no Figma.
+.secondary {
+  font-family: $font-secondary;
+}
+
+.link {
+  @include focus-ring;
+
+  color: $color-text-footer;
+  white-space: nowrap;
+  border-radius: $radius-xs;
+  transition: color $duration-fast ease;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

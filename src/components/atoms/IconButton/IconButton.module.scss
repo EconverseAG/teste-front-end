@@ -1,0 +1,55 @@
+@use "abstracts" as *;
+
+.iconButton {
+  @include reset-button;
+  @include focus-ring;
+
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  transition:
+    color $duration-fast ease,
+    transform $duration-fast $ease-out,
+    box-shadow $duration-fast ease,
+    opacity $duration-fast ease;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
+}
+
+.ghost {
+  color: $color-text-subtle;
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      color: $color-primary;
+    }
+  }
+}
+
+// Seta do carrossel: círculo branco 32px
+.floating {
+  width: 32px;
+  height: 32px;
+  color: $color-text;
+  background: $color-white;
+  border-radius: 50%;
+  box-shadow: $shadow-arrow;
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      color: $color-primary;
+      transform: scale(1.08);
+    }
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+}
+
+.flip {
+  transform: scaleX(-1);
+}

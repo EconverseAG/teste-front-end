@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.showcase {
+  @include container;
+
+  margin-top: $section-gap;
+  scroll-margin-top: 24px;
+
+  @include below("sm") {
+    margin-top: 56px;
+  }
+}
+
+.tabs {
+  // Título 45px + 4px: as abas começam a 49px do topo da seção.
+  margin-top: 4px;
+}
+
+// Abas -> cards: 24px. "Ver todos" -> cards: 25px (vitrines sem abas).
+.panel {
+  margin-top: 24px;
+
+  .showcase:not(:has(.tabs)) & {
+    margin-top: 25px;
+  }
+}

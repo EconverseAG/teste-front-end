@@ -1,0 +1,59 @@
+@use "abstracts" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.title {
+  @include text(30px, 45px, 700);
+
+  display: flex;
+  gap: 34px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  color: $color-primary;
+  text-align: center;
+
+  @include below("sm") {
+    @include text(22px, 33px, 700);
+  }
+}
+
+// Filetes de 360px, 34px de respiro e alinhados a 18px do topo (Figma).
+.decorated {
+  &::before,
+  &::after {
+    flex: 0 1 360px;
+    height: 1px;
+    margin-top: 18px;
+    content: "";
+    background: $color-line;
+
+    @include below("sm") {
+      margin-top: 16px;
+    }
+  }
+
+  @include below("sm") {
+    gap: 16px;
+  }
+}
+
+.action {
+  @include text(15px, 22.5px, 700);
+  @include focus-ring;
+
+  color: $color-text;
+  border-radius: $radius-sm;
+  transition: color $duration-fast ease;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

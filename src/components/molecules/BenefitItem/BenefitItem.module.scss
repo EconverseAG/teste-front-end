@@ -1,0 +1,22 @@
+@use "abstracts" as *;
+
+.item {
+  @include text(12px, 18px, 500);
+
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: 9px;
+  align-items: center;
+  color: $color-text-subtle;
+  white-space: nowrap;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: $color-text-subtle;
+}
+
+.highlight {
+  font-weight: 600;
+  color: $color-primary-strong;
+}

@@ -1,0 +1,43 @@
+@use "abstracts" as *;
+
+.section {
+  @include container;
+
+  margin-top: $section-gap;
+
+  @include below("sm") {
+    margin-top: 56px;
+  }
+}
+
+.list {
+  @include reset-list;
+  @include hide-scrollbar;
+
+  display: flex;
+  gap: 42px;
+  justify-content: center;
+  // 32px até o título menos o respiro da sombra; o respiro evita corte no overflow.
+  margin-top: 8px;
+  margin-bottom: -28px;
+  padding-block: 24px 28px;
+  overflow-x: auto;
+
+  @include below("lg") {
+    gap: 24px;
+    justify-content: flex-start;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    scroll-snap-type: x mandatory;
+
+    > li {
+      scroll-snap-align: start;
+    }
+  }
+
+  @include below("sm") {
+    gap: 16px;
+    margin-inline: -$gutter-mobile;
+    padding-inline: $gutter-mobile;
+  }
+}

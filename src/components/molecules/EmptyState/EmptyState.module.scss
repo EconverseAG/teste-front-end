@@ -1,0 +1,54 @@
+@use "abstracts" as *;
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 360px;
+  padding: 40px 16px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.medal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  color: $color-primary;
+  background: $color-white;
+  border: 1px solid $color-line;
+  border-radius: 50%;
+  box-shadow: 0 16px 45px rgb(0 0 0 / 6%);
+
+  &::before {
+    position: absolute;
+    inset: 8px;
+    content: "";
+    background: $color-surface-muted;
+    border-radius: inherit;
+  }
+
+  svg {
+    position: relative;
+  }
+}
+
+.title {
+  @include text(18px, 24px, 600);
+
+  color: $color-ink;
+}
+
+.description {
+  @include text(13px, 20px);
+
+  margin-top: 8px;
+  color: $color-text-muted;
+}
+
+.action {
+  margin-top: 24px;
+}

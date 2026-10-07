@@ -1,0 +1,11 @@
+@use "abstracts" as *;
+
+.bar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: $z-header + 1;
+  height: 3px;
+  pointer-events: none;
+  background: linear-gradient(90deg, $color-primary, $color-accent);
+  transform-origin: left;
+}

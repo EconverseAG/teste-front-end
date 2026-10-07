@@ -1,0 +1,16 @@
+.price {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+// Rolos têm altura fixa; centralizar mantém R$, pontos e vírgula na linha dos dígitos.
+.visual,
+.group {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.symbol {
+  margin-right: 0.25em;
+}

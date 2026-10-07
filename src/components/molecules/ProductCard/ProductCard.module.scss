@@ -1,0 +1,116 @@
+@use "abstracts" as *;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
+  padding: 32px 13px 16px;
+  background: $color-white;
+  border-radius: $radius-xl;
+
+  // Sombras em pseudo-elementos: o hover e o carrossel só animam opacidade,
+  // que roda na GPU, em vez de repintar um box-shadow com blur a cada frame.
+  &::before,
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    border-radius: inherit;
+    transition: opacity $duration-base ease;
+  }
+
+  &::before {
+    box-shadow: $shadow-card;
+    opacity: var(--card-shadow, 1);
+  }
+
+  &::after {
+    box-shadow: $shadow-card-hover;
+    opacity: 0;
+  }
+
+  @include motion-safe {
+    transition: transform $duration-base $ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-6px);
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:hover .image {
+      transform: scale(1.04);
+    }
+  }
+
+  &:has(.hit:focus-visible) {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+  }
+}
+
+.media {
+  position: relative;
+  height: 228px;
+}
+
+.image {
+  @include motion-safe {
+    transition: transform 400ms $ease-out;
+  }
+}
+
+.title {
+  @include text(15px, 22.5px, 300);
+  @include line-clamp(2);
+
+  min-height: 45px;
+  margin-top: 9px;
+  color: $color-text;
+}
+
+.hit {
+  @include reset-button;
+
+  text-align: left;
+  outline: none;
+
+  // Área de clique cobrindo o card inteiro.
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: "";
+    border-radius: inherit;
+  }
+}
+
+.price {
+  margin-top: 12px;
+}
+
+.shipping {
+  @include text(12px, 18px);
+
+  margin-top: 7px;
+  margin-bottom: 12px;
+  color: $color-primary;
+}
+
+.buy {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}

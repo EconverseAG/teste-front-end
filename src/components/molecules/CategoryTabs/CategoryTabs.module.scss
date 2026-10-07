@@ -1,0 +1,71 @@
+@use "abstracts" as *;
+
+.tablist {
+  @include hide-scrollbar;
+
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tab {
+  @include reset-button;
+  @include text(16px, 16px);
+
+  position: relative;
+  flex: 1 0 0;
+  min-width: 120px;
+  height: 40px;
+  padding: 12px 24px;
+  color: $color-text-tab;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: $color-white;
+  border: 1px solid $color-border-tab;
+  transition: color $duration-fast ease;
+
+  // Bordas colapsadas como no Figma (itemSpacing -1).
+  & + & {
+    margin-left: -1px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &:focus-visible {
+    z-index: 1;
+    outline: 2px solid $color-primary;
+    outline-offset: -3px;
+  }
+
+  @include below("sm") {
+    @include text(14px, 16px);
+
+    // No mobile as abas rolam na horizontal em vez de espremer o rótulo.
+    flex: 0 0 auto;
+    min-width: 0;
+    padding-inline: 18px;
+  }
+}
+
+.active {
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.label {
+  position: relative;
+}
+
+// Indicador que desliza entre as abas (só aparece como filete inferior).
+.indicator {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  height: 2px;
+  background: $color-primary;
+}

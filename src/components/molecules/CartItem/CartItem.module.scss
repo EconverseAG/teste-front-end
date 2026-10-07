@@ -1,0 +1,80 @@
+@use "abstracts" as *;
+
+.item {
+  display: flex;
+  gap: 16px;
+  padding-block: 16px;
+}
+
+.media {
+  position: relative;
+  flex: 0 0 80px;
+  height: 80px;
+  overflow: hidden;
+  background: $color-surface-muted;
+  border-radius: $radius-xl;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.name {
+  @include text(13px, 19px, 400);
+  @include line-clamp(2);
+
+  color: $color-text;
+}
+
+.remove {
+  @include reset-button;
+  @include focus-ring;
+
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: $color-text-subtle;
+  border-radius: 50%;
+  transition:
+    color $duration-fast ease,
+    background-color $duration-fast ease;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-danger;
+      background: rgb(209 41 61 / 8%);
+    }
+  }
+}
+
+.foot {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.quantity {
+  width: 96px;
+  height: 32px;
+}
+
+.total {
+  @include text(15px, 18px, 600);
+
+  color: $color-ink;
+}

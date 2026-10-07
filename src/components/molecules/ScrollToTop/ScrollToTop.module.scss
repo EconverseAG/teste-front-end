@@ -1,0 +1,52 @@
+@use "abstracts" as *;
+
+.button {
+  @include reset-button;
+  @include focus-ring;
+
+  position: fixed;
+  right: 24px;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: $z-header;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: $color-primary;
+  pointer-events: none;
+  background: $color-white;
+  border: 1px solid $color-line;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity $duration-base $ease-out,
+    transform $duration-base $ease-out,
+    background-color $duration-fast ease,
+    color $duration-fast ease;
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-white;
+      background: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+
+  @include below("sm") {
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.visible {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}

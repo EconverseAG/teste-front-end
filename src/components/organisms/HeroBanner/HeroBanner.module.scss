@@ -1,0 +1,106 @@
+@use "abstracts" as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  height: 390px;
+  overflow: hidden;
+  background: #111;
+
+  // Degradê do Figma: 966px a partir da esquerda, preto a 85%, opacidade 80%.
+  &::after {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: -1;
+    width: min(966px, 100%);
+    content: "";
+    background: linear-gradient(270deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 80%) 85%);
+  }
+
+  @include below("sm") {
+    height: 420px;
+
+    &::after {
+      width: 100%;
+      background: linear-gradient(0deg, rgb(0 0 0 / 85%) 10%, rgb(0 0 0 / 35%) 100%);
+    }
+  }
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+
+  @include below("sm") {
+    object-position: 70% center;
+  }
+}
+
+.content {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding-top: 78px;
+  color: $color-white;
+
+  @include below("sm") {
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+}
+
+.title {
+  @include text(48px, 50px, 600);
+
+  max-width: 640px;
+
+  @include below("md") {
+    @include text(40px, 44px, 600);
+  }
+
+  @include below("sm") {
+    @include text(32px, 36px, 600);
+  }
+}
+
+.subtitle {
+  @include text(32px, 48px);
+
+  margin-top: 18px;
+
+  @include below("sm") {
+    @include text(22px, 32px);
+
+    margin-top: 12px;
+  }
+}
+
+.highlight {
+  font-weight: 700;
+  color: $color-accent;
+}
+
+// "Ver produto": 206x50, 16/24 semibold, sem caixa alta.
+.cta {
+  @include text(16px, 24px, 600);
+
+  width: 206px;
+  height: 50px;
+  margin-top: 41px;
+  text-transform: none;
+  border-radius: 5px;
+
+  @include below("sm") {
+    margin-top: 24px;
+  }
+}

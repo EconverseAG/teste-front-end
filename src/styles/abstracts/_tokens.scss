@@ -1,0 +1,79 @@
+// Tokens extraídos do Figma (Teste Front-End Jr / Home). Nomes semânticos,
+// valores literais do layout: trocar a marca é trocar este arquivo.
+
+// Cores
+$color-primary: #3442b5;
+$color-primary-strong: #3019b2;
+$color-primary-hover: #2a369a;
+$color-accent: #f7ca11;
+$color-accent-hover: #e6bb06;
+$color-ink: #271c47;
+$color-ink-strong: #161615;
+
+$color-text: #3f3f40;
+$color-text-category: #4e4e4e;
+$color-text-tab: #3b3b3b;
+$color-text-muted: #808080;
+$color-text-subtle: #9f9f9f;
+$color-text-placeholder: #676767;
+$color-text-footer: rgb(34 34 34 / 71%);
+$color-icon-social: #4a4a4a;
+$color-icon-close: #707070;
+
+$color-white: #fff;
+$color-surface-search: #f6f5f2;
+$color-surface-muted: #f4f4f4;
+$color-surface-checkbox: #f6f6f6;
+$color-border-tab: #bdbdbd;
+$color-border-input: #e7e7e7;
+$color-border-qty: #d9d9d9;
+$color-border-checkbox: #8c342b;
+$color-line: #dedede;
+$color-line-header: #f0f0f0;
+$color-line-footer: rgb(40 40 40 / 18%);
+$color-overlay: rgb(0 0 0 / 54%);
+$color-danger: #d1293d;
+
+// Tipografia (as famílias chegam como CSS vars do next/font)
+$font-primary: var(--font-poppins), system-ui, sans-serif;
+$font-secondary: var(--font-work-sans), system-ui, sans-serif;
+$font-display: var(--font-outfit), var(--font-poppins), system-ui, sans-serif;
+
+// Sombras
+$shadow-nav: 0 8px 16px rgb(57 48 19 / 12%);
+$shadow-card: 0 3px 19px rgb(0 0 0 / 22%);
+$shadow-card-hover: 0 12px 28px rgb(0 0 0 / 22%);
+$shadow-category: 0 4px 11px rgb(0 0 0 / 13%);
+$shadow-category-active: 0 2px 9px rgb(0 0 0 / 22%);
+$shadow-brand: 0 7px 20px rgb(0 0 0 / 13%);
+$shadow-arrow: 0 4px 4px rgb(0 0 0 / 25%);
+
+// Raios
+$radius-xs: 1px;
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 10px;
+$radius-2xl: 20px;
+
+// Layout
+$container: 1280px;
+$gutter: 80px;
+$gutter-mobile: 16px;
+$section-gap: 90px;
+
+// Breakpoints (desktop-first: o layout de referência é 1440)
+$bp-xl: 1440px;
+$bp-lg: 1200px;
+$bp-md: 1024px;
+$bp-sm: 768px;
+$bp-xs: 520px;
+
+// Movimento
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$duration-fast: 160ms;
+$duration-base: 240ms;
+
+// Camadas
+$z-header: 20;
+$z-modal: 100;

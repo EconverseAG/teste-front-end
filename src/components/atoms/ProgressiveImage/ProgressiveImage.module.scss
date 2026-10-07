@@ -1,0 +1,44 @@
+@use "abstracts" as *;
+
+.frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 12%;
+}
+
+.image {
+  opacity: 0;
+
+  @include motion-safe {
+    transition: opacity 400ms $ease-out;
+  }
+
+  &[data-loaded] {
+    opacity: 1;
+  }
+
+  // Carregou: o skeleton sai (sem JS re-renderizando).
+  &[data-loaded] + .placeholder {
+    display: none;
+  }
+}
+
+// Prioritárias aparecem assim que pintam, antes mesmo da hidratação.
+.eager {
+  opacity: 1;
+  transition: none;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
+}

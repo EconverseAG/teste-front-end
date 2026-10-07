@@ -1,0 +1,45 @@
+@use "abstracts" as *;
+
+// Mesma altura das abas (40px) para a vitrine não pular ao buscar.
+.summary {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid $color-border-tab;
+
+  @include below("sm") {
+    flex-wrap: wrap;
+  }
+}
+
+.text {
+  @include text(14px, 20px);
+
+  color: $color-text-tab;
+
+  strong {
+    font-weight: 600;
+    color: $color-primary;
+  }
+}
+
+.clear {
+  @include reset-button;
+  @include text(12px, 18px, 600);
+  @include focus-ring;
+
+  flex: none;
+  color: $color-primary;
+  text-transform: uppercase;
+  border-radius: $radius-xs;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}

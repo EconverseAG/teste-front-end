@@ -1,0 +1,36 @@
+@use "abstracts" as *;
+
+.section {
+  @include container;
+
+  // 39px do Figma menos os 8px de respiro do topo da lista.
+  margin-top: 31px;
+}
+
+.list {
+  @include reset-list;
+  @include hide-scrollbar;
+
+  display: flex;
+  gap: 42px;
+  justify-content: center;
+  // Respiro no topo para o hover (translateY) não ser cortado pelo overflow.
+  padding-block: 8px 0;
+  overflow-x: auto;
+
+  @include below("lg") {
+    gap: 24px;
+    justify-content: flex-start;
+  }
+
+  @include below("sm") {
+    gap: 16px;
+    margin-inline: -$gutter-mobile;
+    padding-inline: $gutter-mobile;
+    scroll-snap-type: x mandatory;
+
+    > li {
+      scroll-snap-align: start;
+    }
+  }
+}

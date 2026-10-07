@@ -1,0 +1,199 @@
+@use "abstracts" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  background: $color-white;
+  transition: box-shadow $duration-base ease;
+
+  &[data-elevated] {
+    box-shadow: 0 6px 24px rgb(0 0 0 / 8%);
+  }
+}
+
+// O header do Figma vive dentro do container de 1280 (linhas e sombra também).
+.inner {
+  @include container;
+}
+
+.benefits {
+  @include reset-list;
+  @include hide-scrollbar;
+
+  display: flex;
+  gap: 119px;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  overflow-x: auto;
+  border-bottom: 1px solid $color-line-header;
+
+  @include below("md") {
+    gap: 40px;
+    justify-content: flex-start;
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 630px) 1fr;
+  gap: 24px;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid $color-line-header;
+
+  @include below("md") {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo actions"
+      "search search";
+    row-gap: 12px;
+    height: auto;
+    padding-block: 12px;
+
+    > :first-child {
+      grid-area: logo;
+    }
+  }
+}
+
+.search {
+  justify-self: center;
+
+  @include below("md") {
+    grid-area: search;
+    max-width: none;
+  }
+}
+
+.actions {
+  @include reset-list;
+
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-self: end;
+
+  @include below("md") {
+    grid-area: actions;
+    gap: 20px;
+  }
+
+  @include below("xs") {
+    gap: 12px;
+  }
+}
+
+.action {
+  @include reset-button;
+  @include focus-ring;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: $color-text-subtle;
+  border-radius: $radius-sm;
+  transition:
+    color $duration-fast ease,
+    transform $duration-fast $ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.cartIcon {
+  display: grid;
+  place-items: center;
+}
+
+.badge {
+  @include text(10px, 16px, 700);
+
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding-inline: 4px;
+  color: $color-ink;
+  text-align: center;
+  background: $color-accent;
+  border: 1px solid $color-white;
+  border-radius: 9px;
+}
+
+// Barra de departamentos: 40px, sombra 0 8 16 do Figma.
+.nav {
+  height: 40px;
+  background: $color-white;
+  box-shadow: $shadow-nav;
+}
+
+.navList {
+  @include reset-list;
+  @include hide-scrollbar;
+
+  display: flex;
+  gap: 91px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-inline: 16px;
+  overflow-x: auto;
+
+  @include below("xl") {
+    gap: 56px;
+  }
+
+  @include below("lg") {
+    gap: 32px;
+    justify-content: flex-start;
+  }
+}
+
+.navLink {
+  @include text(12px, 18px, 600);
+  @include focus-ring;
+
+  position: relative;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  color: $color-text-subtle;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color $duration-fast ease;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    content: "";
+    background: currentcolor;
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $duration-base $ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $color-primary-strong;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.highlight {
+  color: $color-primary-strong;
+}

@@ -1,0 +1,97 @@
+@use "sass:map";
+@use "tokens" as *;
+
+$_breakpoints: (
+  "xl": $bp-xl,
+  "lg": $bp-lg,
+  "md": $bp-md,
+  "sm": $bp-sm,
+  "xs": $bp-xs,
+);
+
+/// Abaixo do breakpoint informado (layout desktop-first).
+@mixin below($name) {
+  @media (max-width: #{map.get($_breakpoints, $name) - 0.02px}) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container + $gutter * 2;
+  margin-inline: auto;
+  padding-inline: $gutter;
+
+  @include below("lg") {
+    padding-inline: 32px;
+  }
+
+  @include below("sm") {
+    padding-inline: $gutter-mobile;
+  }
+}
+
+/// Tipografia no formato do Figma: tamanho/altura de linha em px.
+@mixin text($size, $line-height, $weight: 400, $family: $font-primary) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin focus-ring($offset: 2px) {
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: $offset;
+  }
+}
+
+@mixin reset-button {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}

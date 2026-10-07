@@ -1,0 +1,53 @@
+@use "abstracts" as *;
+
+.selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  height: 36px;
+  padding-inline: 8px 9px;
+  background: $color-white;
+  border: 1px solid $color-border-qty;
+  border-radius: $radius-sm;
+}
+
+.step {
+  @include reset-button;
+  @include focus-ring(0);
+
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: $color-ink;
+  border-radius: $radius-sm;
+  transition:
+    color $duration-fast ease,
+    transform $duration-fast $ease-out;
+
+  &:active:not(:disabled) {
+    transform: scale(0.85);
+  }
+
+  // No mínimo o "−" fica cinza, como no layout (quantidade 01).
+  &:disabled {
+    color: $color-text-subtle;
+    cursor: not-allowed;
+  }
+}
+
+@media (hover: hover) {
+  .step:hover:not(:disabled) {
+    color: $color-primary;
+  }
+}
+
+.value {
+  @include text(16px, 16px, 500);
+
+  min-width: 20px;
+  color: $color-ink;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
