@@ -1,30 +1,30 @@
 import {
-  CreditCard,
   Heart,
   Search,
-  ShieldCheck,
   ShoppingCart,
-  Truck,
   UserRound,
 } from "lucide-react";
 import logo from "../assets/logo.png";
+import creditCardIcon from "../assets/icons/CreditCard.png";
+import shieldCheckIcon from "../assets/icons/ShieldCheck.png";
+import truckIcon from "../assets/icons/Truck.png";
 import "../style/Header.scss";
 
 const benefits = [
   {
-    icon: ShieldCheck,
+    icon: shieldCheckIcon,
     before: "Compra ",
     emphasis: "100% segura",
     after: "",
   },
   {
-    icon: Truck,
+    icon: truckIcon,
     before: "",
     emphasis: "Frete grátis",
     after: " acima de R$ 200",
   },
   {
-    icon: CreditCard,
+    icon: creditCardIcon,
     before: "",
     emphasis: "Parcele",
     after: " suas compras",
@@ -46,10 +46,10 @@ function Header() {
     <header className="header" aria-label="Cabeçalho da loja">
       <div className="header__benefits">
         <ul className="header__benefits-list" aria-label="Benefícios da loja">
-          {benefits.map(({ icon: Icon, emphasis, before, after }) => (
+          {benefits.map(({ icon, emphasis, before, after }) => (
             <li key={emphasis} className="header__benefit-item">
               <span className="header__benefit-icon" aria-hidden="true">
-                <Icon size={14} strokeWidth={2} />
+                <img src={icon} alt="" width={14} height={14} />
               </span>
               <p className="header__benefit-text">
                 {before}
