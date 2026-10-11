@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import BannerParceiros from "./components/BannerParceiros";
 import Brands from "./components/Brand";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,7 @@ function App() {
       <BannerParceiros />
       <Brands />
       <Products showCategories={false} />
+      <Footer />
     </div>
   );
 }

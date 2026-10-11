@@ -1,5 +1,8 @@
+@use "./variables" as *;
+
 .banner-parceiros {
-  width: min(100% - 2rem, 700px);
+  // 1280px
+  width: min(100% - 2rem, 80rem);
   margin: 1.25rem auto;
 }
 
@@ -72,7 +75,8 @@
 
 .banner-parceiros__name {
   margin: 0 0 0.35rem;
-  font-size: clamp(1rem, 2.8vw, 1.4rem);
+  // 40px
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -81,7 +85,8 @@
   display: -webkit-box;
   overflow: hidden;
   margin: 0 0 0.8rem;
-  font-size: clamp(0.55rem, 1.2vw, 0.68rem);
+  // 16px
+  font-size: 1rem;
   line-height: 1.35;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -89,15 +94,18 @@
 
 .banner-parceiros__button {
   display: inline-flex;
-  min-width: 4.8rem;
-  min-height: 1.7rem;
+  // 145px
+  width: 9.0625rem;
+  // 48px
+  height: 3rem;
   align-items: center;
   justify-content: center;
   padding: 0.35rem 0.8rem;
   border-radius: 0.25rem;
-  background: #ffcc00;
-  color: #202020;
-  font-size: 0.56rem;
+  background: $cor-amarelo;
+  color: $cor-roxo-escuro;
+  // 16px
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-decoration: none;
@@ -125,10 +133,10 @@
   }
 
   .banner-parceiros__name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .banner-parceiros__description {
-    font-size: 0.65rem;
+    font-size: 0.875rem;
   }
 }

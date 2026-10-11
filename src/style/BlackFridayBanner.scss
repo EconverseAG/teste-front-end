@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .black-friday-banner {
   position: relative;
   isolation: isolate;
@@ -41,34 +43,39 @@
 
   h1 {
     margin: 0;
-    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    // 48px
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.08;
   }
 
   p {
     margin: 0.85rem 0 1.8rem;
-    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    // 32px
+    font-size: 2rem;
     line-height: 1.4;
   }
 
   strong {
-    color: #ffd21c;
+    color: $cor-amarelo;
     font-weight: 700;
   }
 }
 
 .black-friday-banner__button {
   display: inline-flex;
-  min-width: 8.9rem;
-  min-height: 2.25rem;
+  // 206px
+  width: 12.875rem;
+  // 50px
+  height: 3.125rem;
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-  background: #ffd21c;
-  color: #111111;
-  font-size: 0.75rem;
+  background: $cor-amarelo;
+  color: $cor-roxo-escuro;
+  // 16px
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.2s ease;
@@ -97,8 +104,13 @@
   .black-friday-banner__content {
     padding-inline: 1.25rem;
 
+    h1 {
+      font-size: 1.5rem;
+    }
+
     p {
       margin-bottom: 1.4rem;
+      font-size: 1.25rem;
     }
   }
 }

@@ -1,5 +1,7 @@
+@use "./variables" as *;
+
 .header {
-  --header-foreground: #777777;
+  --header-foreground: #{$cor-texto-links};
 
   background: #ffffff;
   border-bottom: 1px solid #e8e8e8;
@@ -13,7 +15,8 @@
 }
 
 .header__benefits-list {
-  width: min(100%, 1220px);
+  // 1280px
+  width: min(100%, 80rem);
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -43,18 +46,19 @@
 .header__benefit-text {
   margin: 0;
   color: var(--header-foreground);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   line-height: 1.4;
   letter-spacing: 0.01em;
 
   strong {
-    color: #3019b2;
+    color: $cor-azul-barra-categoria;
     font-weight: 600;
   }
 }
 
 .header__main {
-  width: min(100%, 1220px);
+  // 1280px
+  width: min(100%, 80rem);
   margin: 0 auto;
   padding: 1rem 1.25rem 0.75rem;
   display: grid;
@@ -83,7 +87,7 @@
   width: min(100%, 720px);
   margin: 0 auto;
   padding: 0.2rem 0.4rem 0.2rem 1rem;
-  background: #f3f3f5;
+  background: $cor-busca;
   border: 1px solid #ebebee;
   border-radius: 999px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.01);
@@ -94,7 +98,7 @@
     border: 0;
     background: transparent;
     color: var(--header-foreground);
-    font-size: 0.96rem;
+    font-size: 0.875rem;
     outline: none;
 
     &::placeholder {
@@ -154,7 +158,8 @@
 }
 
 .header__categories ul {
-  width: min(100%, 1220px);
+  // 1280px
+  width: min(100%, 80rem);
   margin: 0 auto;
   padding: 0.85rem 1.25rem;
   list-style: none;
@@ -173,7 +178,7 @@
 .header__categories a {
   color: var(--header-foreground);
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;

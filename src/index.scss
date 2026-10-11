@@ -1,3 +1,5 @@
+@use "./style/variables" as *;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 * {
@@ -16,7 +18,7 @@ body {
   min-height: 100vh;
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
-  color: #333333;
+  color: $cor-texto-principal;
 }
 
 button,

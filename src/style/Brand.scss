@@ -1,12 +1,16 @@
+@use "./variables" as *;
+
 .brand {
-  width: min(100% - 2rem, 700px);
+  // 1280px
+  width: min(100% - 2rem, 80rem);
   margin: 2rem auto;
 }
 
 .brand__title {
   margin: 0 0 1.1rem;
-  color: #3546b5;
-  font-size: 1rem;
+  color: $cor-azul-principal;
+  // 30px
+  font-size: 1.875rem;
   font-weight: 700;
   text-align: center;
 }
