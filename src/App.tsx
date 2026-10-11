@@ -12,7 +12,10 @@ function App() {
       <Categorias />
       <Products />
       <BannerParceiros />
+      <Products showCategories={false} />
+      <BannerParceiros />
       <Brands />
+      <Products showCategories={false} />
     </div>
   );
 }

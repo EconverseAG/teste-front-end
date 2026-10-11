@@ -25,6 +25,28 @@
   }
 }
 
+.products__see-all {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 0.75rem;
+  color: #3f3f3f;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: #3546b5;
+  }
+
+  &:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid #3546b5;
+    outline-offset: 3px;
+  }
+}
+
 .products__categories {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -105,6 +127,14 @@
   object-fit: contain;
 }
 
+.products__name {
+  margin: 0;
+  color: #414141;
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .products__description {
   display: -webkit-box;
   min-height: 2.3rem;
@@ -179,6 +209,12 @@
   &:focus-visible {
     outline: 2px solid #3546b5;
     outline-offset: 2px;
+  }
+
+  &:disabled {
+    color: #999999;
+    cursor: not-allowed;
+    opacity: 0.55;
   }
 }
 
