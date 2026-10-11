@@ -1,4 +1,7 @@
 import logo from "../assets/logo.png";
+import facebookIcon from "../assets/icons/facebook.png";
+import instagramIcon from "../assets/icons/instagram.png";
+import linkedinIcon from "../assets/icons/linkedin.png";
 import "../style/Footer.scss";
 
 const footerGroups = [
@@ -106,51 +109,17 @@ function Footer() {
             <ul className="footer__social-list" aria-label="Redes sociais">
               <li>
                 <a href="/" aria-label="Instagram da Econverse">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.8"
-                      r="0.8"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
+                  <img src={instagramIcon} alt="" width={20} height={20} />
                 </a>
               </li>
               <li>
                 <a href="/" aria-label="Facebook da Econverse">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" />
-                  </svg>
+                  <img src={facebookIcon} alt="" width={20} height={20} />
                 </a>
               </li>
               <li>
                 <a href="/" aria-label="LinkedIn da Econverse">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M5.2 8.3a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM3.7 9.7h3v10.1h-3V9.7Zm4.9 0h2.9v1.4h.1a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.7 2 3.7 4.6v5.7h-3v-5c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6v5.1h-3V9.7Zm12.5 10.1h-3V9.7h3v10.1Z" />
-                  </svg>
+                  <img src={linkedinIcon} alt="" width={20} height={20} />
                 </a>
               </li>
             </ul>
