@@ -43,7 +43,6 @@
 
   h1 {
     margin: 0;
-    // 48px
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.08;
@@ -51,7 +50,6 @@
 
   p {
     margin: 0.85rem 0 1.8rem;
-    // 32px
     font-size: 2rem;
     line-height: 1.4;
   }
@@ -64,9 +62,7 @@
 
 .black-friday-banner__button {
   display: inline-flex;
-  // 206px
   width: 12.875rem;
-  // 50px
   height: 3.125rem;
   align-items: center;
   justify-content: center;
@@ -74,7 +70,6 @@
   border-radius: 0.25rem;
   background: $cor-amarelo;
   color: $cor-roxo-escuro;
-  // 16px
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;

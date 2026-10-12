@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
 .banner-parceiros {
-  // 1280px
   width: min(100% - 2rem, 80rem);
   margin: 1.25rem auto;
 }
@@ -75,7 +74,6 @@
 
 .banner-parceiros__name {
   margin: 0 0 0.35rem;
-  // 40px
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
@@ -85,7 +83,6 @@
   display: -webkit-box;
   overflow: hidden;
   margin: 0 0 0.8rem;
-  // 16px
   font-size: 1rem;
   line-height: 1.35;
   -webkit-box-orient: vertical;
@@ -94,9 +91,7 @@
 
 .banner-parceiros__button {
   display: inline-flex;
-  // 145px
   width: 9.0625rem;
-  // 48px
   height: 3rem;
   align-items: center;
   justify-content: center;
@@ -104,7 +99,6 @@
   border-radius: 0.25rem;
   background: $cor-amarelo;
   color: $cor-roxo-escuro;
-  // 16px
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;

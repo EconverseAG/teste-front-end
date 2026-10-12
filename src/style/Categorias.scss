@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
 .categorias {
-  // 1280px
   width: min(100% - 2rem, 80rem);
   margin: 1rem auto;
 }
