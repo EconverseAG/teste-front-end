@@ -1,31 +1,109 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Front-End Júnior — Econverse
 
-### Vem ser #Econverse!
+Projeto desenvolvido como parte do processo seletivo para a vaga de **Desenvolvedor Front-End Júnior da Econverse**.
 
-Segue abaixo as instruções para a execução do teste.
+## Tecnologias utilizadas
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+- **React** — construção da interface por componentes.
+- **TypeScript** — tipagem estática e maior segurança no desenvolvimento.
+- **Vite** — ambiente de desenvolvimento e ferramenta de build.
+- **Sass/SCSS** — estilização da interface.
+- **ESLint** — análise estática e padronização do código.
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Funcionalidades
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- Exibição de produtos em uma vitrine.
+- Consumo de dados de produtos em formato JSON.
+- Visualização dos detalhes de um produto por meio de um modal.
+- Interface baseada no layout de referência do Figma.
+- Organização da aplicação em componentes reutilizáveis.
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## Como executar o projeto
 
-**Boa sorte! ;)**
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) instalado.
+- npm, incluído na instalação do Node.js.
+
+### Instalação
+
+**1. Clone o repositório:**
+
+```bash
+git clone URL_DO_SEU_REPOSITORIO
+```
+
+**2. Acesse a pasta do projeto:**
+
+```bash
+cd NOME_DA_PASTA
+```
+
+**3. Instale as dependências:**
+
+```bash
+npm install
+```
+
+**4. Inicie o servidor de desenvolvimento:**
+
+```bash
+npm run dev
+```
+
+**5. Acesse a aplicação:**
+
+Abra no navegador o endereço exibido no terminal, normalmente:
+
+`http://localhost:5173`
+
+## Verificação do código
+
+**Executar o ESLint:**
+
+```bash
+npm run lint
+```
+
+**Gerar a versão de produção:**
+
+```bash
+npm run build
+```
+
+**Visualizar a versão de produção localmente:**
+
+```bash
+npm run preview
+```
+
+## Estrutura do projeto
+
+```text
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── style/
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── package.json
+└── README.md
+```
+
+> A estrutura apresentada é ilustrativa. Ajuste-a para corresponder aos arquivos e diretórios reais do projeto.
+
+## Objetivo do desafio
+
+Demonstrar conhecimentos em desenvolvimento Front-End, incluindo:
+
+- Componentização e reutilização de código.
+- Tipagem estática com TypeScript.
+- Consumo e manipulação de dados em JSON.
+- Estilização com pré-processador CSS.
+- Organização e boas práticas de desenvolvimento.
+
+---
+
+Desenvolvido como parte do processo seletivo para **Desenvolvedor Front-End Júnior — Econverse**.

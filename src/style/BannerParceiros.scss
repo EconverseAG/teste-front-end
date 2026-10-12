@@ -1,0 +1,136 @@
+@use "./variables" as *;
+
+.banner-parceiros {
+  width: min(100% - 2rem, 80rem);
+  margin: 1.25rem auto;
+}
+
+.banner-parceiros__title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.banner-parceiros__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.banner-parceiros__card {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  aspect-ratio: 1.8;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #17130f;
+  color: #ffffff;
+}
+
+.banner-parceiros__scene {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.banner-parceiros__card::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgb(0 0 0 / 72%) 0%,
+    rgb(0 0 0 / 47%) 43%,
+    rgb(0 0 0 / 8%) 100%
+  );
+  content: "";
+}
+
+.banner-parceiros__content {
+  position: relative;
+  display: flex;
+  width: 53%;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.8rem 0 0.8rem 1.4rem;
+}
+
+.banner-parceiros__name {
+  margin: 0 0 0.35rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.banner-parceiros__description {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.banner-parceiros__button {
+  display: inline-flex;
+  width: 9.0625rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.25rem;
+  background: $cor-amarelo;
+  color: $cor-roxo-escuro;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: #ffda33;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 560px) {
+  .banner-parceiros__list {
+    grid-template-columns: 1fr;
+  }
+
+  .banner-parceiros__content {
+    width: 58%;
+    padding-left: 1rem;
+  }
+
+  .banner-parceiros__name {
+    font-size: 1.5rem;
+  }
+
+  .banner-parceiros__description {
+    font-size: 0.875rem;
+  }
+}

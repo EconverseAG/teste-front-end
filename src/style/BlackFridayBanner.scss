@@ -1,0 +1,111 @@
+@use "./variables" as *;
+
+.black-friday-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: clamp(16rem, 23.7vw, 22.5rem);
+  margin: 1.5rem 0;
+  overflow: hidden;
+  background: #111820;
+}
+
+.black-friday-banner__photo,
+.black-friday-banner__gradient {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.black-friday-banner__photo {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.black-friday-banner__gradient {
+  z-index: -1;
+  object-fit: fill;
+}
+
+.black-friday-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem clamp(1.5rem, 5.5vw, 4.25rem);
+  color: #ffffff;
+
+  h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  p {
+    margin: 0.85rem 0 1.8rem;
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  strong {
+    color: $cor-amarelo;
+    font-weight: 700;
+  }
+}
+
+.black-friday-banner__button {
+  display: inline-flex;
+  width: 12.875rem;
+  height: 3.125rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: $cor-amarelo;
+  color: $cor-roxo-escuro;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: #ffbf00;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 560px) {
+  .black-friday-banner {
+    width: 100%;
+    min-height: 16rem;
+    margin: 1rem 0;
+  }
+
+  .black-friday-banner__photo {
+    object-position: 58% center;
+  }
+
+  .black-friday-banner__content {
+    padding-inline: 1.25rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.25rem;
+    }
+  }
+}
