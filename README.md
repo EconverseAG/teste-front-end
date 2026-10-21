@@ -1,31 +1,72 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+# Teste Front-End Jr. — Econverse
 
-Segue abaixo as instruções para a execução do teste.
+Aplicação web de vitrine de produtos desenvolvida como parte do teste técnico para a vaga de Front-End Júnior da Econverse.
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+## Tecnologias utilizadas
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+- React
+- TypeScript
+- Vite
+- Sass (SCSS)
+- HTML semântico
+- CSS Grid e Flexbox
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+## Funcionalidades
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+- Carregamento de produtos por meio de uma API em JSON.
+- Exibição dos produtos em cards com imagem, nome, descrição e preço.
+- Modal com detalhes do produto selecionado.
+- Fechamento do modal pelo botão, clicando fora do conteúdo ou pressionando `Esc`.
+- Layout responsivo para diferentes tamanhos de tela.
+- Formatação de preços em reais (BRL).
+- Estados de carregamento e tratamento de erros na requisição.
 
-**Boa sorte! ;)**
+## Requisitos
+
+- Node.js
+- npm
+
+## Como executar o projeto
+
+1. Clone ou baixe o repositório.
+2. Abra o terminal na pasta do projeto.
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+4. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Acesse o endereço indicado no terminal, geralmente `http://localhost:5173/`.
+
+## Build de produção
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+Os arquivos gerados serão disponibilizados na pasta `dist`.
+
+Para testar localmente a versão gerada, execute:
+
+```bash
+npm run preview
+```
+
+## Fonte dos dados
+
+Os produtos são carregados da API disponibilizada no enunciado do teste técnico da Econverse.
+
+Durante o desenvolvimento local, o Vite utiliza um proxy para encaminhar a requisição à API.
+
+## Observações
+
+Este projeto foi desenvolvido com foco nos requisitos do teste técnico, incluindo consumo de API, componentes React, tipagem com TypeScript, estilização com Sass e responsividade.
