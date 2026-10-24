@@ -1,0 +1,34 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.benefits-bar {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    height: 31px;
+    border-bottom: 1px solid $color-border;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+
+    @include respond-to($breakpoint-tablet) {
+      gap: 24px;
+    }
+
+    @include respond-to($breakpoint-mobile) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    strong {
+      font-weight: 600;
+      color: $color-primary-dark;
+    }
+  }
+}

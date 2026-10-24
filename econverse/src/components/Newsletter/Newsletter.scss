@@ -1,0 +1,77 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.newsletter {
+  background: $color-newsletter;
+  color: $color-surface;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 163px;
+    padding-block: 32px;
+
+    @include respond-to($breakpoint-tablet) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    max-width: 440px;
+    margin-top: 8px;
+    font-size: 0.75rem;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    width: min(740px, 100%);
+
+    @include respond-to($breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.75rem;
+    color: $color-text;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+
+  &__submit {
+    @include reset-button;
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 4px;
+    background: $color-accent;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-text;
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    grid-column: 1 / -1;
+    font-size: 0.75rem;
+  }
+}

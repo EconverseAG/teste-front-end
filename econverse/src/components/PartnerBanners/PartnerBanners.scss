@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.partner-banners {
+  margin-bottom: 64px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @include respond-to($breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 350px;
+    padding: 40px 24px;
+    border-radius: 8px;
+    // Imagem do Figma: salvar em public/images/partner-store.jpg
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)),
+      url('../../assets/images/parceiros.png'), linear-gradient(135deg, #2a1d0a, #0e0e14);
+    background-size: cover;
+    background-position: center;
+    color: $color-surface;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__description {
+    max-width: 230px;
+    margin-top: 8px;
+    font-size: 0.875rem;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 138px;
+    height: 44px;
+    margin-top: 24px;
+    border-radius: 4px;
+    background: $color-accent;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-text;
+  }
+}

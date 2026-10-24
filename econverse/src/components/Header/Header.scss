@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  background: $color-surface;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 72px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__action {
+    @include reset-button;
+    display: flex;
+    color: $color-text-muted;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    &__actions {
+      gap: 12px;
+    }
+  }
+}

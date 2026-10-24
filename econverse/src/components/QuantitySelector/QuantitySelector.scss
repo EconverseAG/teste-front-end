@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid $color-border;
+  border-radius: 2px;
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    color: $color-text;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__value {
+    font-size: 0.875rem;
+  }
+}

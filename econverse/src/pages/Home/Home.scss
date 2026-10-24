@@ -1,0 +1,9 @@
+@use '../../styles/variables' as *;
+
+.home {
+  &__status {
+    padding: 80px 20px;
+    text-align: center;
+    color: $color-text-muted;
+  }
+}

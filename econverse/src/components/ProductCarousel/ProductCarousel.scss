@@ -1,0 +1,60 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+$items-per-view: 4;
+$items-gap: 16px;
+
+.product-carousel {
+  position: relative;
+
+  &__track {
+    display: flex;
+    gap: $items-gap;
+    padding: 4px 4px 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    flex: 0 0 calc((100% - #{$items-gap * ($items-per-view - 1)}) / #{$items-per-view});
+    scroll-snap-align: start;
+
+    @include respond-to($breakpoint-tablet) {
+      flex-basis: calc((100% - #{$items-gap}) / 2);
+    }
+
+    @include respond-to($breakpoint-mobile) {
+      flex-basis: 80%;
+    }
+  }
+
+  &__arrow {
+    @include reset-button;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: $color-surface;
+    box-shadow: $shadow-card;
+    color: $color-text;
+    transform: translateY(-50%);
+
+    &--previous {
+      left: -14px;
+    }
+
+    &--next {
+      right: -14px;
+    }
+  }
+}

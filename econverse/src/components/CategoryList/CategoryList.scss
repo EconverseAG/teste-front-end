@@ -1,0 +1,64 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.category-list {
+  padding-block: 38px 80px;
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-inline: 20px;
+    overflow-x: auto;
+  }
+
+  &__item {
+    @include reset-button;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 130px;
+    font-size: 0.875rem;
+    color: $color-text-muted;
+  }
+
+  &__icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    border-radius: 8px;
+    background: $color-background-soft;
+    box-shadow: $shadow-soft;
+    transition: background 0.2s;
+
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    background-color: $color-text;
+    mask: var(--category-icon) center / contain no-repeat;
+    -webkit-mask: var(--category-icon) center / contain no-repeat;
+    transition: background-color 0.2s;
+  }
+
+  &__item--active {
+    font-weight: 600;
+    color: $color-primary-dark;
+
+    .category-list__icon-box {
+      background: $color-surface;
+    }
+
+    .category-list__icon {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &__name {
+    white-space: nowrap;
+  }
+}

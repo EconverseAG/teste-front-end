@@ -1,0 +1,81 @@
+
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero-banner {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5, 7, 15, 0.85) 0%,
+      rgba(5, 7, 15, 0.65) 50%,
+      rgba(5, 7, 15, 0.35) 100%
+    ),
+    url('../../assets/images/hero-black-friday.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $color-surface;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 390px;
+    padding-block: 40px;
+  }
+
+  &__title {
+    max-width: 600px;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    margin-top: 24px;
+    font-size: 2rem;
+    font-weight: 400;
+
+    strong {
+      font-weight: 600;
+      color: $color-accent;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 227px;
+    height: 60px;
+    margin-top: 40px;
+    border-radius: 4px;
+    background: $color-accent;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $color-text;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1.25rem;
+    }
+
+    &__button {
+      width: 180px;
+      height: 48px;
+      font-size: 1rem;
+    }
+  }
+}

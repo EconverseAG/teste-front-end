@@ -1,0 +1,78 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  padding-top: 40px;
+  background-color: $color-background-soft;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding-bottom: 40px;
+
+    @include respond-to($breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 300px;
+    padding-right: 40px;
+    border-right: 1px solid $color-border;
+
+    @include respond-to($breakpoint-tablet) {
+      border-right: 0;
+    }
+  }
+
+  &__description {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+    color: $color-text-muted;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include respond-to($breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column-title {
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+
+    a:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__copyright {
+    padding-block: 16px 24px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    background: $color-surface;
+  }
+}

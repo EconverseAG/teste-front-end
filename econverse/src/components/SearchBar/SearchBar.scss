@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 631px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: $color-background-soft;
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 0.875rem;
+    color: $color-text;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    color: $color-text-muted;
+  }
+}

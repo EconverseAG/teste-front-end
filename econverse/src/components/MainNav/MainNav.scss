@@ -1,0 +1,52 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+
+  &__list {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+  }
+
+  &__link {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary-dark;
+      font-weight: 700;
+    }
+
+  }
+
+  &__subscription {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 40px;
+  }
+
+  @include respond-to($breakpoint-tablet) {
+    overflow-x: auto;
+    gap: 24px;
+
+    &__list {
+      gap: 24px;
+      justify-content: flex-start;
+      white-space: nowrap;
+    }
+  }
+}

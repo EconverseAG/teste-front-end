@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.brands-section {
+  margin-bottom: 64px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 20px 24px;
+    overflow-x: auto;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 216px;
+    height: 216px;
+    border-radius: 50%;
+    background: $color-surface;
+    box-shadow: $shadow-soft;
+    font-size: 0.8em;
+  }
+}

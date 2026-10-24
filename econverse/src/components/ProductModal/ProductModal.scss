@@ -1,0 +1,111 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.product-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: min(769px, 100% - 32px);
+  min-height: 299px;
+  padding: 32px 40px;
+  border-radius: 2px;
+  background: $color-surface;
+
+  @include respond-to($breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 56px 24px 24px;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-overlay;
+  }
+
+  &__close {
+    @include reset-button;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    display: flex;
+    color: $color-text-muted;
+  }
+
+  &__media {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 140px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-text;
+  }
+
+  &__price {
+    margin-top: 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    max-width: 280px;
+    margin-top: 28px;
+    font-family: $font-family-secondary;
+    font-size: 0.6875rem;
+    line-height: 1.6;
+    color: $color-text-muted;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: $font-family-secondary;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $color-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  &__buy {
+    @include reset-button;
+    flex: 0 1 188px;
+    height: 36px;
+    border-radius: 4px;
+    background: $color-accent;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-text;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+}

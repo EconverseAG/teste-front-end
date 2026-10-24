@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+@mixin respond-to($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
