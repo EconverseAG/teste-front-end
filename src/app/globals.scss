@@ -1,0 +1,113 @@
+:root {
+  --brand: #3442b5;
+  --brand-violet: #3019b2;
+  --highlight: #f7ca11;
+  --navy: #271c47;
+  --ink: #3f3f40;
+  --ink-soft: #4e4e4e;
+  --ink-strong: #222222;
+  --subtle: #9f9f9f;
+  --strike: #808080;
+  --surface: #f4f4f4;
+  --search: #f6f5f2;
+  --line: #dedede;
+  --tab-border: #bdbdbd;
+  --input-border: #e7e7e7;
+  --placeholder: #676767;
+  --background: #ffffff;
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface);
+  --muted-foreground: var(--subtle);
+  --accent: var(--highlight);
+  --accent-foreground: var(--navy);
+  --destructive: #c0392b;
+  --border: var(--line);
+  --input: var(--input-border);
+  --ring: var(--brand);
+  --radius: 0.625rem;
+  --font-sans: var(--font-poppins), 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --shadow-tile: 0 4px 11px 0 rgb(0 0 0 / 0.13);
+  --shadow-tile-active: 0 2px 9px 0 rgb(0 0 0 / 0.22);
+  --shadow-card: 0 3px 19px 0 rgb(0 0 0 / 0.22);
+  --shadow-brand: 0 7px 20px 0 rgb(0 0 0 / 0.13);
+  --shadow-nav: 0 8px 16px 0 rgb(57 48 19 / 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

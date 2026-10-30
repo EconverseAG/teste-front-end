@@ -1,0 +1,52 @@
+.sectionTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.headingRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1138px;
+  gap: 1rem;
+}
+
+.divider {
+  flex: 1 1 0%;
+  height: 1px;
+  background-color: var(--line);
+}
+
+.title {
+  margin: 0;
+  color: var(--brand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.link {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  text-underline-offset: 4px;
+
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+
+@media (min-width: 48rem) {
+  .headingRow {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+  }
+}

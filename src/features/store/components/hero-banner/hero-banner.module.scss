@@ -1,0 +1,120 @@
+.heroBanner {
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  height: 390px;
+  overflow: hidden;
+}
+
+.image {
+  z-index: -20;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to left, transparent 0%, #000000 85%);
+  opacity: 0.8;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 80rem;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  gap: 1.5rem;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  max-width: 822px;
+  color: var(--primary-foreground);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.subtitle {
+  color: var(--primary-foreground);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.discount {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 3.125rem;
+  border-radius: 5px;
+  background-color: var(--highlight);
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+@media (min-width: 48rem) {
+  .title {
+    font-size: 3rem;
+    line-height: 50px;
+  }
+
+  .subtitle {
+    font-size: 32px;
+    line-height: 3rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .overlay {
+    width: 67%;
+  }
+
+  .content {
+    justify-content: flex-start;
+    padding-top: 4.875rem;
+    gap: 2.5625rem;
+  }
+
+  .copy {
+    gap: 1.125rem;
+  }
+
+  .cta {
+    align-self: flex-start;
+    margin-left: 0.4375rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .content {
+    padding-inline: 0;
+  }
+}

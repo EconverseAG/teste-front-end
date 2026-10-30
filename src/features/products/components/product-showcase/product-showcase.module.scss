@@ -1,0 +1,145 @@
+@use "../../../../styles/mixins" as mixins;
+
+.productShowcase {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1364px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  gap: 1.53125rem;
+}
+
+.tabs {
+  @include mixins.hide-scrollbar;
+
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  overflow-x: auto;
+}
+
+.tabList {
+  display: flex;
+  min-width: max-content;
+}
+
+.tab {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  margin-left: -1px;
+  padding-inline: 2rem;
+  border: 1px solid var(--tab-border);
+  background-color: var(--background);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.tabActive {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.tabInactive {
+  color: #3b3b3b;
+  font-weight: 400;
+
+  &:hover {
+    color: var(--brand);
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.arrowIcon {
+  display: none;
+  flex-shrink: 0;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 304px;
+  justify-content: center;
+  flex: 1 1 0%;
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem 0;
+  gap: 18px;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .tabList {
+    min-width: 0;
+  }
+
+  .arrowIcon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    pointer-events: none;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(2, 304px);
+    padding: 1.5rem;
+  }
+
+  .tabs {
+    margin-top: -2.9375rem;
+  }
+
+  .tabs + .carousel {
+    margin-top: -0.03125rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .productShowcase {
+    padding-inline: 0;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(4, 304px);
+  }
+}
+
+.emptyState {
+  display: flex;
+  min-height: 12rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.emptyTitle {
+  color: var(--ink-strong);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.emptyDescription {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}

@@ -1,0 +1,68 @@
+@use "../../../../styles/mixins" as mixins;
+
+.brandList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
+  gap: 2rem;
+}
+
+.title {
+  padding-inline: 1.25rem;
+  color: var(--brand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.track {
+  @include mixins.hide-scrollbar;
+
+  display: flex;
+  padding: 0.25rem 1.25rem 2rem;
+  gap: 2.625rem;
+  overflow-x: auto;
+}
+
+.item {
+  flex-shrink: 0;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: var(--background);
+  box-shadow: var(--shadow-brand);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.logo {
+  width: 6rem;
+  height: auto;
+}
+
+@media (min-width: 48rem) {
+  .title {
+    font-size: 1.875rem;
+  }
+
+  .brandLink {
+    width: 211px;
+    height: 211px;
+  }
+
+  .logo {
+    width: 117px;
+  }
+}

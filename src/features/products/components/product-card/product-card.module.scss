@@ -1,0 +1,114 @@
+.productCard {
+  display: grid;
+  grid-template-rows: 428px 44px;
+  flex-shrink: 0;
+  width: 304px;
+  height: 500px;
+  padding: 0 15.763px 16px 12.385px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  gap: 12px;
+}
+
+.detailsButton {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 32px 228px 9px 46px 12px 56px 2px 43px;
+  width: 100%;
+  min-width: 0;
+  height: 428px;
+  text-align: left;
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+}
+
+.imageFrame {
+  position: relative;
+  display: block;
+  grid-row: 2;
+  width: 278.104px;
+  height: 228px;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.description {
+  grid-row: 4;
+  display: -webkit-box;
+  height: 46px;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.priceGroup,
+.installments {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceGroup {
+  grid-row: 6;
+  justify-content: flex-end;
+  height: 56px;
+  gap: 2px;
+}
+
+.listPrice {
+  color: var(--strike);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-decoration-line: line-through;
+}
+
+.price {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.installments {
+  grid-row: 8;
+  height: 43px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  gap: 7px;
+}
+
+.installmentText {
+  color: var(--ink);
+}
+
+.freeShipping {
+  color: var(--brand);
+}
+
+.buyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2.75rem;
+  margin-top: 0;
+  border-radius: 0.375rem;
+  background-color: var(--brand);
+  color: var(--primary-foreground);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

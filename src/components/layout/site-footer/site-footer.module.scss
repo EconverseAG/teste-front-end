@@ -1,0 +1,149 @@
+.siteFooter {
+  width: 100%;
+}
+
+.surface {
+  background-color: var(--surface);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 2.625rem 1.25rem;
+  gap: 2.5rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  max-width: 354px;
+  gap: 1.6875rem;
+}
+
+.brandCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+}
+
+.logo {
+  align-self: flex-start;
+  width: 10.25rem;
+  height: 3rem;
+}
+
+.description {
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1.625rem;
+}
+
+.socialLink {
+  display: block;
+  color: var(--ink);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: var(--brand);
+  }
+}
+
+.socialIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.divider {
+  display: none;
+  width: 1px;
+  height: 198px;
+  background-color: rgb(34 34 34 / 0.2);
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.columnTitle {
+  color: rgb(34 34 34 / 0.7);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  color: rgb(34 34 34 / 0.7);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    color: var(--brand);
+  }
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.9375rem;
+  padding-inline: 1.25rem;
+  background-color: var(--background);
+}
+
+.legalText {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (min-width: 40rem) {
+  .navigation {
+    display: flex;
+    gap: 6.25rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .content {
+    flex-direction: row;
+    align-items: center;
+    gap: 5.625rem;
+  }
+
+  .divider {
+    display: block;
+  }
+}
+
+@media (min-width: 80rem) {
+  .content {
+    padding-inline: 0;
+  }
+}
