@@ -18,3 +18,12 @@ $font-family: 'Poppins', sans-serif;
 // ===== Layout =====
 $container-width: 1280px;
 $search-width: 630px;
+
+// ===== Categorias =====
+$categories-gap: 42px;
+$category-item-width: 128px;
+$category-item-height: 171px;
+$category-card-size: 128px;     // estimado pelo print, confirmar
+$category-card-radius: 10px;    // estimado, confirmar
+$category-icon-size: 56px;      // estimado, confirmar
+$category-label-gap: 24px;      // estimado (171 - 128 - altura do texto)
