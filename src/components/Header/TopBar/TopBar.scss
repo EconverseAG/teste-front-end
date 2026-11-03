@@ -1,0 +1,32 @@
+.top-bar {
+  width: 100%;
+  max-width: 764px;
+  margin: 6px auto;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 600;
+
+    span {
+      color: colors.$color-gray;
+    }
+
+    strong {
+      color: colors.$color-blue-primary;
+      font-weight: 600;
+    }
+  }
+}
