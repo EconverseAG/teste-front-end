@@ -1,0 +1,47 @@
+.brand-showcase {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 211px;
+    border-radius: 50%;
+    width: 211px;
+    height: 211px;
+    box-shadow: 0px 7px 20px 0px #00000021;
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+      width: 117px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 32px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 100%;
+    color: colors.$color-blue-secondary;
+  }
+}
