@@ -1,0 +1,33 @@
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  color: colors.$color-white;
+
+  h1 {
+    font-size: 48px;
+    line-height: 50px;
+    font-weight: 600;
+  }
+  p {
+    margin: 12px 0 41px;
+    font-size: 32px;
+    line-height: 100%;
+    span {
+      color: colors.$color-yellow-primary;
+      font-weight: 700;
+    }
+  }
+  button {
+    background: colors.$color-yellow-primary;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 206px;
+    height: 50px;
+    line-height: 100%;
+    font-weight: 600;
+  }
+}
