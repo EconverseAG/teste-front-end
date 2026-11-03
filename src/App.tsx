@@ -1,5 +1,6 @@
 import CategoryNavigation from './components/CategoryNavigation';
 import Header from './components/Header';
+import HeroBanner from './components/HeroBanner';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main>
         <CategoryNavigation />
+        <HeroBanner />
       </main>
     </>
   );
