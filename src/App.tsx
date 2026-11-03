@@ -7,7 +7,7 @@ function App() {
     <>
       <section id="center">
         <div>
-          <h1>Get started</h1>
+          <h1>Get Test</h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
