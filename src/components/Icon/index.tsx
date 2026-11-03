@@ -9,6 +9,13 @@ import userCircle from '@/assets/icons/userCircle.svg';
 import shoppingCart from '@/assets/icons/shoppingCart.svg';
 import shippingBox from '@/assets/icons/shippingBox.svg';
 import crownSimple from '@/assets/icons/crownSimple.svg';
+import fashion from '@/assets/icons/fashion.svg';
+import running from '@/assets/icons/running.svg';
+import tools from '@/assets/icons/tools.svg';
+import supermarket from '@/assets/icons/supermarket.svg';
+import technology from '@/assets/icons/technology.svg';
+import healthCare from '@/assets/icons/healthCare.svg';
+import whiskey from '@/assets/icons/whiskey.svg';
 
 const icons = {
   creditCard,
@@ -20,6 +27,13 @@ const icons = {
   shoppingCart,
   shippingBox,
   crownSimple,
+  fashion,
+  running,
+  tools,
+  supermarket,
+  technology,
+  healthCare,
+  whiskey,
 };
 
 type IconProps = {
