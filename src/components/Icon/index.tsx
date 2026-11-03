@@ -8,6 +8,7 @@ import heart from '@/assets/icons/heart.svg';
 import userCircle from '@/assets/icons/userCircle.svg';
 import shoppingCart from '@/assets/icons/shoppingCart.svg';
 import shippingBox from '@/assets/icons/shippingBox.svg';
+import crownSimple from '@/assets/icons/crownSimple.svg';
 
 const icons = {
   creditCard,
@@ -18,6 +19,7 @@ const icons = {
   userCircle,
   shoppingCart,
   shippingBox,
+  crownSimple,
 };
 
 type IconProps = {
