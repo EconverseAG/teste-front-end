@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useProducts } from '../../hooks/useProducts';
 import { ProductCard } from '../ProductCard/ProductCard';
+import type { Product } from '../../types/product';
+import { ProductModal } from '../ProductModal/ProductModal';
 import './ProductShowcase.scss';
 
 const TABS = ['Celular', 'Acessórios', 'Tablets', 'Notebooks', 'TVs', 'Ver todos'];
@@ -27,7 +29,10 @@ export function ProductShowcase() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(false);
+  const [selected, setSelected] = useState<Product | null>(null);
+  const closeModal = useCallback(() => setSelected(null), []);
   const viewportRef = useRef<HTMLDivElement>(null);
+  
 
   const updateArrows = useCallback(() => {
     const el = viewportRef.current;
@@ -91,7 +96,7 @@ export function ProductShowcase() {
             <ul className="showcase__list">
               {products.map((product) => (
                 <li key={product.productName} className="showcase__item">
-                  <ProductCard product={product} />
+                  <ProductCard product={product} onBuy={setSelected} />
                 </li>
               ))}
             </ul>
@@ -108,6 +113,7 @@ export function ProductShowcase() {
           <Chevron />
         </button>
       </div>
+      <ProductModal product={selected} onClose={closeModal} />
     </section>
   );
 }

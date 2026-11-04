@@ -6,7 +6,12 @@ import './ProductCard.scss';
 const OLD_PRICE_MARKUP = 1.07;
 const INSTALLMENTS = 2;
 
-export function ProductCard({ product }: { product: Product }) {
+interface ProductCardProps {
+  product: Product;
+  onBuy?: (product: Product) => void;
+}
+
+export function ProductCard({ product, onBuy }: ProductCardProps) {
   const { productName, descriptionShort, photo, price } = product;
 
   return (
@@ -32,7 +37,11 @@ export function ProductCard({ product }: { product: Product }) {
       </p>
       <p className="product-card__shipping">Frete grátis</p>
 
-      <button type="button" className="product-card__button">
+      <button
+        type="button"
+        className="product-card__button"
+        onClick={() => onBuy?.(product)}
+      >
         Comprar
       </button>
     </article>
