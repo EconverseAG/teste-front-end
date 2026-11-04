@@ -2,19 +2,24 @@
 
 .banner {
   position: relative;
-  height: 390px;
-  background: url('../../assets/images/banner-black-friday.png') center / cover no-repeat;
-  color: $color-white;
-  font-family: $font-family;
+  overflow: hidden;
+  color: #fff;
+  background-image: url('../../assets/icons/images/banner-black-friday.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 400px; 
 
   // Gradiente escuro à esquerda (Rectangle 108: 966px, opacidade 80%)
   &::before {
     content: '';
     position: absolute;
     inset: 0 auto 0 0;
-    width: 966px;
+    width: 966px; 
+    max-width: 100%;
     background: linear-gradient(to right, #000, rgba(0, 0, 0, 0));
     opacity: 0.8;
+    pointer-events: none;
   }
 
   &__content {
