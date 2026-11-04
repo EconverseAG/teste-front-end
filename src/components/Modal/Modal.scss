@@ -1,0 +1,45 @@
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 739px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 56px 56.48px 50.58px 51px;
+  border-radius: 6px;
+  background-color: colors.$color-white;
+  box-shadow: 0 4px 20px #00000030;
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #00000080;
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: colors.$color-gray-text;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid colors.$color-gray-text;
+      outline-offset: 2px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+}

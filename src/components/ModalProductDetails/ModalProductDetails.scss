@@ -1,0 +1,151 @@
+@use 'sass:color';
+
+.modal-product-details {
+  display: flex;
+  align-items: center;
+  gap: 87px;
+  width: 100%;
+
+  &__image {
+    width: 100%;
+    max-width: 247px;
+    height: 192.2px;
+    object-fit: contain;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  &__title {
+    color: colors.$color-gray-medium-dark;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1px;
+  }
+
+  &__description {
+    color: colors.$color-gray-dark;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
+
+  &__original-price {
+    color: colors.$color-gray-medium-dark;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 1px;
+  }
+
+  &__quantity {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+
+    > span {
+      color: colors.$color-gray-dark;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  &__quantity-control {
+    display: flex;
+    align-items: center;
+    min-width: 110px;
+    height: 36px;
+    overflow: hidden;
+    border: 1px solid colors.$color-gray-medium-light;
+    border-radius: 6px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 100%;
+      border: none;
+      background-color: colors.$color-white;
+      color: colors.$color-purple-primary;
+      font-size: 22px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover:not(:disabled) {
+        background-color: colors.$color-gray-lighter;
+      }
+
+      &:disabled {
+        color: colors.$color-gray;
+        cursor: not-allowed;
+      }
+
+      &:focus-visible {
+        outline: 2px solid colors.$color-blue-secondary;
+        outline-offset: -2px;
+      }
+    }
+
+    input {
+      width: 48px;
+      height: 100%;
+      padding: 0;
+      border: none;
+      outline: none;
+      background-color: colors.$color-white;
+      color: colors.$color-purple-primary;
+      font-size: 16px;
+      text-align: center;
+      appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        margin: 0;
+        appearance: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid colors.$color-blue-secondary;
+        outline-offset: -2px;
+      }
+    }
+  }
+
+  &__buy-button {
+    width: 100%;
+    min-height: 36px;
+    border: none;
+    border-radius: 6px;
+    background-color: colors.$color-yellow-primary;
+    color: colors.$color-purple-primary;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: color.adjust(
+        colors.$color-yellow-primary,
+        $lightness: 20%
+      );
+    }
+
+    &:focus-visible {
+      outline: 2px solid
+        color.adjust(colors.$color-yellow-primary, $lightness: 20%);
+      outline-offset: 3px;
+    }
+  }
+}

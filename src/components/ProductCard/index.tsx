@@ -1,20 +1,37 @@
+import { type KeyboardEvent } from 'react';
+
 import type { Product } from '@/types/product';
 import './ProductCard.scss';
 import { applyDiscount, formatInstallments, formatPrice } from '@/utils/price';
 
 type ProductCardProps = {
   product: Product;
+  onSelect: (product: Product) => void;
 };
 
-function ProductCard({ product }: Readonly<ProductCardProps>) {
+function ProductCard({ product, onSelect }: Readonly<ProductCardProps>) {
   const formattedPrice = formatPrice(product.price);
   const discountedPrice = applyDiscount(product.price);
   const formattedDiscountedPrice = formatPrice(discountedPrice);
 
   const installmentDescription = formatInstallments(discountedPrice, 2);
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onSelect(product);
+    }
+  };
+
   return (
-    <article className="product-card">
+    <article
+      className="product-card"
+      onClick={() => onSelect(product)}
+      onKeyDown={(event) => handleKeyDown(event)}
+      tabIndex={0}
+      role="button"
+      aria-label={`Ver detalhes de ${product.productName}`}
+    >
       <div className="product-card__image-wrapper">
         <img
           className="product-card__image"
