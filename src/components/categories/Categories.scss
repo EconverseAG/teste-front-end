@@ -1,0 +1,72 @@
+@use '../../styles/variables' as *;
+
+// Distância do banner até o topo das categorias: 573 - (144 + 390) = 39px
+.categories {
+  margin-top: 39px;
+  font-family: $font-family;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: $categories-gap; // 42px
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &__item {
+    width: $category-item-width; // 128px
+    height: $category-item-height; // 171px
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $category-label-gap;
+    height: 100%;
+    text-decoration: none;
+    color: $color-gray-dark;
+
+    &:focus-visible {
+      outline: 2px solid $color-blue;
+      outline-offset: 4px;
+      border-radius: $category-card-radius;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $category-card-size;
+    height: $category-card-size;
+    background: $color-search-bg; // TODO: confirmar a cor do card inativo
+    border-radius: $category-card-radius;
+    box-shadow: 0 4px 12px $color-shadow; // TODO: confirmar a sombra
+
+    img {
+      width: $category-icon-size;
+      height: $category-icon-size;
+    }
+  }
+
+  &__label {
+    font: 500 12px/1.5 $font-family; // TODO: confirmar tipografia
+    text-align: center;
+  }
+
+  // Estado ativo (Tecnologia)
+  &__link--active &__card {
+    background: $color-white;
+    box-shadow: 0 8px 16px $color-shadow; // TODO: confirmar a sombra
+  }
+
+  &__link--active &__label {
+    font-weight: 700; // TODO: confirmar
+    color: $color-offers; // TODO: confirmar a cor
+  }
+
+  &__link:hover &__card {
+    background: $color-white;
+  }
+}

@@ -1,0 +1,123 @@
+.product-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.54);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.product-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 87px;
+  width: 769px;
+  max-width: 100%;
+  padding: 56px 51px 56px 56px;
+  background: #fff;
+  border: 1px solid #707070;
+  border-radius: 6px;
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: #707070;
+  }
+
+  &__image {
+    width: 247px;
+    height: 192px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 328px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+
+  &__price {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__description {
+    font-size: 7px;
+    color: #707070;
+    margin: 0 0 4px;
+  }
+
+  &__link {
+    font-size: 7px;
+    font-weight: 600;
+    color: #3a2a8c; // troque pela variável roxa do seu _variables.scss
+    text-decoration: none;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+    height: 36px;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 0 10px;
+    font-size: 11px;
+
+    button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  }
+
+  &__buy {
+    width: 188px;
+    background: #f7ca11; // use a variável amarela do projeto
+    border: 0;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 24px 24px;
+
+    &__info {
+      width: 100%;
+    }
+  }
+}

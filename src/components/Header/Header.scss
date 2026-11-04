@@ -1,0 +1,159 @@
+@use '../../styles/variables' as *;
+
+// Altura total: 32 (benefícios) + 72 (principal) + 40 (menu) = 144px
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $color-white;
+  font-family: $font-family;
+
+  &__inner {
+    max-width: $container-width;
+    margin: 0 auto;
+  }
+
+  // ----- Barra de benefícios (32px) -----
+  &__benefits {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 119px;
+    height: 32px;
+    border-bottom: 1px solid $color-border-light;
+    font: 500 12px/1 $font-family;
+    color: $color-gray-medium;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    strong {
+      font-weight: 600;
+      color: $color-blue; // confirmar a cor no Figma
+    }
+  }
+
+  // ----- Linha principal (72px): logo | busca | ícones -----
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr $search-width 1fr;
+    align-items: center;
+    height: 72px;
+    border-bottom: 1px solid $color-border-light;
+  }
+
+  &__logo {
+    justify-self: start;
+    display: block;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: $search-width;
+    height: 48px;
+    padding: 0 24px 0 16px;
+    background: $color-search-bg;
+    border-radius: 10px;
+
+    &:focus-within {
+      outline: 2px solid $color-blue;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      font: 500 14px/1 $font-family;
+      color: $color-gray-dark;
+      outline: none;
+
+      &::placeholder {
+        color: $color-gray-medium;
+      }
+
+      // remove o "x" nativo do input type="search"
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+
+    button {
+      display: flex;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+  &__actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    a {
+      display: flex;
+    }
+
+    // O SVG do primeiro ícone vem com 25px (inclui o contorno);
+    // a margem negativa mantém o conjunto com 216px, como no Figma.
+    li:first-child img {
+      width: 25px;
+      height: 25px;
+      margin: 0 -0.5px;
+    }
+
+    li:not(:first-child) img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  // ----- Menu (40px) -----
+  &__nav {
+    height: 40px;
+    background: $color-white;
+    box-shadow: 0 8px 16px $color-shadow;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 91px;
+      height: 100%;
+    }
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font: 600 12px/1 $font-family;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-gray-medium;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &--highlight {
+      color: $color-offers;
+    }
+  }
+}
