@@ -6,6 +6,7 @@ import ProductCard from '../ProductCard';
 import ProductCategoryTabs from '../ProductCategoryTabs';
 import ViewAllButton from '../ViewAllButton';
 import { productCategories as categories } from '@/constants/productCategories';
+import ModalProductDetails from '../ModalProductDetails';
 
 type RelatedProductsProps = {
   products: Product[];
@@ -17,6 +18,8 @@ function RelatedProducts({
   variant,
 }: Readonly<RelatedProductsProps>) {
   const [activeCategory, setActiveCategory] = useState('CELULAR');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+
   return (
     <section
       className="related-products"
@@ -48,12 +51,21 @@ function RelatedProducts({
             <ProductCard
               key={`${product.productName}-${index}`}
               product={product}
+              onSelect={setSelectedProduct}
             />
           ))
         ) : (
           <p className="related-products__empty">Nenhum produto encontrado.</p>
         )}
       </ProductCarousel>
+
+      {selectedProduct && (
+        <ModalProductDetails
+          product={selectedProduct}
+          isOpen={selectedProduct !== null}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </section>
   );
 }
