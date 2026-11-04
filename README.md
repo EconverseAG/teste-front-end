@@ -1,75 +1,98 @@
-# React + TypeScript + Vite
+# Teste Front-end
+Aplicação de vitrine de produtos desenvolvida com React, TypeScript e Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Pré-requisitos
 
-Currently, two official plugins are available:
+- Git
+- Node.js `20.19+` ou `22.12+`
+- npm (instalado junto com o Node.js)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Confira as versões instaladas:
 
 ```
+node --version
+npm --version
+```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Clonar e instalar
+Clone o repositório usando HTTPS:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
+git clone https://github.com/Wilian-Pereira-W/teste-front-end.git
+cd teste-front-end
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Ou, se sua chave SSH estiver configurada no GitHub, use SSH:
 
+```
+git clone git@github.com:Wilian-Pereira-W/teste-front-end.git
+cd teste-front-end
+```
+
+Instale as dependências usando o arquivo de lock:
+
+```
+npm ci
+```
+
+## Configurar a API de produtos
+Crie o arquivo `.env` a partir do exemplo:
+
+```
+cp .env.example .env
+```
+
+O arquivo `.env.example` já contém o endpoint utilizado pelo projeto. A configuração deve ser:
+
+```
+VITE_PRODUCTS_API_URL=/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json
+```
+
+O prefixo `/api` é configurado em `vite.config.ts` para encaminhar as requisições ao domínio [https://app.econverse.com.br](https://app.econverse.com.br/), permitindo contornar a restrição de CORS durante o desenvolvimento local.
+
+O endpoint deve retornar um JSON neste formato:
+
+```
+{
+  "success": true,
+  "products": [
+    {
+      "productName": "Nome do produto",
+      "descriptionShort": "Descrição breve",
+      "photo": "https://endereco-da-imagem/imagem.jpg",
+      "price": 199.9
+    }
+  ]
+}
+```
+
+O arquivo `.env` não é versionado e deve permanecer apenas na sua máquina.
+
+**Observação:** o proxy do Vite funciona apenas durante o desenvolvimento local. Para utilizar a aplicação em produção, será necessário configurar um proxy equivalente no servidor de hospedagem ou disponibilizar a API por meio de um backend.
+
+## Executar em desenvolvimento
+
+```
+npm run dev
+```
+
+Abra no navegador o endereço mostrado pelo Vite no terminal (por padrão, `http://localhost:5173`).
+
+## Verificações e build
+Para executar o linter:
+
+```
+npm run lint
+```
+
+Para validar os tipos e gerar a versão de produção em `dist/`:
+
+```
+npm run build
+```
+
+Para servir localmente a versão gerada:
+
+```
+npm run preview
 ```
