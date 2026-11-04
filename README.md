@@ -86,11 +86,16 @@ npm run dev
 Abra no navegador o endereço mostrado pelo Vite no terminal (por padrão, `http://localhost:5173`).
 
 ## Verificações e build
-
 Para executar o linter:
 
 ```
 npm run lint
+```
+
+Para executar os testes:
+
+```
+npm test
 ```
 
 Para validar os tipos e gerar a versão de produção em `dist/`:
