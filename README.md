@@ -1,4 +1,5 @@
 # Teste Front-end
+
 Aplicação de vitrine de produtos desenvolvida com React, TypeScript e Vite.
 
 ## Pré-requisitos
@@ -15,6 +16,7 @@ npm --version
 ```
 
 ## Clonar e instalar
+
 Clone o repositório usando HTTPS:
 
 ```
@@ -36,6 +38,7 @@ npm ci
 ```
 
 ## Configurar a API de produtos
+
 Crie o arquivo `.env` a partir do exemplo:
 
 ```
@@ -60,7 +63,7 @@ O endpoint deve retornar um JSON neste formato:
       "productName": "Nome do produto",
       "descriptionShort": "Descrição breve",
       "photo": "https://endereco-da-imagem/imagem.jpg",
-      "price": 199.9
+      "price": 1999
     }
   ]
 }
@@ -79,6 +82,7 @@ npm run dev
 Abra no navegador o endereço mostrado pelo Vite no terminal (por padrão, `http://localhost:5173`).
 
 ## Verificações e build
+
 Para executar o linter:
 
 ```
