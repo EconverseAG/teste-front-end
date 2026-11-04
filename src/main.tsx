@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import type { Product } from './types/product';
 import { getProducts } from './data/products';
@@ -17,6 +17,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [cartCount, setCartCount] = useState(0);
   const [error, setError] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const controller = new AbortController();
@@ -27,18 +28,26 @@ function App() {
     return () => controller.abort();
   }, []);
 
+  const matchingProducts = useMemo(() => products.filter((product) =>
+    `${product.productName} ${product.descriptionShort}`.toLocaleLowerCase('pt-BR').includes(searchTerm.toLocaleLowerCase('pt-BR')),
+  ), [products, searchTerm]);
+
   return <>
-    <Header cartCount={cartCount} />
+    <Header cartCount={cartCount} onSearch={setSearchTerm} />
     <main>
       <Hero />
       <CategoryNav />
-      {error ? <div className="load-state load-state--error" role="alert"><p>{error}</p><button type="button" onClick={() => window.location.reload()}>Tentar novamente</button></div> : products.length === 0 ? <p className="load-state" role="status">Carregando produtos…</p> : <>
-        <ProductShelf products={products.slice(0, 4)} onSelect={setSelectedProduct} />
+      {error ? <div className="load-state load-state--error" role="alert"><p>{error}</p><button type="button" onClick={() => window.location.reload()}>Tentar novamente</button></div> : products.length === 0 ? <p className="load-state" role="status">Carregando produtos…</p> : searchTerm ? (
+        matchingProducts.length > 0
+          ? <ProductShelf id="produtos" products={matchingProducts} onSelect={setSelectedProduct} title={`Resultados para “${searchTerm}”`} />
+          : <p className="load-state" role="status">Nenhum produto encontrado para “{searchTerm}”.</p>
+      ) : <>
+        <ProductShelf id="produtos" products={products} onSelect={setSelectedProduct} showCategories />
         <PartnerBanners />
-        <ProductShelf products={products.slice(4, 8)} onSelect={setSelectedProduct} subtitle="Ver todos" />
+        <ProductShelf id="ofertas" products={products} onSelect={setSelectedProduct} subtitle="Ver todos" />
         <PartnerBanners />
         <BrandShelf />
-        <ProductShelf products={products.slice(0, 4)} onSelect={setSelectedProduct} subtitle="Ver todos" />
+        <ProductShelf id="mais-produtos" products={products} onSelect={setSelectedProduct} subtitle="Ver todos" />
       </>}
     </main>
     <Footer />

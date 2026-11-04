@@ -30,7 +30,7 @@ export function ProductModal({ product, onClose, onAddToCart }: {
           <h2 id="modal-title">{product.productName}</h2>
           <p className="product-modal__price">{formatPrice(product.price)}</p>
           <p className="product-modal__description">{product.descriptionShort}</p>
-          <a href="#produtos" onClick={onClose}>Veja mais detalhes do produto <span aria-hidden="true">&gt;</span></a>
+          <p className="product-modal__source">Informações conforme o catálogo da Econverse.</p>
           <div className="product-modal__actions">
             <div className="quantity" aria-label="Quantidade">
               <button type="button" aria-label="Diminuir quantidade" onClick={() => setQuantity((value) => Math.max(1, value - 1))}>−</button>

@@ -11,7 +11,17 @@ export async function getProducts(signal?: AbortSignal) {
   if (!data.success) throw new Error('A Econverse não conseguiu retornar os produtos.');
   // Keep the official API response locally so the page does not depend on CORS
   // headers that the source endpoint does not currently send.
-  return data.products.map((product) => ({ ...product, photo: '/assets/foto-iphone.png' }));
+  return data.products.map((product) => ({ ...product, photo: useLocalPhoto(product.photo) }));
+}
+
+function useLocalPhoto(photoUrl: string) {
+  try {
+    const imagePath = new URL(photoUrl, window.location.origin).pathname;
+    if (imagePath.endsWith('/fotos-produtos/foto-iphone.png')) return '/assets/foto-iphone.png';
+  } catch {
+    // Keep the source string so the browser can report a missing asset normally.
+  }
+  return photoUrl;
 }
 
 function isProductResponse(value: unknown): value is ProductResponse {
@@ -26,10 +36,10 @@ function isProductResponse(value: unknown): value is ProductResponse {
         typeof product.productName === 'string' &&
         typeof product.descriptionShort === 'string' &&
         typeof product.photo === 'string' &&
-        typeof product.price === 'number',
+        typeof product.price === 'number' && Number.isFinite(product.price) && product.price >= 0,
     )
   );
 }
 
-export const formatPrice = (price: number) =>
-  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price);
+export const formatPrice = (priceInCents: number) =>
+  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(priceInCents / 100);

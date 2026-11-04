@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Brand } from './Brand';
 
-export function Header({ cartCount }: { cartCount: number }) {
+export function Header({ cartCount, onSearch }: { cartCount: number; onSearch: (term: string) => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   return (
     <header className="site-header" id="inicio">
       <div className="service-strip">
@@ -15,9 +16,9 @@ export function Header({ cartCount }: { cartCount: number }) {
           <span /><span /><span />
         </button>
         <Brand />
-        <form className="search" role="search" onSubmit={(event) => event.preventDefault()}>
+        <form className="search" role="search" onSubmit={(event) => { event.preventDefault(); onSearch(searchTerm.trim()); }}>
           <label className="sr-only" htmlFor="product-search">Buscar produtos</label>
-          <input id="product-search" placeholder="O que você está buscando?" />
+          <input id="product-search" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="O que você está buscando?" />
           <button aria-label="Buscar" type="submit"><span className="search__glass" /></button>
         </form>
         <div className="header-actions">
