@@ -7,6 +7,7 @@ import brand from '@/assets/images/logo.svg';
 import PartnerShowcase from './components/PartnerShowcase';
 import partner from '@/assets/images/partner.webp';
 import Newsletter from './components/Newsletter';
+import Footer from './components/Footer';
 
 const brands = [
   {
@@ -68,6 +69,7 @@ function App() {
         <BrandShowcase brands={brands} />
         <Newsletter />
       </main>
+      <Footer />
     </>
   );
 }
