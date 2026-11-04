@@ -1,31 +1,65 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Front-end Econverse
 
-### Vem ser #Econverse!
+Implementação de uma página de e-commerce inspirada nas referências visuais fornecidas para o desafio Econverse. A aplicação usa React e TypeScript, carrega o catálogo oficial de produtos e apresenta detalhes em um modal acessível.
 
-Segue abaixo as instruções para a execução do teste.
+## Tecnologias
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+- React 18 e TypeScript
+- Vite
+- Sass (SCSS)
+- HTML semântico e CSS responsivo
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+## Pré-requisitos
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+- Node.js 18 ou superior
+- npm 9 ou superior
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+## Instalação e execução
 
-**Boa sorte! ;)**
+```bash
+npm install
+npm run dev
+```
+
+O Vite mostra no terminal o endereço local da aplicação.
+
+## Build de produção
+
+```bash
+npm run build
+npm run preview
+```
+
+O build é gerado na pasta `dist/`.
+
+## Funcionalidades
+
+- Página responsiva com cabeçalho, destaque promocional, categorias, prateleiras de produtos, parceiros, marcas e rodapé.
+- Catálogo baseado no JSON oficial da Econverse, com estados de carregamento e erro.
+- Busca por nome ou descrição, abas de categoria e carrosséis com todos os 10 itens do catálogo oficial.
+- Cards de produto com imagem, descrição e preço convertido de centavos para reais.
+- Modal com informações do produto selecionado, ajuste de quantidade, fechamento pelo botão, pelo backdrop ou por `Escape`.
+- Contagem local de itens no carrinho ao usar o botão de compra. Não há integração de checkout.
+- Formulário visual de newsletter com validação no navegador; não envia dados para um serviço externo.
+- Navegação por teclado, rótulos acessíveis, textos alternativos, foco visível e metadados básicos para SEO.
+
+## Organização
+
+```text
+src/
+  components/   Componentes de cabeçalho, seções, cards e modal
+  data/         Carregamento, validação e formatação dos produtos
+  styles/       Estilos globais e responsivos em SCSS
+  types/        Tipos TypeScript do catálogo
+public/
+  assets/       Imagem oficial de produto
+  data/         Cópia do JSON oficial usado pela aplicação
+```
+
+## Decisões e limitações
+
+- O endpoint público de produtos não envia cabeçalho CORS. Para manter o site funcional também em hospedagem estática, o JSON recebido da Econverse foi salvo em `public/data/products.json`; a validação de resposta e os estados de erro permanecem no carregador. O campo `price` é tratado como centavos, conforme o formato da amostra. Para atualizar o catálogo, substitua esse arquivo pelo JSON oficial mais recente.
+- A amostra atual do catálogo contém somente celulares. As outras abas da vitrine mostram um estado vazio em vez de inventar produtos para categorias sem dados.
+- As imagens de produto usam o asset oficial baixado do campo `photo` do JSON. O catálogo não fornece preço promocional, parcelas ou frete, então esses valores não são inventados.
+- O Figma não ficou acessível pelo ambiente. O layout foi montado a partir das capturas `Home.png` e `Popup.png` fornecidas; banners decorativos são aproximações em CSS, pois as imagens originais desses banners não foram fornecidas como assets separados.
+- Carrinho, newsletter e busca são demonstrações visuais locais, sem integração com serviços externos.
