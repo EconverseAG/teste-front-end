@@ -6,5 +6,6 @@ export type Product = {
 };
 
 export type ProductsResponse = {
+  success: boolean;
   products: Product[];
 };

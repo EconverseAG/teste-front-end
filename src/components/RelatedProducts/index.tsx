@@ -1,23 +1,26 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import type { Product } from '@/types/product';
-import ProductCarousel from '@/components/ProductCarousel';
 import './RelatedProducts.scss';
-import ProductCard from '../ProductCard';
+
 import ProductCategoryTabs from '../ProductCategoryTabs';
 import ViewAllButton from '../ViewAllButton';
-import { productCategories as categories } from '@/constants/productCategories';
 import ModalProductDetails from '../ModalProductDetails';
 
+import LoadedProductCarousel from './LoadedProductCarousel';
+import ProductCarouselSkeleton from './ProductCarouselSkeleton';
+
+import { productCategories as categories } from '@/constants/productCategories';
+
 type RelatedProductsProps = {
-  products: Product[];
+  productsPromise: Promise<Product[]>;
   variant?: 'tabs' | 'view-all';
 };
 
 function RelatedProducts({
-  products,
+  productsPromise,
   variant,
 }: Readonly<RelatedProductsProps>) {
-  const [activeCategory, setActiveCategory] = useState('CELULAR');
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
@@ -45,19 +48,12 @@ function RelatedProducts({
 
       {variant === 'view-all' && <ViewAllButton onClick={() => {}} />}
 
-      <ProductCarousel ariaLabel="Produtos relacionados">
-        {products.length > 0 ? (
-          products.map((product, index) => (
-            <ProductCard
-              key={`${product.productName}-${index}`}
-              product={product}
-              onSelect={setSelectedProduct}
-            />
-          ))
-        ) : (
-          <p className="related-products__empty">Nenhum produto encontrado.</p>
-        )}
-      </ProductCarousel>
+      <Suspense fallback={<ProductCarouselSkeleton />}>
+        <LoadedProductCarousel
+          productsPromise={productsPromise}
+          onSelect={setSelectedProduct}
+        />
+      </Suspense>
 
       {selectedProduct && (
         <ModalProductDetails
