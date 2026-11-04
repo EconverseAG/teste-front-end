@@ -6,6 +6,7 @@ import HeroBanner from './components/HeroBanner';
 import brand from '@/assets/images/logo.svg';
 import PartnerShowcase from './components/PartnerShowcase';
 import partner from '@/assets/images/partner.webp';
+import Newsletter from './components/Newsletter';
 
 const brands = [
   {
@@ -65,6 +66,7 @@ function App() {
         <PartnerShowcase partners={partners} />
         <PartnerShowcase partners={partners} />
         <BrandShowcase brands={brands} />
+        <Newsletter />
       </main>
     </>
   );
