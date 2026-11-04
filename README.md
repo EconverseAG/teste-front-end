@@ -1,75 +1,95 @@
-# React + TypeScript + Vite
+# Teste Front-End Jr - Econverse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Página de e-commerce desenvolvida a partir de um layout do Figma, com vitrine de produtos em carrossel e um modal (popup) de compra rápida.
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (bundler e servidor de desenvolvimento)
+- [Sass (SCSS)](https://sass-lang.com/) para estilização
+- [ESLint](https://eslint.org/) para padronização do código
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Header com barra de benefícios, busca, ícones de usuário/carrinho e menu de navegação
+- Banner principal
+- Categorias com ícones
+- Vitrine "Produtos relacionados" com abas e carrossel (setas de navegação e scroll horizontal)
+- Cards de produto com preço, preço antigo, parcelamento e frete grátis
+- Modal de produto aberto ao clicar em "Comprar":
+  - imagem, nome, preço e descrição do produto
+  - seletor de quantidade (mínimo 1)
+  - fecha pelo botão "X", clicando fora ou pressionando `Esc`
+  - bloqueia o scroll da página enquanto está aberto
 
-## Expanding the ESLint configuration
+## Como rodar
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Pré-requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Node.js](https://nodejs.org/) 18 ou superior
+- npm (já vem com o Node.js)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Passo a passo
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# 1. Clone o repositório
+git clone <uhttps://github.com/giotrzz/teste-front-end.git>
+cd teste-front-end
 
+# 2. Instale as dependências
+npm install
+
+# 3. Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Depois, abra no navegador o endereço exibido no terminal (por padrão, `http://localhost:5173`).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Outros comandos
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Comando           | Descrição                                      |
+| ----------------- | ---------------------------------------------- |
+| `npm run dev`     | Inicia o servidor de desenvolvimento           |
+| `npm run build`   | Gera a versão de produção na pasta `dist`      |
+| `npm run preview` | Serve localmente a versão gerada pelo build    |
+| `npm run lint`    | Executa o ESLint em todo o projeto             |
 
+## Estrutura do projeto
+
+```
+teste-front-end/
+├── public/                  # Arquivos estáticos servidos como estão
+├── src/
+│   ├── assets/
+│   │   ├── icons/           # Ícones SVG (carrinho, coração, escudo, etc.)
+│   │   │   └── categories/  # Ícones das categorias (tecnologia, moda, saúde...)
+│   │   ├── images/          # Imagens (ex.: banner da Black Friday)
+│   │   └── logo-econverse.png
+│   ├── components/
+│   │   ├── Banner/          # Banner principal
+│   │   ├── Categories/      # Lista de categorias
+│   │   ├── Header/          # Cabeçalho e navegação
+│   │   ├── ProductCard/     # Card individual de produto
+│   │   ├── ProductShowcase/ # Vitrine com abas e carrossel de produtos
+│   │   └── ProductModal/    # Modal (popup) de compra rápida
+│   ├── hooks/
+│   │   └── useProducts.ts   # Hook que carrega a lista de produtos
+│   ├── services/
+│   │   └── productservice.ts # Acesso aos dados dos produtos
+│   ├── styles/
+│   │   ├── _variables.scss  # Cores, fontes e demais variáveis globais
+│   │   └── global.scss      # Estilos globais
+│   ├── types/
+│   │   └── product.ts       # Tipagem do produto (`Product`)
+│   ├── utils/
+│   │   └── formatPrice.ts   # Formata valores em reais (R$)
+│   ├── App.tsx              # Composição da página
+│   └── main.tsx             # Ponto de entrada da aplicação
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.json            # Configurações do TypeScript
+├── tsconfig.app.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
