@@ -1,0 +1,131 @@
+@use 'sass:color';
+
+.newsletter {
+  width: 100%;
+  padding: 40px 82px 40px 80px;
+  background-color: colors.$color-purple-primary;
+  color: colors.$color-white;
+  margin-top: 90px;
+  min-height: 162px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 124px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 120%;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  &__description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+
+  &__form {
+    flex: 1;
+    max-width: 660px;
+  }
+
+  &__fields {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 639px;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: colors.$color-white;
+    font-size: 12px;
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid colors.$color-yellow-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__button {
+    min-width: 157px;
+    height: 42px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: colors.$color-yellow-primary;
+    color: colors.$color-purple-primary;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: color.adjust(
+        colors.$color-yellow-primary,
+        $lightness: -6%
+      );
+    }
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    cursor: pointer;
+
+    input {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      border: 1px solid colors.$color-brown-dark;
+      border-radius: 1px;
+      background-color: colors.$color-white;
+      cursor: pointer;
+
+      &:checked {
+        background-color: colors.$color-yellow-primary;
+        border-color: colors.$color-brown-dark;
+      }
+
+      &:checked::after {
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: colors.$color-purple-primary;
+        font-size: 11px;
+      }
+
+      &:focus-visible {
+        outline: 2px solid colors.$color-yellow-primary;
+        outline-offset: 2px;
+      }
+    }
+  }
+}
