@@ -16,6 +16,9 @@ import supermarket from '@/assets/icons/supermarket.svg';
 import technology from '@/assets/icons/technology.svg';
 import healthCare from '@/assets/icons/healthCare.svg';
 import whiskey from '@/assets/icons/whiskey.svg';
+import facebook from '@/assets/icons/facebook.svg';
+import instagram from '@/assets/icons/instagram.svg';
+import linkedin from '@/assets/icons/linkedin.svg';
 
 const icons = {
   creditCard,
@@ -34,6 +37,9 @@ const icons = {
   technology,
   healthCare,
   whiskey,
+  facebook,
+  instagram,
+  linkedin,
 };
 
 type IconProps = {
