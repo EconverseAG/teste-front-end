@@ -1,0 +1,96 @@
+.product-card {
+  display: flex;
+  flex: 0 0 304px;
+  flex-direction: column;
+  min-height: 500px;
+  padding-top: 22px;
+  padding-bottom: 16px;
+  padding-left: 12.39px;
+  padding-right: 13.51px;
+  border-radius: 10px;
+  background-color: colors.$color-white;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.16));
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 278px;
+    margin-bottom: 7px;
+  }
+
+  &__description {
+    margin: 8px 0 12px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 100%;
+    color: colors.$color-gray-medium-dark;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__original-price {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: line-through;
+    line-height: 100%;
+    color: colors.$color-gray-medium;
+  }
+
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    color: colors.$color-gray-medium-dark;
+    line-height: 100%;
+  }
+
+  &__installments {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    color: colors.$color-gray-medium-dark;
+  }
+
+  &__shipping {
+    margin-top: 7px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    color: colors.$color-blue-secondary;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-top: auto;
+    border-radius: 4px;
+    border: none;
+    background-color: colors.$color-blue-secondary;
+    color: colors.$color-white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: colors.$color-blue-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid colors.$color-purple-primary;
+      outline-offset: 2px;
+    }
+  }
+}
