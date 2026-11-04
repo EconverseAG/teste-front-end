@@ -1,0 +1,24 @@
+.product-details-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: colors.$color-blue-secondary;
+  transition: color 0.2s ease;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 100%;
+  letter-spacing: 5%;
+
+  &:hover {
+    color: colors.$color-purple-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid colors.$color-yellow-primary;
+    outline-offset: 4px;
+  }
+}
