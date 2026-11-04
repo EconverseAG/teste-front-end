@@ -2,6 +2,10 @@
 
 Aplicação de vitrine de produtos desenvolvida com React, TypeScript e Vite.
 
+## Layout
+
+O layout original do projeto foi planejado para uma tela com largura de `1440px`, que é sua resolução de referência.
+
 ## Pré-requisitos
 
 - Git
