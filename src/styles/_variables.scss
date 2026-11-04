@@ -3,7 +3,7 @@ $color-blue: #3442b5;          // Azul
 $color-yellow: #f7ca11;        // Amarelo
 $color-purple: #271c47;        // Roxo
 $color-gray-medium: #9f9f9f;   // Cinza Médio
-$color-gray-dark: #3f3f40;     // Cinza Escuro
+$color-gray-dark: #3f3f40;     // Cinza Escuro (no Figma: "Preto")
 $color-white: #ffffff;
 
 // ===== Cores avulsas =====
@@ -11,6 +11,10 @@ $color-offers: #3019b2;        // "Ofertas do dia"
 $color-border-light: #f0f0f0;
 $color-search-bg: #f6f5f2;
 $color-shadow: rgba(57, 48, 19, 0.12);
+$color-tab-border: #bdbdbd;
+$color-tab-text: #3b3b3b;
+$color-line: #dedede;
+$color-old-price: #808080;
 
 // ===== Tipografia =====
 $font-family: 'Poppins', sans-serif;
@@ -23,7 +27,15 @@ $search-width: 630px;
 $categories-gap: 42px;
 $category-item-width: 128px;
 $category-item-height: 171px;
-$category-card-size: 128px;     // estimado pelo print, confirmar
+$category-card-size: 128px;     // estimado, confirmar
 $category-card-radius: 10px;    // estimado, confirmar
 $category-icon-size: 56px;      // estimado, confirmar
-$category-label-gap: 24px;      // estimado (171 - 128 - altura do texto)
+$category-label-gap: 24px;      // estimado
+
+// ===== Vitrine =====
+$card-width: 304px;
+$card-height: 500px;
+$card-gap: 18px;
+$card-radius: 10px;
+$card-shadow: 0 3px 19px rgba(0, 0, 0, 0.22);
+$arrow-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);

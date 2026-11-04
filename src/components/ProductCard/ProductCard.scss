@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+
+// Posições do Figma (relativas ao topo do card de 500px):
+// imagem 32 → 262 | nome 269 → 315 | preços 327 → 383
+// parcelas 385 | frete 410 | botão 440 → 484 | respiro final 16px
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: $card-width;
+  height: $card-height;
+  padding: 32px 15.76px 16px 12.39px;
+  background: $color-white;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  font-family: $font-family;
+  color: $color-gray-dark;
+
+  &__image {
+    width: 100%;
+    height: 230px;
+    object-fit: contain; // altura estimada, confirmar
+  }
+
+  &__name {
+    margin-top: 7px;
+    height: 46px;
+    font: 300 15px/23px $font-family;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__prices {
+    margin-top: 12px;
+  }
+
+  &__old-price {
+    font: 400 16px/24px $font-family;
+    color: $color-old-price;
+  }
+
+  &__price {
+    margin-top: 2px;
+    font: 700 20px/30px $font-family;
+  }
+
+  &__installments {
+    margin-top: 2px;
+    font: 400 12px/18px $font-family;
+  }
+
+  &__shipping {
+    margin-top: 7px;
+    font: 400 12px/18px $font-family;
+    color: $color-blue;
+  }
+
+  &__button {
+    width: 100%;
+    height: 44px;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 4px;
+    background: $color-blue;
+    color: $color-white;
+    font: 700 12px/1 $font-family; // tipografia do botão estimada, confirmar
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.92);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-gray-dark;
+      outline-offset: 2px;
+    }
+  }
+}
