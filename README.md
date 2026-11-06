@@ -29,3 +29,4 @@ Segue abaixo as instruções para a execução do teste.
 - Alcance dos objetivos propostos
 
 **Boa sorte! ;)**
+Melhoria na documentação do projeto
